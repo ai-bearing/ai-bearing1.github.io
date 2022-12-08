@@ -211,4 +211,4 @@ Comments ex post:
 ## Day 7
 Comments ex ante:
 - My god this is a hard problem, I spent like 2 hours looking up how trees work and I still don't know where to start
-- Finals getting into higher gear so I think I will push this off until I go home for winter break
+- Finals getting into higher gear so I think I will push this and all the days up to the 14th until I go home for winter break.
