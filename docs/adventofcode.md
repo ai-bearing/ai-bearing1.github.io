@@ -1,5 +1,5 @@
 # Why
-I didn't have much else to do in the lead-up to finals (though obviously I can't do much of it right now thanks to finals), and I figured I needed to brush up on my coding skills (of which I have very few). I'm going to be using this page to document my thought process and the various solutions I create. Warning: they will be pretty bad.
+I didn't have much else to do in the lead-up to finals (though obviously I can't do much of it right now thanks to finals), and I figured I needed to brush up on my coding skills (of which I have very few). I'm going to be using this page to document my thought process and the various solutions I create. Warning: they will be clunky.
 
 # Solutions By Day
 
