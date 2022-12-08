@@ -10,5 +10,5 @@ I'm just trying to see how to make a barebones website with Github Pages
 I figured I needed to make a website some day, so here we are.
 
 ## Things I'm Doing/Have Done
-Advent of Code (link)
+[Advent of Code](adventofcode.md)
 
