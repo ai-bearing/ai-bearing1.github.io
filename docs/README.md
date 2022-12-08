@@ -11,5 +11,5 @@ I figured I needed a website to store various things I have done or am doing.
 
 ## Things I'm Doing/Have Done
 - [Advent of Code](adventofcode.md)
-- Topology Notes (I made these for finals)
+- [Topology Notes](https://aiyer.notion.site/Topology-Final-Exam-Notes-4603c14e5cb94f45a867fca3164d27a5) (I made these for finals)
 
