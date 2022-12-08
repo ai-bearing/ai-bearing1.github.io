@@ -1,6 +1,3 @@
----
-permalink: /
----
 ## About
 I'm just trying to see how to make a barebones website with Github Pages
 
