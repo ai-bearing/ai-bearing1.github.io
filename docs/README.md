@@ -9,6 +9,6 @@ I'm just trying to see how to make a barebones website with Github Pages
 ## Why is this here?
 I figured I needed to make a website some day, so here we are.
 
-## Menu
-Soon to come!
+## Things I'm Doing/Have Done
+Advent of Code (link)
 
