@@ -1,3 +1,4 @@
+# Advent of Code
 ## Why
 I didn't have much else to do in the lead-up to finals, and I figured that it's a good idea to brush up on my coding skills (and learn some Python in the process). I'm going to be using this page to document my solutions and some comments (ex ante and ex post) that I have on the process.
 
