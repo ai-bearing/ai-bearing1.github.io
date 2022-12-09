@@ -3,7 +3,7 @@ Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it
 
 
 ## Who I am
-I am a math and econ student at Occidental College.
+I am a math and econ student at Occidental College. You can find my resume [here](https://github.com/ai-bearing/ai-bearing.github.io/blob/ca7e5c87db3a7564b25812ae86f44b72db9bb3f7/docs/CVDraft.pdf)
 
 ## Why is this here?
 I figured I needed a website to store and document various things I have done or am doing.
