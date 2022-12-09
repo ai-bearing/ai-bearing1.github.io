@@ -1,5 +1,5 @@
 ## Why
-I didn't have much else to do in the lead-up to finals (though obviously I can't do much of it right now thanks to finals), and I figured I needed to brush up on my coding skills (of which I have very few). I'm going to be using this page to document my thought process and the various solutions I create. Warning: they will be clunky.
+I didn't have much else to do in the lead-up to finals, and I figured that it's a good idea to brush up on my coding skills (and learn some Python in the process). I'm going to be using this page to document my solutions and some comments (ex ante and ex post) that I have on the process.
 
 ## Solutions By Day
 
@@ -21,6 +21,7 @@ print(top3elves)
 ```
 Comments ex post:
 - I found this problem pretty easy, thank god for the ``sort`` method
+- I started on Day 2 and did Day 1 for the stars
 
 ### Day 2
 ```python
@@ -115,6 +116,7 @@ print(sum2)
 ```
 Comments ex post:
 - I almost used absurdly massive conditional statements on this, but a friend told me about sets before then, thank god
+- This was the first time I realized there was a part 2, so I needed to go back and rework Day 2 and 1
 
 ### Day 4
 ```python
@@ -192,6 +194,7 @@ for i in crates:
 Comments ex post:
 - I spent most of my time trying to figure out how to read in the first 8 lines vertically, and I figured I would just hard code it
 - Used a slicing operator in the for loop for the first time to get the removal order for Part 2
+- I didn't clean the output to produce the proper strings
 
 ### Day 6
 ```python
@@ -210,5 +213,6 @@ Comments ex post:
 
 ### Day 7
 Comments ex ante:
-- My god this is a hard problem, I spent like 2 hours looking up how trees work and I still don't know where to start
+- I spent like 2 hours looking up how trees work and I still don't know how to do this
 - Finals getting into higher gear so I think I will push this and all the days up to the 14th until I go home for winter break.
+- I'll ask my mom for help
