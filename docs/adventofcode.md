@@ -1,9 +1,9 @@
-# Why
+## Why
 I didn't have much else to do in the lead-up to finals (though obviously I can't do much of it right now thanks to finals), and I figured I needed to brush up on my coding skills (of which I have very few). I'm going to be using this page to document my thought process and the various solutions I create. Warning: they will be clunky.
 
-# Solutions By Day
+## Solutions By Day
 
-## Day 1:
+### Day 1:
 ```python
 f = open('advent_1.txt','r')
 elfsum = 0
@@ -22,7 +22,7 @@ print(top3elves)
 Comments ex post:
 - I found this problem pretty easy, thank god for the ``sort`` method
 
-## Day 2
+### Day 2
 ```python
 finalscore = 0
 f = open('advent_2.txt','r')
@@ -116,7 +116,7 @@ print(sum2)
 Comments ex post:
 - I almost used absurdly massive conditional statements on this, but a friend told me about sets before then, thank god
 
-## Day 4
+### Day 4
 ```python
 # get a line from the text input
 # split based on the comma (figure out how to do this), use s1 and s2
@@ -145,7 +145,7 @@ print(contained_ranges)
 print(overlaps)
 ```
 
-## Day 5
+### Day 5
 ```python
 f = open('advent_5.txt','r')
 # read all lines into array
@@ -193,7 +193,7 @@ Comments ex post:
 - I spent most of my time trying to figure out how to read in the first 8 lines vertically, and I figured I would just hard code it
 - Used a slicing operator in the for loop for the first time to get the removal order for Part 2
 
-## Day 6
+### Day 6
 ```python
 f = open('advent_6.txt','r')
 datastream_buffer = f.readline()
@@ -208,7 +208,7 @@ for i in range(0,len(datastream_buffer)-3,1):
 Comments ex post:
 - thatwaseasy.mp4
 
-## Day 7
+### Day 7
 Comments ex ante:
 - My god this is a hard problem, I spent like 2 hours looking up how trees work and I still don't know where to start
 - Finals getting into higher gear so I think I will push this and all the days up to the 14th until I go home for winter break.
