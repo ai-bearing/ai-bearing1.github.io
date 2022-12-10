@@ -15,7 +15,7 @@ I am a math and econ student at Occidental College. I'm going to be using this w
 ## Class Notes
 - [Topology Notes](https://aiyer.notion.site/Topology-Final-Exam-Notes-4603c14e5cb94f45a867fca3164d27a5)
 - [Intermediate Microeconomics Notes](https://aiyer.notion.site/Intermediate-Microeconomics-Final-Exam-Notes-2269f691b5e943508a237ff043d5d358)
-- [Intermediate Micro Practice Exam Workthroughs](https://aiyer.notion.site/Intermediate-Micro-Practice-Exams-3e77552d3a6b4735bc5c7397f241dfcb)
+- [Intermediate Micro Practice Exam](https://aiyer.notion.site/Intermediate-Micro-Practice-Exams-3e77552d3a6b4735bc5c7397f241dfcb)
 
 ## Posts and Pontifications
 - [Articles for *The Occidental*](https://theoccidentalnews.com/author/iyera)
