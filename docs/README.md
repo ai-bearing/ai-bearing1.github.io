@@ -1,11 +1,8 @@
 ## About
 Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it's pretty cool nonetheless.
 
-## Why the website name?
-Originally I wanted it to be "aiyering", but unfortunately that was taken, so this was the next closest name that worked.
-
 ## Who I am
-I am a math and econ student at Occidental College. I'm going to be using this website to document some things I've done or am doing. Class notes, posts, etc., all are fair game
+I am a math and econ student at Occidental College. I'm going to be using this website to document some things I've done or am doing. Class notes, blog posts and pontifications, and the like. I hope you find them mildly interesting!
 
 ## Interests
 - Abstract Algebra and Topology
