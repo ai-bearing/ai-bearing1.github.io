@@ -1,7 +1,7 @@
 ## About
 Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it's pretty cool nonetheless.
 <center>
-  <img src="me\ in\ front\ of\ mount\ rainier.png" alt="a picture of me">
+  <img src="https://github.com/ai-bearing/ai-bearing.github.io/blob/45505391bfcf4b91fffb33ee06e5560f0020dc5a/docs/me%20in%20front%20of%20mount%20rainier.png" alt="a picture of me">
 </center>
 
 ## Who I am
