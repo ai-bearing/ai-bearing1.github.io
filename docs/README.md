@@ -1,5 +1,8 @@
 ## About
 Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it's pretty cool nonetheless.
+<center>
+  <img src="me\ in\ front\ of\ mount\ rainier.png" alt="a picture of me">
+</center>
 
 ## Who I am
 I am a math and econ student at Occidental College. I'm going to be using this website to document some things I've done or am doing. Class notes, blog posts and pontifications, and the like. I hope you find them mildly interesting!
