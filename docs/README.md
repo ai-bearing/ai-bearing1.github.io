@@ -1,8 +1,11 @@
 ## About
 Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it's pretty cool nonetheless.
 <div align="center">
-    <img src="https://github.com/ai-bearing/ai-bearing.github.io/blob/45505391bfcf4b91fffb33ee06e5560f0020dc5a/docs/me%20in%20front%20of%20mount%20rainier.png" alt="a picture of me" width="300">
+    <a href="https://github.com/ai-bearing/ai-bearing.github.io/">
+        <img src="docs/me in front of mount rainier.png" alt="a picture of me" width="350" />
+    </a>
 </div>
+
 
 ## Who I am
 I am a math and econ student at Occidental College. I'm going to be using this website to document some things I've done or am doing. Class notes, blog posts and pontifications, and the like. I hope you find them mildly interesting!
