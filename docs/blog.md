@@ -14,3 +14,5 @@ The econ notes are pretty thorough (except for consumer theory — I mostly made
 - public goods
 
 I think my main issue with the exchange economies question on the practice exams was that I tried to work too fast. Of course, we are allotted three whole hours to take the final exam, which means that (theoretically speaking), I should be fine on the exam as long as I don't suddenly get the urge to leave as soon as possible.
+
+---
