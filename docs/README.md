@@ -22,6 +22,9 @@ I am a math and econ student at Occidental College. I'm going to be using this w
 - For math documents, I use LaTeX with NeoVim through the terminal, using [this](https://github.com/benbrastmckie/.config#Mac-OS-Installation) config with some minor changes.
 - I also use NeoVim for programming in Python.
 
+## What I'm reading
+You can find my reading list [here](https://aiyer.notion.site/30eab91bd1ac46b5890bf3f44e24dd9b?v=e2eb4a06677b4cc3aa410c9d7bf6212d).  
+
 ## Class Notes
 ### Fall 2022
 - [Topology Notes](https://aiyer.notion.site/Topology-Final-Exam-Notes-4603c14e5cb94f45a867fca3164d27a5)
