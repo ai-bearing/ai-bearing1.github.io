@@ -217,3 +217,8 @@ Comments ex ante:
 - I spent like 2 hours looking up how trees work and I still don't know how to do this
 - Finals getting into higher gear so I think I will push this and all the days up to the 14th until I go home for winter break.
 - I'll ask my mom for help
+- I tried a couple methods and it still didn't work
+
+### Update on December 15
+- I don't think I will be able to do any of these other problems, none of the following problems are any easier than what we have currently 
+- It was a good run, and I did learn a bit of stuff like sets and lists in python, maybe I'll try to take a stab at this next time around

@@ -3,6 +3,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 15 December, 2022
+I am done with finals, and with the end of finals I have finished my final formal physics class for the forseeable future. It's not like I'm *bad* at physics, but I just didn't really enjoy it and weirdly enough doesn't feel particularly real. I know I'm majoring in math and econ, two of the most abstract subjects, but even then physics feels like it takes way too many assumptions
+
+---
+
 ### 13 December, 2022
 My econ final went without a hitch, thank god. Micro is a pretty weird subject and I was sure the professor would be able to find a way to mess up our senses, but thankfully everything was for the most part sane. I actually ended up getting three of my predictions correct (there was a moving decision with labor supply, an exchange economies question, and a public goods question). I finished the test early but I did read over every question again just to make sure I didn't mess up badly, and I think (god willing) I will end up with an A in the class. Much better result than topology, but also Intermediate Micro isn't an upper div class.
 
