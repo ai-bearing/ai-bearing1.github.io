@@ -1,5 +1,10 @@
 title: Avinash Iyer
 theme: minima
+description:
+  I'm a math and econ major at Occidental College. Welcome to my website!
+author:
+  name: Avinash Iyer
+  email: iyera@oxy.edu
 header_pages:
   - README.md
   - blog.md
