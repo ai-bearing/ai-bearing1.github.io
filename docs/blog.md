@@ -3,6 +3,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 16 December, 2022
+First full day back home, and I am not really enjoying it. Everything is very boring but also there's that typical feeling of a coming mountain of work that I am currently procrastinating on (namely, REU applications), which I have yet to do substantial work on for some reason. However, I'll survive.
+
+---
+
 ### 15 December, 2022
 I am done with finals, and with the end of finals I have finished my final formal physics class for the forseeable future. It's not like I'm *bad* at physics, but I just didn't really enjoy it and weirdly enough doesn't feel particularly real. I know I'm majoring in math and econ, two of the most abstract subjects, but even then physics feels like it takes way too many assumptions
 
