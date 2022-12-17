@@ -3,6 +3,6 @@ theme: minima
 description:
   I'm a math and econ major at Occidental College. Welcome to my website!
 header_pages:
-  - about.md
+  - README.md
   - blog.md
   - adventofcode.md
