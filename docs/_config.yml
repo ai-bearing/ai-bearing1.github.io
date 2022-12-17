@@ -1,2 +1,6 @@
 title: Avinash Iyer
 theme: minima
+header_pages:
+  - README.md
+  - blog.md
+  - adventofcode.md
