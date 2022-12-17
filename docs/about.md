@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "About"
+permalink: "/about"
 ---
 Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it's pretty cool nonetheless.
 
