@@ -1,3 +1,8 @@
+---
+layout: page
+title: "Blog-ish"
+permalink: /blog.html
+---
 # Blog-ish
 ## What this is
 This is less of a typical blog and more an online journal where I write down my thoughts on various things that are on my mind at that period in time. I'm going to try to update this regularly. I will try to keep profanity to a minimum, but readers are advised that there will probably be a nonzero amount of profanity.
