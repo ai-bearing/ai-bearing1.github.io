@@ -6,6 +6,8 @@ This is less of a typical blog and more an online journal where I write down my 
 ### 16 December, 2022
 First full day back home, and I am not really enjoying it. Everything is very boring but also there's that typical feeling of a coming mountain of work that I am currently procrastinating on (namely, REU applications), which I have yet to do substantial work on for some reason. However, I'll survive.
 
+I'm somewhat sad that I won't be able to complete Advent of Code this year. It's just absurdly hard, but also I feel like it's supposed to be somewhat "basic" when it comes to the difficulty of programming challenges. Unfortunately, I'm not particularly adept at programming or programming thought processes, and as a result wasn't able to make it past Day 7.
+
 ---
 
 ### 15 December, 2022
