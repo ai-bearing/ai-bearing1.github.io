@@ -1,4 +1,8 @@
-## About
+---
+layout: page
+title: "About"
+permalink: "/about.html"
+---
 Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it's pretty cool nonetheless.
 
 <div align="center">
