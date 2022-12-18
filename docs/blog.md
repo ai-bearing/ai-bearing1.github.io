@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 17 December, 2022
+Yoo I got an A in physics. And that's the last time I will take a physics class too. I don't have any ill will towards physics majors, but it's really just that I don't enjoy the subject.
+
+---
+
 ### 16 December, 2022
 First full day back home, and I am not really enjoying it. Everything is very boring but also there's that typical feeling of a coming mountain of work that I am currently procrastinating on (namely, REU applications), which I have yet to do substantial work on for some reason. However, I'll survive.
 
