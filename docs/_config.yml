@@ -1,8 +1,8 @@
-title: Avinash Iyer
+title: Avinash Iyer's Website
 theme: minima
+author: Avinash Iyer
 description:
   I'm a math and econ major at Occidental College. Welcome to my website!
 header_pages:
-  - README.md
   - blog.md
   - adventofcode.md
