@@ -11,6 +11,18 @@ This is less of a typical blog and more an online journal where I write down my 
 ### 17 December, 2022
 Yoo I got an A in physics. And that's the last time I will take a physics class too. I don't have any ill will towards physics majors, but it's really just that I don't enjoy the subject.
 
+I also have to start writing REU essays, my adjustment period from getting back home should mostly be over by tomorrow. I think the plan is to apply to the following, with preference in rough order of the following:
+
+- Baruch (Discrete Math REU)
+- Northwestern (Dynamics)
+- Oregon State (Number Theory)
+- University of Virginia (Topology)
+- Williams College (Commutative Algebra)
+- University of Michigan (Topic TBD)
+- University of Minnesota (Algebra, Combinatorics, and Representation Theory)
+
+There are certainly others that I want to apply to, especially considering that the chance that I'll get into one of these is probably small, but I really want to get into Baruch or Northwestern, considering they're in the largest and third largest metro areas in the country respectively.
+
 ---
 
 ### 16 December, 2022
