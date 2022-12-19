@@ -18,7 +18,7 @@ Math, like a lot of subjects, is primarily (in my opinion) about teaching someon
 - know the definition of closed (complement is open)
 - construct an open cover of our closed subset
 - show that this open cover has a finite subcover
--
+
 This question draws on memorized definitions, their specific applications, and using a little bit of ingenuity to construct the specific open cover that solves our problem.
 
 Of course, this is true of nearly every subject, but math is, in a sense, arbitrary (thanks, Gödel's incompleteness theorem). Maybe some think "well that sucks, you're studying a subject that isn't completely real," but I think that's where the fun is. Math is less of something meant to describe reality (though it does do that a lot), but a process of discovering based on certain rules that don't necessarily have to be the way we set out.
