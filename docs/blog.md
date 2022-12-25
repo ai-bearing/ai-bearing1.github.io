@@ -8,6 +8,15 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 24 December, 2022
+There is a *lot* of haze in the Bay Area, which shines a light into a lot of political failures in the entirety of the state of California. There were no wildfires, and at any rate it's winter so there shouldn't be any wildfires — the reason for this haze is wood smoke from fireplaces and wood-burning stoves, paired with an inversion weather pattern that keeps the smoke down near the surface.
+
+Wood burning stoves? Fireplaces? Is this the 1800s? No — it is simply the government of California being too spineless to allow upgraded housing with better insulation and heating and ban fireplaces in the process. One might think we would have a good set of conscious policies to facilitate the gradual removal of fireplaces through recycling of housing stock, but we don't because new apartments would use up people's street parking or something — instead we use unenforceable "Spare the Air" alerts that advise people to not burn wood. Of course there are prime examples of [solidarity in action](https://www.econlib.org/solidarity/), but imminent blackouts is much more conducive to solidaristic action than temporarily hazy air.
+
+I do wish there was a solution to this, because, well, I want to go outside and do exercise, but in the meantime we can only do Spare the Air alerts.
+
+---
+
 ### 17 December, 2022
 Yoo I got an A in physics. And that's the last time I will take a physics class too. I don't have any ill will towards physics majors, but it's really just that I don't enjoy the subject.
 
