@@ -8,6 +8,15 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 25 December, 2022
+Merry Christmas! I sadly did not get a present at this moment (mostly because my parents are not really the Christmas present giving types, but I will be getting an iPhone sometime in the future if all goes well). Most everyone knows that [gift giving is inefficient](https://www.vox.com/new-money/2016/12/21/14032662/christmas-gift-giving-wasteful), but did you know that [gift giving is falling](https://archive.ph/D1GdQ) as incomes are rising? In other words, gift giving is an inferior "good" (inferior service?)
+
+Sidenote: I never really liked the term "inferior good" to denote goods whose consumption falls as incomes rise. After all, if a consumer is consuming a good, it means they think that good is superior to all the other types of goods they might have consumed. Sadly, economists are obsessed with terminology lest they get left in the dust by mathematicians and physicists, so they decided to call them "inferior goods" instead of "goods with negative income effect." The term "Giffen good" (for goods whose demand curve is upward sloping) is fine, though, because it's alliterative.
+
+Anyway, I am actually pretty heartened by the fall of gift giving — it means we're wealthy enough that we don't think we necessarily need gifts, and we are humble enough to know that we don't really have the knowledge to give someone exactly what they want. If only we realized this earlier and decided to give each other cash instead.
+
+---
+
 ### 24 December, 2022
 There is a *lot* of haze in the Bay Area, which shines a light into a lot of political failures in the entirety of the state of California. There were no wildfires, and at any rate it's winter so there shouldn't be any wildfires — the reason for this haze is wood smoke from fireplaces and wood-burning stoves, paired with an inversion weather pattern that keeps the smoke down near the surface.
 
