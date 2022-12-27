@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 26 December, 2022
+Observed Christmas Day it is, and what a very gloomy [week ahead](https://media.discordapp.net/attachments/999492574916116503/1057199186862420008/image.png). Obviously this is better than some of the horror stories coming out of the Northeast or Midwest from the past few days (sub-freezing temperatures and all), and thank god I live in the Bay Area instead of those dreadful places. Nonetheless, I do probably need to get some outside sooner or later, considering I haven't really left the house in a few days.
+
+---
+
 ### 25 December, 2022
 Merry Christmas! I sadly did not get a present at this moment (mostly because my parents are not really the Christmas present giving types, but I will be getting an iPhone sometime in the future if all goes well). Most everyone knows that [gift giving is inefficient](https://www.vox.com/new-money/2016/12/21/14032662/christmas-gift-giving-wasteful), but did you know that [gift giving is falling](https://archive.ph/D1GdQ) as incomes are rising? In other words, gift giving is an inferior "good" (inferior service?)
 
