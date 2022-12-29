@@ -8,6 +8,18 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 28 December, 2022
+I'm a bit over halfway through *The Tyranny of Experts* by William Easterly, and I'm liking a lot about it so far. The main sticking points are as follows:
+- Knowledge problem: central planners don't know the solutions, we need to let free individuals experiment and try different things out to find out what the solution is
+- Technocratic/autocratic development won out in the west (despite a history of free development) thanks to racism and a deluded belief that the knowledge problem surely could not apply to them
+- Many of the worst problems in the developing world are not simply technocratic in nature, but rather stem from a lack of political and economic rights on the part of the poor. Letting the idea that we just don't have the right technologies distract us from the rights violations going on is a grave mistake.
+- The solution is always and everywhere freedom, not support for tyrannical and repressive governments.
+- Slavery was really, really freaking bad.
+
+Sadly, I don't think Easterly's preferred policies would be widely supported among the "experts" that dominate modern-day conversations about, well, anything. The book is a grave indictment of belief in experts (hence its name), and as an aspiring expert (albeit not in economic development), I think humility is the hardest lesson of them all. We could always be wrong — we are not immune to propaganda, prevailing beliefs, and there could always be a different answer on the horizon.
+
+---
+
 ### 26 December, 2022
 Observed Christmas Day it is, and what a very gloomy [week ahead](https://media.discordapp.net/attachments/999492574916116503/1057199186862420008/image.png). Obviously this is better than some of the horror stories coming out of the Northeast or Midwest from the past few days (sub-freezing temperatures and all), and thank god I live in the Bay Area instead of those dreadful places. Nonetheless, I do probably need to get some outside sooner or later, considering I haven't really left the house in a few days.
 
@@ -66,7 +78,6 @@ My econ final went without a hitch, thank god. Micro is a pretty weird subject a
 ---
 
 ### 11 December, 2022
-#### Classes and Finals
 My mind is still very, very dead from making the economics notes and also working through the practice finals Prof. Ngo gave to us. Additionally, a lot of stuff went wrong on my topology exam, mostly stemming from a complete and utter inability to think during the exam period. I was sure I had eaten enough and even drank chocolate milk during the exam, but the questions were a mixture of curveballs, tedious problems, and the fact that I just didn't prepare for some of the problems. Might be my first B in a math class, which would suck, but I guess the bright side is that I'm done with the class. Even though I really did love the professor, there was just a lot of stuff going on in my life that the completion of the class is a good sign that stuff should (inshallah) become better.
 
 The econ notes are pretty thorough (except for consumer theory — I mostly made this set of notes to double down on producer theory and monopolies). I think the final exam should have some mixture of the following:
@@ -75,14 +86,5 @@ The econ notes are pretty thorough (except for consumer theory — I mostly made
 - non-standard budget constraint or moving decision
 - economic rent/situation with different types of producers
 - public goods
-
-I think my main issue with the exchange economies question on the practice exams was that I tried to work too fast. Of course, we are allotted three whole hours to take the final exam, which means that (theoretically speaking), I should be fine on the exam as long as I don't suddenly get the urge to leave as soon as possible.
-
-#### Thoughts on Gentrification and Exclusion
-In Los Angeles, there's often talk about "gentrification" (usually a signifier for neighborhood change, typically identified with new housing development, different restaurants, and rising rents) that's leading to people having to leave their communities, with much of the blame placed on the tech industry or new private market rate housing. Of course, I fall firmly on the side that gentrification — to the extent that it's a discussion about rising rents — is resolved via mass construction of housing ([here](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3867764) [are](https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01055/100977/Local-Effects-of-Large-New-Apartment-Buildings-in) [some](https://ideas.repec.org/p/fer/wpaper/146.html) [papers](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3426103) showing that mass construction of housing does lead to decreasing rents both at the hyperlocal level and at the regional level).   
-
-I'm extremely irked by people who believe that gentrification is a problem because of culture or demographic shifts, and even if we resolved the fundamental economic problem of housing scarcity, that gentrification would still be bad. We would call an Ohio steelworker who is opposed to immigration liberalization because of nonsense fears such as "they'll take our jobs" or "immigrants degrade American culture" as rightly xenophobic, but all of a sudden arguments of a similar vein applied to the hyper-local level are valid if they're being made by a person of color.
-
-Is this a bit strawman-y? Perhaps, but I do think that accepting demographic change and living with people of different races, backgrounds, and ethnicities is just a part of life. If activists think that gentrification is bad because of rising rents, then they should support mass housing construction — if they think it's bad because of demographic and cultural shifts, then their belief is fundamentally based in exclusion, but just for the "right people."
 
 ---
