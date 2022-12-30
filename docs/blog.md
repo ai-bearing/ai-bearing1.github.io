@@ -8,6 +8,15 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 29 December, 2022
+I like to dabble in speed solving Rubik's cubes, and I'm actually pretty decent — most of my Ao5s are around 17 to 18 seconds, and I usually consider solves above 20 seconds "bad." What's fascinating to me is that when I started speedcubing (as in, deliberately trying to solve the Rubik's cube in a fast method, rather than just learning how to solve it), I probably would have greatly rejoiced at such a result. After all, I was averaging around 30 to 40 seconds at the beginning of learning the CFOP method, and yet now I'm averaging half those results.
+
+I think this is actually a very interesting allegory for the broader world — we have become so much more well off and so much more socially tolerant compared to 20 or 50 years ago that pining for "the good old days," while extremely common, is very silly. When was "the good old days?" The 1970s, when we still had rampant racism in the United States? The 1950s, when segregation was still legal? The 1920s, when we banned immigration from much of the world thanks to eugenicist beliefs? Not to forget that during this time, we were also much, much poorer than we are now — no refrigerators, few TVs (especially not UHD TVs), more hunger, fewer opportunities for education, etc.
+
+This New Year's Week, I'm thankful for economic and social progress — here's to much, much more in the future. Hopefully I'll be able to regale my future children or grandchildren with stories about the bad old days when we needed to carry our backpacks on our backs instead of being able to use levitation devices. 
+
+---
+
 ### 28 December, 2022
 I'm a bit over halfway through *The Tyranny of Experts* by William Easterly, and I'm liking a lot about it so far. The main sticking points are as follows:
 - Knowledge problem: central planners don't know the solutions, we need to let free individuals experiment and try different things out to find out what the solution is
