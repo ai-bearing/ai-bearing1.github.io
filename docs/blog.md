@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 1 January, 2023
+New Year, New Book(s) to read. I finished *The Tyranny of Experts*, and I really liked it. It's a great overview of not only the history of "development economics" as a concept, but also how the application of technocratic development distracts from the rights of the poor and the problems of dictators. One of my favorite parts was the section on the development history of Greene Street in NYC — I think we need more vignettes/microhistories of different famous streets. For example, I think one on the history of Wilshire Boulevard in Los Angeles or Market Street in San Francisco would be very welcome.  
+
+---
+
 ### 29 December, 2022
 I like to dabble in speed solving Rubik's cubes, and I'm actually pretty decent — most of my Ao5s are around 17 to 18 seconds, and I usually consider solves above 20 seconds "bad." What's fascinating to me is that when I started speedcubing (as in, deliberately trying to solve the Rubik's cube in a fast method, rather than just learning how to solve it), I probably would have greatly rejoiced at such a result. After all, I was averaging around 30 to 40 seconds at the beginning of learning the CFOP method, and yet now I'm averaging half those results.
 
