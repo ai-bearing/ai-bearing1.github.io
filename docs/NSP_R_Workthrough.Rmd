@@ -2,7 +2,7 @@
 title: "No Starch Press R Workthrough"
 output: html_document
 author: Avinash Iyer
-permalink: "/r-workthrough.html"
+permalink: "/NSP_R_Workthrough.html"
 ---
 ## First Steps
 To store a vector to a variable, we do the following:
