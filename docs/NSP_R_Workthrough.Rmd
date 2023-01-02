@@ -1,8 +1,6 @@
 ---
 title: "R Workthrough"
-output:
-    md_document
-    html_document
+output: html_document
 author: Avinash Iyer
 permalink: "/NSP_R_Workthrough"
 ---
