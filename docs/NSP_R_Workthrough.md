@@ -1,7 +1,7 @@
 ---
 title: "R Workthrough"
 author: "Avinash Iyer"
-permalink: /NSP_R_Workthrough
+permalink: /NSP_R_Workthrough.html
 output: 
   html_document:
     keep_md: true
