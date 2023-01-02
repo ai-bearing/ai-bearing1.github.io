@@ -5,7 +5,7 @@ permalink: /NSP_R_Workthrough
 output: html_document
 ---
 
-## First Steps
+## Getting Started
 
 To store a vector to a variable, we do the following:
 
@@ -65,6 +65,7 @@ hist(Nile)
 ```
 
 To make a function, we can define as follows:
+
 ```{r}
 oddcount <- function(x){
   k<- 0 # assign 0 to k
@@ -76,12 +77,14 @@ oddcount <- function(x){
 ```
 
 We can test our `oddcount` function on various vectors:
+
 ```{r}
 oddcount(c(1,3,5))
 oddcount(c(1,3,7,9,2,4))
 ```
 
 In function `oddcount`, the values of `k` and `n` are local variables, and so don't really exist until the function is called. This is different from Python. Additionally, functions are passed by value rather than by reference. Let's create a function called `addone`, and see what happens to our vectors.
+
 ```{r}
 addone <- function(x){
   for(i in 1:length(x)){
@@ -93,3 +96,36 @@ z <- c(1,3,5)
 addone(z)
 z
 ```
+
+## Vectors
+In R, there is no separate thing as a "scalar," since scalars are considered to be 1-dimensional vectors. We define vectors as follows:
+```{r}
+x <- c(1,3,4)
+x
+length(x)
+```
+R automatically recycles (or basically copypastes) the shorter vector in addition until it reaches the length of the longer vector, as follows:
+```{r}
+y<- c(1,3,4,5,6)
+y
+z <- x+y
+z
+```
+This is equivalent to adding `c(1,3,4,1,3)` to `c(1,3,4,5,6)`.
+
+Multiplication is performed elementwise:
+```{r}
+w <- c(1,3,4) * c(6,7,8)
+w
+```
+This is true of other numeric operators:
+```{r}
+k <- w %% c(3,4,2)
+k
+```
+
+Alternatively, we can do the following:
+```{r}
+w %% 2
+```
+
