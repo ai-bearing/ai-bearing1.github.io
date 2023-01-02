@@ -516,6 +516,30 @@ find the number of runs of 1s in a vector of 0s and 1s, as follows:</p>
 }
 findruns(c(1,1,0,0,1,1,1,0,1,1,1),2) # this function should return (1,5,6,9,10)</code></pre>
 <pre><code>## [1]  1  5  6  9 10</code></pre>
+<p>Considering that this function creates a new vector every time it
+finds a run, this is very memory inefficient. We can solve this by
+initializing a new vector in <code>runs</code> and then cutting it
+towards the end.</p>
+<pre class="r"><code>findruns1 &lt;- function(x,k){
+  n &lt;- length(x)
+  runs &lt;- vector(length=n) # create a vector of length n at the beginning
+  count &lt;- 0
+  for(i in 1:(n-k+1)){
+    if(all(x[i:(i+k-1)] == 1)){
+      count &lt;- count + 1
+      runs[count] &lt;- i
+    }
+  }
+  # this loop will change the vector elements in runs to the point where the runs start
+  if(count &gt; 0){
+    runs &lt;- runs[1:count]
+  } else{
+    runs &lt;- NULL
+  }
+  return(runs)
+}
+findruns1(c(1,1,0,0,1,1,1,0,1,1,1),2)</code></pre>
+<pre><code>## [1]  1  5  6  9 10</code></pre>
 </div>
 
 
