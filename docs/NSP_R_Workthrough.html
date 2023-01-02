@@ -460,6 +460,62 @@ k</code></pre>
 <p>Alternatively, we can do the following:</p>
 <pre class="r"><code>w %% 2</code></pre>
 <pre><code>## [1] 0 1 0</code></pre>
+<p>We can also generate vectors with slicing operations:</p>
+<pre class="r"><code>z &lt;- 5:8
+z</code></pre>
+<pre><code>## [1] 5 6 7 8</code></pre>
+<p>If we wanted to extract all but the last element, we can do either of
+the following:</p>
+<pre class="r"><code>z[1:(length(z)-1)]</code></pre>
+<pre><code>## [1] 5 6 7</code></pre>
+<pre class="r"><code>z[-length(z)]</code></pre>
+<pre><code>## [1] 5 6 7</code></pre>
+<p>Slicing is precedent over plus/minus, so be wary (which is why we put
+the <code>length(z)-1</code> in parentheses up there).</p>
+<p>We can also make vectors from sequences as follows:</p>
+<pre class="r"><code>seq(from=1.1,to=2,length=10)</code></pre>
+<pre><code>##  [1] 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0</code></pre>
+<p>Sequences help deal with the null vector problem:</p>
+<pre class="r"><code>x &lt;- c(5,12,13)
+seq(x)</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
+<pre class="r"><code>x &lt;- NULL
+seq(x)</code></pre>
+<pre><code>## integer(0)</code></pre>
+<p>We can also use the <code>rep(x,times)</code> function to repeat
+vectors a number of times.</p>
+<pre class="r"><code>x &lt;- rep(8,4)
+x</code></pre>
+<pre><code>## [1] 8 8 8 8</code></pre>
+<p>We can also use the argument <code>each</code> within the
+<code>rep</code> function to change how numbers are repeated.</p>
+<pre class="r"><code>rep(c(5,12,13),3)</code></pre>
+<pre><code>## [1]  5 12 13  5 12 13  5 12 13</code></pre>
+<pre class="r"><code>rep(c(5,12,13),each=3)</code></pre>
+<pre><code>## [1]  5  5  5 12 12 12 13 13 13</code></pre>
+<p>We can also use the functions <code>any</code> and <code>all</code>
+as “or” or “and” for vector elements:</p>
+<pre class="r"><code>x &lt;- 1:10
+any(x&gt;8)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>all(x&gt;3)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>any(x&gt;88)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>We can use the <code>any</code> and <code>all</code> functions to
+find the number of runs of 1s in a vector of 0s and 1s, as follows:</p>
+<pre class="r"><code>findruns &lt;- function(x,k){
+  n &lt;- length(x)
+  runs &lt;- NULL
+  for(i in 1:(n-k+1)){
+    if(all(x[i:(i+k-1)] == 1)){
+      runs &lt;- c(runs,i)
+    }
+  }
+  return(runs)
+}
+findruns(c(1,1,0,0,1,1,1,0,1,1,1),2) # this function should return (1,5,6,9,10)</code></pre>
+<pre><code>## [1]  1  5  6  9 10</code></pre>
 </div>
 
 

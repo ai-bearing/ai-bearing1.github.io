@@ -129,3 +129,86 @@ Alternatively, we can do the following:
 w %% 2
 ```
 
+We can also generate vectors with slicing operations:
+```{r}
+z <- 5:8
+z
+```
+
+If we wanted to extract all but the last element, we can do either of the following:
+```{r}
+z[1:(length(z)-1)]
+z[-length(z)]
+```
+
+Slicing is precedent over plus/minus, so be wary (which is why we put the `length(z)-1` in parentheses up there).
+
+We can also make vectors from sequences as follows:
+```{r}
+seq(from=1.1,to=2,length=10)
+```
+Sequences help deal with the null vector problem:
+```{r}
+x <- c(5,12,13)
+seq(x)
+x <- NULL
+seq(x)
+```
+
+We can also use the `rep(x,times)` function to repeat vectors a number of times.
+```{r}
+x <- rep(8,4)
+x
+```
+
+We can also use the argument `each` within the `rep` function to change how numbers are repeated.
+```{r}
+rep(c(5,12,13),3)
+rep(c(5,12,13),each=3)
+```
+
+We can also use the functions `any` and `all` as "or" or "and" for vector elements:
+```{r}
+x <- 1:10
+any(x>8)
+all(x>3)
+any(x>88)
+```
+
+We can use the `any` and `all` functions to find the number of runs of 1s in a vector of 0s and 1s, as follows:
+```{r}
+findruns <- function(x,k){
+  n <- length(x)
+  runs <- NULL
+  for(i in 1:(n-k+1)){
+    if(all(x[i:(i+k-1)] == 1)){
+      runs <- c(runs,i)
+    }
+  }
+  return(runs)
+}
+findruns(c(1,1,0,0,1,1,1,0,1,1,1),2) # this function should return (1,5,6,9,10)
+```
+
+Considering that this function creates a new vector every time it finds a run, this is very memory inefficient. We can solve this by initializing a new vector in `runs` and then cutting it towards the end.
+```{r}
+findruns1 <- function(x,k){
+  n <- length(x)
+  runs <- vector(length=n) # create a vector of length n at the beginning
+  count <- 0
+  for(i in 1:(n-k+1)){
+    if(all(x[i:(i+k-1)] == 1)){
+      count <- count + 1
+      runs[count] <- i
+    }
+  }
+  # this loop will change the vector elements in runs to the point where the runs start
+  if(count > 0){
+    runs <- runs[1:count]
+  } else{
+    runs <- NULL
+  }
+  return(runs)
+}
+findruns1(c(1,1,0,0,1,1,1,0,1,1,1),2)
+```
