@@ -1,0 +1,46 @@
+---
+title: "No Starch Press R Workthrough"
+output: html_document
+author: Avinash Iyer
+permalink: "/r-workthrough.html"
+---
+## First Steps
+To store a vector to a variable, we do the following:
+```{r}
+x <- c(1,2,4)
+```
+We can also store this variable into a new variable:
+```{r}
+q <- c(x,x,8)
+```
+Then, we print `q`:
+```{r}
+q
+```
+To pull out the individual element, we do the following:
+```{r}
+x[3]
+```
+Elements of vectors in R are indexed at 1, **not** 0. For example, we would get an error if we tried to find `x[0]`. Importantly, we can also do subsets (or slicing, if we're talking about Python syntax).
+```{r}
+x[2:3]
+```
+The syntax `x[2:3]` means we start at index 2 (or the 2nd element) and go until (and including) index 3 (or the 3rd element). For example, with our vector `q`:
+```{r}
+q[2:4]
+```
+We can also find some values:
+```{r}
+mean(x)
+sd(x)
+```
+R also has a bunch of internal data sets that we can use for our own edification by typing in the following:
+```{r message=FALSE}
+data()
+```
+For example, we can use the dataset `Nile` for some fun:
+```{r}
+mean(Nile)
+sd(Nile)
+hist(Nile)
+```
