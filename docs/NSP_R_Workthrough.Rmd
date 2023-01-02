@@ -2,7 +2,9 @@
 title: "R Workthrough"
 author: "Avinash Iyer"
 permalink: /NSP_R_Workthrough
-output: html_document
+output: 
+  html_document:
+  keep_md: yes
 ---
 
 ## Getting Started
