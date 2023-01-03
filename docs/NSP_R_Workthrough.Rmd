@@ -1,11 +1,11 @@
 ---
+layout: page
 title: "R Workthrough"
 author: "Avinash Iyer"
 permalink: /NSP_R_Workthrough
 output: 
   html_document:
     keep_md: true
-layout: page
 ---
 
 ## Getting Started
