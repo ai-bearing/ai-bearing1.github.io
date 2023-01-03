@@ -597,6 +597,7 @@ mean(y)
 ```
 
 ## Matrices, In Detail
+### Defining and Subsetting
 A matrix is simply a bunch of rows and columns. We can create a matrix as follows:
 
 ```r
@@ -631,4 +632,251 @@ B
 ##      [,1] [,2] [,3]
 ## [1,]    1    3    5
 ## [2,]    2    4    6
+```
+We can also use bindings as follows:
+
+```r
+R <- rbind(1:3,4:6)
+R
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+```
+
+```r
+C <- cbind(1:3,4:6)
+C
+```
+
+```
+##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
+```
+We can then extract dimension as follows:
+
+```r
+dim(R)
+```
+
+```
+## [1] 2 3
+```
+
+```r
+dim(C)
+```
+
+```
+## [1] 3 2
+```
+Where the first number is the rows and the second number is the columns. We can find the rows and columns as follows:
+
+```r
+R[1,]
+```
+
+```
+## [1] 1 2 3
+```
+
+```r
+R[,2]
+```
+
+```
+## [1] 2 5
+```
+We can also use negative indices to delete.
+
+```r
+R[,-2]
+```
+
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    4    6
+```
+### Exercise 3.1
+Part A:
+
+```r
+mtx <- matrix(data=c(4.3,3.1,8.2,8.2,3.2,0.9,1.6,6.5),nrow=4,ncol=2,byrow=TRUE)
+mtx
+```
+
+```
+##      [,1] [,2]
+## [1,]  4.3  3.1
+## [2,]  8.2  8.2
+## [3,]  3.2  0.9
+## [4,]  1.6  6.5
+```
+Part B:
+
+```r
+dim(mtx[-1,])
+```
+
+```
+## [1] 3 2
+```
+
+```r
+dim(mtx[-2,])
+```
+
+```
+## [1] 3 2
+```
+
+```r
+dim(mtx[-3,])
+```
+
+```
+## [1] 3 2
+```
+
+```r
+dim(mtx[-4,])
+```
+
+```
+## [1] 3 2
+```
+Part C:
+
+```r
+mtx[,2] <- sort(mtx[,2])
+mtx
+```
+
+```
+##      [,1] [,2]
+## [1,]  4.3  0.9
+## [2,]  8.2  3.1
+## [3,]  3.2  6.5
+## [4,]  1.6  8.2
+```
+Part D:
+
+```r
+R <- mtx[-4,-2]
+matrix(R)
+```
+
+```
+##      [,1]
+## [1,]  4.3
+## [2,]  8.2
+## [3,]  3.2
+```
+Part E:
+
+```r
+R <- mtx[3:4,]
+R
+```
+
+```
+##      [,1] [,2]
+## [1,]  3.2  6.5
+## [2,]  1.6  8.2
+```
+Part F:
+
+```r
+mtx[c(4,1),2] <- diag(x=R) * (-1/2)
+mtx[c(4,1),1] <- diag(x=R) * (-1/2)
+mtx
+```
+
+```
+##      [,1] [,2]
+## [1,] -4.1 -4.1
+## [2,]  8.2  3.1
+## [3,]  3.2  6.5
+## [4,] -1.6 -1.6
+```
+### Operations
+We can take the transpose of a matrix as follows:
+
+```r
+A <- rbind(c(2,5,2),c(6,1,4))
+A
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    2    5    2
+## [2,]    6    1    4
+```
+
+```r
+t(A)
+```
+
+```
+##      [,1] [,2]
+## [1,]    2    6
+## [2,]    5    1
+## [3,]    2    4
+```
+From Linear Algebra, we know that `t(t(A)) = A`
+
+```r
+t(t(A))
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    2    5    2
+## [2,]    6    1    4
+```
+We can find the inverse of a (square) matrix with the `solve` function:
+
+```r
+A <- rbind(c(1,0,3),c(5,3,4),c(3,3,7))
+solve(A)
+```
+
+```
+##            [,1]        [,2]       [,3]
+## [1,]  0.3333333  0.33333333 -0.3333333
+## [2,] -0.8518519 -0.07407407  0.4074074
+## [3,]  0.2222222 -0.11111111  0.1111111
+```
+We can do matrix multiplication by using `%*%`, as follows:
+
+```r
+B <- rbind(c(0,1,3),c(1,1,3),c(3,5,7))
+A%*%B # A is the matrix used in the previous code chunk
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    9   16   24
+## [2,]   15   28   52
+## [3,]   24   41   67
+```
+### Exercise 3.2
+Part A:
+
+```r
+A <- cbind(c(1,2,7),c(2,4,6))
+B <- cbind(c(10,30,50),c(20,40,60))
+(2/7)*(A-B)
+```
+
+```
+##            [,1]       [,2]
+## [1,]  -2.571429  -5.142857
+## [2,]  -8.000000 -10.285714
+## [3,] -12.285714 -15.428571
 ```
