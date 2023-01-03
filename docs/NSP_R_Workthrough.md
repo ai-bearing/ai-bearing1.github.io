@@ -7,6 +7,8 @@ output:
   html_document:
     keep_md: true
 ---
+## Why?
+I need to #learntocode and I figure that with a statistics class coming up and econometrics classes in my future, I will need a high powered stats language for my needs, and R fits the bill. I'm using No Starch Press's guides "The Art of R Programming" and "The Book of R" to work my way through.
 
 ## Getting Started
 
@@ -592,4 +594,41 @@ mean(y)
 
 ```
 ## [1] 50.25
+```
+
+## Matrices, In Detail
+A matrix is simply a bunch of rows and columns. We can create a matrix as follows:
+
+```r
+A <- matrix(data=c(-3,2,893,0.17),nrow=2,ncol=2)
+A
+```
+
+```
+##      [,1]   [,2]
+## [1,]   -3 893.00
+## [2,]    2   0.17
+```
+We need to make sure that the length of the data vector is eqactly equal to `nrow*ncol`. By default, the `matrix` function fills in data by row, but we can also make it fill in the data by column:
+
+```r
+A <- matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,byrow=TRUE)
+A
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+```
+
+```r
+B <- matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,byrow = FALSE)
+B
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
 ```

@@ -355,6 +355,14 @@ display: none;
 </div>
 
 
+<div id="why" class="section level2">
+<h2>Why?</h2>
+<p>I need to #learntocode and I figure that with a statistics class
+coming up and econometrics classes in my future, I will need a high
+powered stats language for my needs, and R fits the bill. I’m using No
+Starch Press’s guides “The Art of R Programming” and “The Book of R” to
+work my way through.</p>
+</div>
 <div id="getting-started" class="section level2">
 <h2>Getting Started</h2>
 <p>To store a vector to a variable, we do the following:</p>
@@ -614,6 +622,30 @@ functions, <code>NULL</code> does not:</p>
 <pre class="r"><code>y &lt;- c(8,NULL,12,168,13)
 mean(y)</code></pre>
 <pre><code>## [1] 50.25</code></pre>
+</div>
+<div id="matrices-in-detail" class="section level2">
+<h2>Matrices, In Detail</h2>
+<p>A matrix is simply a bunch of rows and columns. We can create a
+matrix as follows:</p>
+<pre class="r"><code>A &lt;- matrix(data=c(-3,2,893,0.17),nrow=2,ncol=2)
+A</code></pre>
+<pre><code>##      [,1]   [,2]
+## [1,]   -3 893.00
+## [2,]    2   0.17</code></pre>
+<p>We need to make sure that the length of the data vector is eqactly
+equal to <code>nrow*ncol</code>. By default, the <code>matrix</code>
+function fills in data by row, but we can also make it fill in the data
+by column:</p>
+<pre class="r"><code>A &lt;- matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,byrow=TRUE)
+A</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<pre class="r"><code>B &lt;- matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,byrow = FALSE)
+B</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
 </div>
 
 
