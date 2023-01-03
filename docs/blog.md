@@ -11,7 +11,7 @@ This is less of a typical blog and more an online journal where I write down my 
 ### 1 January, 2023
 New Year, New Book(s) to read. I finished *The Tyranny of Experts*, and I really liked it. It's a great overview of not only the history of "development economics" as a concept, but also how the application of technocratic development distracts from the rights of the poor and the problems of dictators. One of my favorite parts was the section on the development history of Greene Street in NYC — I think we need more vignettes/microhistories of different famous streets. For example, I think one on the history of Wilshire Boulevard in Los Angeles or Market Street in San Francisco would be very welcome. 
 
-Additionally, I started on my R workthrough (you can see my progress [here](NSP_R_Workthrough.html)), using the No Starch Press guide. I'm mostly doing this because I have a lot of spare time in my remaining days of winter break (with REU apps interspersed, of course). Hopefully I'll maintain a good momentum towards the end of break and return to classes.
+Additionally, I started on my R workthrough (you can see my progress [here](NSP_R_Workthrough.md)), using the No Starch Press guide. I'm mostly doing this because I have a lot of spare time in my remaining days of winter break (with REU apps interspersed, of course). Hopefully I'll maintain a good momentum towards the end of break and return to classes.
 
 ---
 
