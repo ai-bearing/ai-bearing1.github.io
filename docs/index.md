@@ -36,5 +36,5 @@ Soon to come!
 - [Blog-ish](blog.md)
 - [Articles for *The Occidental*](https://theoccidentalnews.com/author/iyera)
 - [Advent of Code](adventofcode.md)
-- [R Workthrough](NSP_R_Workthrough.html)
+- [R Workthrough](NSP_R_Workthrough.md)
 
