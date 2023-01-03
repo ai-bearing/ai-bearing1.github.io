@@ -1,7 +1,7 @@
 ---
 title: "R Workthrough"
 author: "Avinash Iyer"
-permalink: /NSP_R_Workthrough.html
+permalink: /NSP_R_Workthrough
 output: 
   html_document:
     keep_md: true
@@ -400,12 +400,12 @@ findruns1 <- function(x,k){
   count <- 0
   for(i in 1:(n-k+1)){
     if(all(x[i:(i+k-1)] == 1)){
-      count <- count + 1
+      count <- count + 1 # remember that indexing in R starts at 1
       runs[count] <- i
     }
   }
   # this loop will change the vector elements in runs to the point where the runs start
-  if(count > 0){
+  if(count > 0){ # if statement is to make sure we cut off our runs value
     runs <- runs[1:count]
   } else{
     runs <- NULL
@@ -417,4 +417,178 @@ findruns1(c(1,1,0,0,1,1,1,0,1,1,1),2)
 
 ```
 ## [1]  1  5  6  9 10
+```
+
+Most operations can be vectorized, as in the following:
+
+```r
+u <- c(5,2,8)
+v <- c(1,3,9)
+u > v
+```
+
+```
+## [1]  TRUE FALSE FALSE
+```
+Here, the function checks each element of the vectors `u` and `v`. Additionally, we could do the following:
+
+```r
+w <- function(x) return(x+1)
+w(u)
+```
+
+```
+## [1] 6 3 9
+```
+Other standard functions are also vectorized:
+
+```r
+sqrt(u)
+```
+
+```
+## [1] 2.236068 1.414214 2.828427
+```
+
+```r
+u+1
+```
+
+```
+## [1] 6 3 9
+```
+Additionally, they can be nested:
+
+```r
+sqrt(w(u))
+```
+
+```
+## [1] 2.449490 1.732051 3.000000
+```
+
+```r
+round(sqrt(1:9))
+```
+
+```
+## [1] 1 1 2 2 2 2 3 3 3
+```
+
+Some functions end up working via vectorization even if they look like they have scalars. For example, the following function:
+
+```r
+add_square_vector <- function(x,c){
+  return((x+c)^2)
+}
+```
+We can do with a scalar element:
+
+```r
+add_square_vector(1:3,2)
+```
+
+```
+## [1]  9 16 25
+```
+Or even with a vector element:
+
+```r
+add_square_vector(1:3,1:3)
+```
+
+```
+## [1]  4 16 36
+```
+
+
+
+Imagine we have a vectorized function that yields a vector. For example:
+
+```r
+z12 <- function(z) return(c(z,z^2))
+```
+Then, we have the following:
+
+```r
+z12(3)
+```
+
+```
+## [1] 3 9
+```
+and
+
+```r
+z12(1:8)
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  1  4  9 16 25 36 49 64
+```
+
+In order to resolve this, we could use the `matrix` function:
+
+```r
+matrix(z12(1:8),ncol=2)
+```
+
+```
+##      [,1] [,2]
+## [1,]    1    1
+## [2,]    2    4
+## [3,]    3    9
+## [4,]    4   16
+## [5,]    5   25
+## [6,]    6   36
+## [7,]    7   49
+## [8,]    8   64
+```
+We can also use the `sapply(x,f)` (or *simplify apply*) to apply `f` to every element of `x` and convert to a matrix:
+
+```r
+sapply(1:8,z12)
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    1    2    3    4    5    6    7    8
+## [2,]    1    4    9   16   25   36   49   64
+```
+
+To deal with `NA` values, we can illustrate using the following:
+
+```r
+x <- c(8,NA,12,168,13)
+x
+```
+
+```
+## [1]   8  NA  12 168  13
+```
+
+```r
+mean(x)
+```
+
+```
+## [1] NA
+```
+
+```r
+mean(x,na.rm=TRUE)
+```
+
+```
+## [1] 50.25
+```
+We use `na.rm` to remove `NA` values. Whereas `NA` does affect the `mean` and other mathematical functions, `NULL` does not:
+
+```r
+y <- c(8,NULL,12,168,13)
+mean(y)
+```
+
+```
+## [1] 50.25
 ```

@@ -200,12 +200,12 @@ findruns1 <- function(x,k){
   count <- 0
   for(i in 1:(n-k+1)){
     if(all(x[i:(i+k-1)] == 1)){
-      count <- count + 1
+      count <- count + 1 # remember that indexing in R starts at 1
       runs[count] <- i
     }
   }
   # this loop will change the vector elements in runs to the point where the runs start
-  if(count > 0){
+  if(count > 0){ # if statement is to make sure we cut off our runs value
     runs <- runs[1:count]
   } else{
     runs <- NULL
@@ -213,4 +213,80 @@ findruns1 <- function(x,k){
   return(runs)
 }
 findruns1(c(1,1,0,0,1,1,1,0,1,1,1),2)
+```
+
+Most operations can be vectorized, as in the following:
+```{r}
+u <- c(5,2,8)
+v <- c(1,3,9)
+u > v
+```
+Here, the function checks each element of the vectors `u` and `v`. Additionally, we could do the following:
+```{r}
+w <- function(x) return(x+1)
+w(u)
+```
+Other standard functions are also vectorized:
+```{r}
+sqrt(u)
+u+1
+```
+Additionally, they can be nested:
+```{r}
+sqrt(w(u))
+round(sqrt(1:9))
+```
+
+Some functions end up working via vectorization even if they look like they have scalars. For example, the following function:
+```{r}
+add_square_vector <- function(x,c){
+  return((x+c)^2)
+}
+```
+We can do with a scalar element:
+```{r}
+add_square_vector(1:3,2)
+```
+Or even with a vector element:
+```{r}
+add_square_vector(1:3,1:3)
+```
+
+```{r include=FALSE}
+library(knitr)
+```
+
+Imagine we have a vectorized function that yields a vector. For example:
+```{r}
+z12 <- function(z) return(c(z,z^2))
+```
+Then, we have the following:
+```{r}
+z12(3)
+```
+and
+```{r}
+z12(1:8)
+```
+
+In order to resolve this, we could use the `matrix` function:
+```{r}
+matrix(z12(1:8),ncol=2)
+```
+We can also use the `sapply(x,f)` (or *simplify apply*) to apply `f` to every element of `x` and convert to a matrix:
+```{r}
+sapply(1:8,z12)
+```
+
+To deal with `NA` values, we can illustrate using the following:
+```{r}
+x <- c(8,NA,12,168,13)
+x
+mean(x)
+mean(x,na.rm=TRUE)
+```
+We use `na.rm` to remove `NA` values. Whereas `NA` does affect the `mean` and other mathematical functions, `NULL` does not:
+```{r}
+y <- c(8,NULL,12,168,13)
+mean(y)
 ```
