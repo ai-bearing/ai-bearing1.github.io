@@ -1095,6 +1095,77 @@ arr4</code></pre>
 ## [4,]  1.3 -99.0</code></pre>
 </div>
 </div>
+<div id="non-numerical-values" class="section level2">
+<h2>Non-Numerical Values</h2>
+<div id="booleans" class="section level3">
+<h3>Booleans</h3>
+<p>We can write booleans as follows:</p>
+<pre class="r"><code>foo &lt;- TRUE
+foo</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>bar &lt;- FALSE
+bar</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>We can also make a vector of booleans:</p>
+<pre class="r"><code>baz &lt;- c(T,T,T,F,T,F,F,F)
+baz</code></pre>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<p>And we can make a matrix from this vector:</p>
+<pre class="r"><code>qux &lt;- matrix(data=baz,nrow=2,ncol=4,byrow=foo)
+qux</code></pre>
+<pre><code>##      [,1]  [,2]  [,3]  [,4]
+## [1,] TRUE  TRUE  TRUE FALSE
+## [2,] TRUE FALSE FALSE FALSE</code></pre>
+<p>And there are relational operators:</p>
+<pre class="r"><code>1 == 2</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>1 &gt; 2</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>1 &lt; 2</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>1 &gt;= 2</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>1 &lt;= 2</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>1 != 2</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>These relational operators are also elementwise on a vector:</p>
+<pre class="r"><code>foo &lt;- c(3,2,1,4,1,2,1,-1,0,3)
+bar &lt;- c(4,1,2,1,1,0,0,3,0,4)
+foo &gt;= bar</code></pre>
+<pre><code>##  [1] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE</code></pre>
+<p>We can assign this vector of elementwise operations to a new
+vector:</p>
+<pre class="r"><code>quux &lt;- (foo == bar)
+quux</code></pre>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<p>There are logical operators too:</p>
+<pre class="r"><code>T &amp; F</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>T | F</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>T &amp;&amp; F</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>T || F</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>Pipes are <code>OR</code>, ampersands are <code>AND</code>. These
+operators are different when operating on vectors:</p>
+<pre class="r"><code>foo &lt;- c(T,F,F,F,T,F,T,T,T,F,T,F)
+bar &lt;- c(F,T,F,T,F,F,F,F,T,T,T,T)
+foo&amp;bar # elementwise</code></pre>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE</code></pre>
+<pre class="r"><code>foo|bar # elementwise</code></pre>
+<pre><code>##  [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>foo&amp;&amp;bar # first element</code></pre>
+<pre><code>## Warning in foo &amp;&amp; bar: &#39;length(x) = 12 &gt; 1&#39; in coercion to &#39;logical(1)&#39;
+
+## Warning in foo &amp;&amp; bar: &#39;length(x) = 12 &gt; 1&#39; in coercion to &#39;logical(1)&#39;</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>foo||bar # first element</code></pre>
+<pre><code>## Warning in foo || bar: &#39;length(x) = 12 &gt; 1&#39; in coercion to &#39;logical(1)&#39;</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
 
 
 

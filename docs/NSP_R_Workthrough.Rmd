@@ -449,3 +449,58 @@ Part E:
 arr4[c(2,4),2,c(1,3,5)] <- -99
 arr4
 ```
+## Non-Numerical Values
+### Booleans
+We can write booleans as follows:
+```{r}
+foo <- TRUE
+foo
+bar <- FALSE
+bar
+```
+We can also make a vector of booleans:
+```{r}
+baz <- c(T,T,T,F,T,F,F,F)
+baz
+```
+And we can make a matrix from this vector:
+```{r}
+qux <- matrix(data=baz,nrow=2,ncol=4,byrow=foo)
+qux
+```
+And there are relational operators:
+```{r}
+1 == 2
+1 > 2
+1 < 2
+1 >= 2
+1 <= 2
+1 != 2
+```
+These relational operators are also elementwise on a vector:
+```{r}
+foo <- c(3,2,1,4,1,2,1,-1,0,3)
+bar <- c(4,1,2,1,1,0,0,3,0,4)
+foo >= bar
+```
+We can assign this vector of elementwise operations to a new vector:
+```{r}
+quux <- (foo == bar)
+quux
+```
+There are logical operators too:
+```{r}
+T & F
+T | F
+T && F
+T || F
+```
+Pipes are `OR`, ampersands are `AND`. These operators are different when operating on vectors:
+```{r}
+foo <- c(T,F,F,F,T,F,T,T,T,F,T,F)
+bar <- c(F,T,F,T,F,F,F,F,T,T,T,T)
+foo&bar # elementwise
+foo|bar # elementwise
+foo&&bar # first element; throws warning
+foo||bar # first element; throws warning
+```

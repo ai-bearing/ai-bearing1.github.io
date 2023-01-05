@@ -1283,3 +1283,194 @@ arr4
 ## [3,]  1.4   1.0
 ## [4,]  1.3 -99.0
 ```
+## Non-Numerical Values
+### Booleans
+We can write booleans as follows:
+
+```r
+foo <- TRUE
+foo
+```
+
+```
+## [1] TRUE
+```
+
+```r
+bar <- FALSE
+bar
+```
+
+```
+## [1] FALSE
+```
+We can also make a vector of booleans:
+
+```r
+baz <- c(T,T,T,F,T,F,F,F)
+baz
+```
+
+```
+## [1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE
+```
+And we can make a matrix from this vector:
+
+```r
+qux <- matrix(data=baz,nrow=2,ncol=4,byrow=foo)
+qux
+```
+
+```
+##      [,1]  [,2]  [,3]  [,4]
+## [1,] TRUE  TRUE  TRUE FALSE
+## [2,] TRUE FALSE FALSE FALSE
+```
+And there are relational operators:
+
+```r
+1 == 2
+```
+
+```
+## [1] FALSE
+```
+
+```r
+1 > 2
+```
+
+```
+## [1] FALSE
+```
+
+```r
+1 < 2
+```
+
+```
+## [1] TRUE
+```
+
+```r
+1 >= 2
+```
+
+```
+## [1] FALSE
+```
+
+```r
+1 <= 2
+```
+
+```
+## [1] TRUE
+```
+
+```r
+1 != 2
+```
+
+```
+## [1] TRUE
+```
+These relational operators are also elementwise on a vector:
+
+```r
+foo <- c(3,2,1,4,1,2,1,-1,0,3)
+bar <- c(4,1,2,1,1,0,0,3,0,4)
+foo >= bar
+```
+
+```
+##  [1] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE
+```
+We can assign this vector of elementwise operations to a new vector:
+
+```r
+quux <- (foo == bar)
+quux
+```
+
+```
+##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE
+```
+There are logical operators too:
+
+```r
+T & F
+```
+
+```
+## [1] FALSE
+```
+
+```r
+T | F
+```
+
+```
+## [1] TRUE
+```
+
+```r
+T && F
+```
+
+```
+## [1] FALSE
+```
+
+```r
+T || F
+```
+
+```
+## [1] TRUE
+```
+Pipes are `OR`, ampersands are `AND`. These operators are different when operating on vectors:
+
+```r
+foo <- c(T,F,F,F,T,F,T,T,T,F,T,F)
+bar <- c(F,T,F,T,F,F,F,F,T,T,T,T)
+foo&bar # elementwise
+```
+
+```
+##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE
+```
+
+```r
+foo|bar # elementwise
+```
+
+```
+##  [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+```
+
+```r
+foo&&bar # first element
+```
+
+```
+## Warning in foo && bar: 'length(x) = 12 > 1' in coercion to 'logical(1)'
+
+## Warning in foo && bar: 'length(x) = 12 > 1' in coercion to 'logical(1)'
+```
+
+```
+## [1] FALSE
+```
+
+```r
+foo||bar # first element
+```
+
+```
+## Warning in foo || bar: 'length(x) = 12 > 1' in coercion to 'logical(1)'
+```
+
+```
+## [1] TRUE
+```
