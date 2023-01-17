@@ -8,6 +8,13 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 17 January, 2023
+I have a campus job for next semester lined up, let's go. If things go well, I will be the grader for Intermediate Micro (all 30-ish students, too). I think this is going to be a very long set of grading assignments, unfortunately, but hopefully this means I'll have a lot of money at the end of the semester.
+
+Additionally, unfortunately I have not retained the momentum for the R workthrough — the siren song of lounging around during break was too strong, I am sorry to say.  
+
+---
+
 ### 1 January, 2023
 New Year, New Book(s) to read. I finished *The Tyranny of Experts*, and I really liked it. It's a great overview of not only the history of "development economics" as a concept, but also how the application of technocratic development distracts from the rights of the poor and the problems of dictators. One of my favorite parts was the section on the development history of Greene Street in NYC — I think we need more vignettes/microhistories of different famous streets. For example, I think one on the history of Wilshire Boulevard in Los Angeles or Market Street in San Francisco would be very welcome. 
 
