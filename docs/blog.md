@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 24 January, 2023
+Unfortunately, my planned statistics class was cancelled, so I'm taking a class on public education in Los Angeles instead. However, my other classes so far seem to be going well (Intermediate Macro and Graph Theory). I'm looking forward to a productive-ish semester.
+
+---
+
 ### 17 January, 2023
 I have a campus job for next semester lined up, let's go. If things go well, I will be the grader for Intermediate Micro (all 30-ish students, too). I think this is going to be a very long set of grading assignments, unfortunately, but hopefully this means I'll have a lot of money at the end of the semester.
 
