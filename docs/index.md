@@ -31,7 +31,8 @@ I am a math and econ student at Occidental College. I'm going to be using this w
 
 ### Spring 2023
 - [Graph Theory](https://aiyer.notion.site/Math-382-Notes-7eb7de261b55436b80fb75fbb861c929)
-- [Intermediate Macroeconomics]()https://aiyer.notion.site/Intermediate-Microeconomics-Class-Notes-b8d4f978e5734db38662eb6e32a44bd6
+- [Intermediate Macroeconomics](https://aiyer.notion.site/Intermediate-Microeconomics-Class-Notes-b8d4f978e5734db38662eb6e32a44bd6)
+
 ## Posts and Pontifications
 - [Blog-ish](blog.md)
 - [Articles for *The Occidental*](https://theoccidentalnews.com/author/iyera)
