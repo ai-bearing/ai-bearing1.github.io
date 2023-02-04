@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 3 February, 2023
+As expected, I have grown increasingly busy with a combination of school, REU applications, graph theory homework, the newspaper, and grading for Intermediate Micro. This is bound to be a fun semester, however, and I'm optimistic for what's in store. At the very minimum, it's bound to include some money.
+
+---
+
 ### 24 January, 2023
 Unfortunately, my planned statistics class was cancelled, so I'm taking a class on public education in Los Angeles instead. However, my other classes so far seem to be going well (Intermediate Macro and Graph Theory). I'm looking forward to a productive-ish semester.
 
