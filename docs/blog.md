@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 12 February, 2023
+Newsroom is talking about how "silence is the best question," which makes a lot of sense if I'm being honest. People take a lot of time to collect their thoughts.
+
+---
+
 ### 3 February, 2023
 As expected, I have grown increasingly busy with a combination of school, REU applications, graph theory homework, the newspaper, and grading for Intermediate Micro. This is bound to be a fun semester, however, and I'm optimistic for what's in store. At the very minimum, it's bound to include some money.
 
