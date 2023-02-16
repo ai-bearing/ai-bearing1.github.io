@@ -8,6 +8,17 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 15 February, 2023
+There's a lot of capital-d Discourse on Twitter and in the pages of the New York Times surrounding transgender children/teenagers these past few weeks and months (as well as a lot of psycho Republican culture warrior stuff), but a take I have seen floating around on the internet concerns an approach to transgender healthcare similar to how people approach, say, opioids or other kinds of drugs.
+
+The best example of this might be Matt Yglesias, who seems to have a worldview centered on believing the United States has too much medical overtreatment specifically in drugs after the opioid epidemic (which has pretty much always been a [fentanyl epidemic](http://cdn.statcdn.com/Infographic/images/normal/16273.jpeg)). The basic idea is that the "rush" to get transgender teenagers and children on puberty blockers is at least partly due to medical overtreatment, rather than the [left-handedness phenomenon](https://slowrevealgraphs.com/wp-content/uploads/2021/11/screen-shot-2021-11-08-at-9.37.02-pm-1.png) of greater acceptance for transgender people. I don't think he is anywhere close to a transphobe, however (considering he is a staunch Democrat, which is itself one of the most pro-trans rights political parties in the country). I simply think his worldview is incorrect.
+
+Maybe there is some medical overtreatment, but I think a fair amount of that is caused by the bigger issue, which is medical paternalism, specifically through [mandated prescription requirements](https://www.cato.org/white-paper/drug-reformation-end-governments-power-require-prescriptions#) for many drugs that don't necessarily have broad social harms from various kinds of consumption (so, excluding antibiotics). Of course, prescription requirements place a high barrier to entry, but they also lull us into believing that the doctor's prescribed course of drugs is 100% correct, few questions asked.
+
+In the case of trans kids and teenagers, though there could be a few cases here or there where kids have figured out some of the way through the transition process that they aren't trans, the regret rate seems [vanishingly low](https://www.them.us/story/transition-regret-percentage-overblown-study), arguably to the point where there are a lot of trans people who fail to reach the high barrier to entry. At any rate, I think it's up to medical professionals and teenagers themselves if they want to transition. It's increasingly unlikely that we might be able to as a society agree on a certain course of action for transgender children and teenagers — I'd rather trust the WPATH standards and reform medical paternalism to deal with perceived overtreatment, rather than try to create a national transgender persons policy.
+
+---
+
 ### 12 February, 2023
 Newsroom is talking about how "silence is the best question," which makes a lot of sense if I'm being honest. People take a lot of time to collect their thoughts.
 
