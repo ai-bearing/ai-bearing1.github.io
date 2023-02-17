@@ -7,7 +7,7 @@ Hi. I'm Avinash. Welcome to my website! There isn't a lot here, but I promise it
 ## Who I am
 I am a math and econ student at Occidental College. I'm going to be using this website to document some things I've done or am doing. Class notes, blog posts and pontifications, and the like. I hope you find them mildly interesting!
 
-## [My CV](https://external.ink?to=ai-bearing.github.io/CVDraft.pdf)
+## [My CV](https://ai-bearing.github.io/CVDraft.pdf)
 
 ## Interests
 - Abstract Algebra and Topology
