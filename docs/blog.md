@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 19 February, 2023
+I think after my first set of midterms, I'm going to switch from using Notion to just using a bunch of LaTeX documents and just hosting them at some link on this website. Notion seemed like a good idea when I started this process, but now it feels a bit cumbersome and I think it's just easier to use LaTeX. A bit sad, but I guess it's good to try things out.
+
+---
+
 ### 15 February, 2023
 There's a lot of capital-d Discourse on Twitter and in the pages of the New York Times surrounding transgender children/teenagers these past few weeks and months (as well as a lot of psycho Republican culture warrior stuff), but a take I have seen floating around on the internet concerns an approach to transgender healthcare similar to how people approach, say, opioids or other kinds of drugs.
 
