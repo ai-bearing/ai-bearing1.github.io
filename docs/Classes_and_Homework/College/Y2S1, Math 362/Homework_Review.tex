@@ -1,0 +1,83 @@
+
+\documentclass[10pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{}
+\begin{document}{
+    \begin{quote}
+      Show that if $X_1$ and $X_2$ are simply connected, then $X_1\times X_2$ is simply connected.
+    \end{quote}
+To start, we will show that $X_1\times X_2$ is path connected. Let $p = (p_1,p_2), q = (q_1,q_2)\subseteq X_1\times X_2$. By the definition of path connected, $\exists f_i:I\rightarrow X_i$ from $p_i$ to $q_i$ for $i = 1,2$. Let $f: I\rightarrow X_1\times X_2$ be given by $f(t) = (f_1(t),f_2(t))$. Then, $f$ is continuous since its ``component functions'' are continuous, and $f(0) = (p_1,p_2)$ and $f(1) = (q_1,q_2)$. Therefore, $\exists$ a continuous map from $I$ to $X_1\times X_2$, so $X_1\times X_2$ is continuous.\\
+\\
+Let $\ell = S^1 \rightarrow X_1\times X_2$. Then, $\pi_1\circ \ell = S^1\rightarrow X_1$, and similarly for $\pi_2$. Since $X_1$ is simply connected, $\pi_1\circ \ell$ is null homotopic. So $\exists H: S^1\times I \rightarrow X_1$ such that $H_0 = \pi_1\circ \ell$ and $H_1 = a$. Similarly, $\exists G: S^1\times I\rightarrow X_2$ such that $G_0 = \pi_2\circ \ell$ and $G_1 = b$ for constants $a,b$. Define $F: S^1\times I \rightarrow X_1 \times X_2$. Let $F(x,t) = (H(x,t),G(x,t))$. Then, $F_0 = (H(x,0),G(x,0)) = (\pi_1\circ l(x),\pi_2\circ l(x)) = l(x)$ and $F_1 = (H(x,1),G(x,1)) = (a,b)$, so $F$ is a homotopy between $\ell$ and the constant map.
+}\end{document}

@@ -1,0 +1,117 @@
+\documentclass[9pt,twocolumn]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+% text + color boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\newtcolorbox{problem}[1]{colback = white, colframe = black, title = {#1}}
+\newtcolorbox{solution}{colback = white, colframe = black!75!white, title = Solution, breakable}
+%including PDFs
+\usepackage{pdfpages}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ling Chen, Avinash Iyer, Nora Manukyan, Vincent Ng}
+\lhead{Homework Section 1.2: Group}
+\begin{document}{
+\begin{problem}{1.2.20}
+  Let $v$ be a cut-vertex of a simple graph $G$. Prove that $\overline{G} - v$ is connected.
+\end{problem}
+\begin{solution}
+  Let $x,y,v\in V(\overline{G})$, where $v$ is a cut-vertex of $G$.\\
+
+  Suppose $x$ and $y$ belong to distinct components of $G-v$. Then, $xy\not\in E(G)$, meaning that $xy\in E(\overline{G})$, meaning there is an $x,y$ path in $\overline{G}$, so there is an $x,y$ path in $\overline{G}-v$.\\
+
+  Suppose $x$ and $y$ are in the same component of $G-v$. Since $v$ is a cut-vertex, this means there must be at least two components in $G-v$. Let $H_1$ be the component that $x,y$ are in, while $\exists w\in H_2$ is a vertex in $H_2$ disjoint from $H_1$. Since $H_1$ and $H_2$ are disjoint, this means the components do not contain any edges between them, so $x\not\leftrightarrow w$ and $y\not\leftrightarrow w$ in $G-v$ --- however, this means that $x\leftrightarrow w$ and $y\leftrightarrow w$ in $\overline{G}$, meaning that $\exists x,y$ path in $\overline{G} - v$.
+\end{solution}
+\begin{problem}{1.2.22}
+  Prove that a graph is connected if and only if for every partition of its vertices into two nonempty sets, there is an edge with endpoints in both sets. 
+\end{problem}
+\begin{solution}
+  Let $G$ be a graph where there exists a partition of its vertices into two non-empty sets such that there is no edge with endpoints in both sets. Call these sets $A$ and $B$. By our assumptions, $\forall u\in A$ and $\forall v\in B$, $\nexists e$ such that $e = uv$. Therefore, we cannot create a path between any $u\in A$ and any $v\in B$ as there is no edge to connect any element in $A$ and any element in $B$. Therefore, $G$ is disconnected.\\
+
+  Suppose $G$ is a disconnected graph. Then, $G$ contains more than one component --- we can create a partition of $V(G)$ by letting $H_1,H_2,\dots,H_k$ refer to the $k$ components of $G$. Each of these components is necessarily disjoint from every other component. By taking $H = H_1\cup H_2\cup\dots\cup H_{k-1}$ as one set and $H_k$ as our other set, we know that $H_1,\dots,H_k$ are all disjoint, meaning that $H$ and $H_k$ are disjoint, meaning that there is no edge connecting any vertex $H$ with any vertex in $H_k$, meaning we have created a partition of $G$ such that there exists no edge between any vertex in one set and any vertex in the other set.
+\end{solution}
+\begin{problem}{1.2.26}
+  Prove that a graph $G$ is bipartite if and only if every subgraph $H$ of $G$ has an independent set consisting of at least half of $V(H)$.
+\end{problem}
+\begin{solution}
+  Suppose $G$ is bipartite. Then, there exists a partition of the vertices $V = X\sqcup Y$ such that $X$ and $Y$ are independent sets. Let $H$ be a subgraph of $G$, and let $H_X = X\cap V(H)$ and $H_Y = Y\cap H$. Because $H$ is a subgraph of $G$, each vertex of $H$ must be an element of either $H_X$ or $H_Y$, or that $V(H) = H_X \sqcup H_Y$. WLOG, let $|H_X|>|H_Y|$. Since $H_X\subseteq X$ and $X$ is an independent set, $H_X$ is an independent subset consisting of at least half of $V(H)$.\\
+
+  Suppose every subgraph of $G$ has an independent set consisting of at least half of $V(H)$. We will suppose toward contradiction that $G$ is not bipartite. Then, $G$ must contain an odd cycle, $H_1$. However, an independent set of $H_1$ consists of at most $\lfloor \frac{|V(H_1)|}{2}\rfloor < \frac{|V(H_1)|}{2}$, otherwise two vertices would be adjacent. Because $H_1$ is an independent set with less than half of the elements of $V(H)$, we have reached a contradiction. Therefore, $G$ must be bipartite.
+\end{solution}
+\begin{problem}{1.2.38}
+  Prove that every $n$-vertex graph with at least $n$ edges contains a cycle.
+\end{problem}
+\begin{solution}
+  We proceed via induction as follows:\\
+
+  For the base case where $|V(G)| = 1$, we know that there is a cycle with one edge that connects back on the vertex.\\
+
+  For the case where $|V(G)| > 1$, if $v\in V(G)$ has degree at most $1$, then $G-v$ has $n-1$ vertices and at least $n-1$ edges, so by our inductive hypothesis, we know that $G-v$ contains a cycle. Meanwhile, if $\forall v\in V(G), d(v)\geq 2$, we know by Lemma 1.2.25 that $G$ contains a cycle.
+\end{solution}
+}\end{document}

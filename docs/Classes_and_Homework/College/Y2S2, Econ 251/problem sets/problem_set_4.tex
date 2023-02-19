@@ -1,0 +1,170 @@
+\documentclass[8pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+\usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
+\hypersetup{urlcolor=black}
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+% text + color boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\newtcolorbox{problem}[1]{colback = white, title = {#1}}
+\newtcolorbox{solution}{colback = white, colframe = black!75!white, title = Solution, breakable}
+%including PDFs
+\usepackage{pdfpages}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Problem Set 4}
+\begin{document}
+  \begin{problem}{Part I: Basic OLS Regressions}
+    \begin{enumerate}[(a)]
+      \item Table 2 presents eight different regressions. For each regression: What is the dependent variable? What are the independent variables? What variables are statistically significant?
+      \item What does ``average protection against expropriation'' measure? How was it compiled? Do you have any potential concerns with this measure?
+      \item Suppose two countries are alike in all regards, except one is in Asia and the other is in Africa. Based on the results from Regression 4 in Table 2, what will be the predicted difference in log GDP per capita?
+      \item According to Regression 4 in Table 2, what fraction of the variation in income per capita is associated with variation in the right-hand side variables?
+      \item Why do AJR run so many different regressions?
+    \end{enumerate}
+  \end{problem}
+  \begin{solution}
+    \begin{tcolorbox}[colback = white, title = (a)]
+      The dependent variable in the first six columns is log GDP per capita in 1995 adjusted for purchasing power parity, while the dependent variable in the final two columns is log output per worker in 1998.\\
+
+      The independent variable is the quality of institutions measured via ``average protection against expropriation risk,'' with dummy variables for latitude, Asia, Africa, and ``Other'' continents.\\
+
+      Average protection against expropriation risk is statistically significant even after accounting for latitude and the different continents. Additionally, latitude and continent are not significant.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (b)]
+      Average protection against expropriation risk measures the stability of private property rights (a proxy for market and political institutions), provided by Political Risk Services, a well-respected policy risk think tank.\\
+
+      One of the main issues with using average protection against expropriation risk is that private property rights are not the only measure of a country's stability of market institutions, and that using data only from PRS and not from other groups that measure international business risk might skew the results.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (c)]
+      The difference between log GDP per capita should be around 40 log points between two countries, all else being equal.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (d)]
+      About 70\% of the variation in income per capita is associated with variations in institutions.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (e)]
+      AJR run different regressions to check whether their results hold up to differences in various other ideas that other scholars have posited for the differences in income per capita (such as latitude/weather and different continents).
+    \end{tcolorbox}
+  \end{solution}
+  \begin{problem}{Part II: Correlation vs. Causation}
+    In Figure 2, AJR document a strong relationship between per capita income and their measure of institutions (average protection against expropriation). Does the evidence in Figure 2 demonstrate that differences in institutions cause differences in per capita income levels? Explain.
+  \end{problem}
+  \begin{solution}
+    The evidence in Figure 2 does not necessarily demonstrate a causal relationship between institutions and per capita GDP because richer countries could simply be able to afford better institutions than poorer countries, and there are a lot of other reasons for why some countries are richer than others that the simple regressions don't measure. All they show is that there is a correlation between institutions and GDP per capita, not a definite causal relationship.
+  \end{solution}
+  \begin{problem}{Part III: Institutional persistence and settler mortality}
+    \begin{enumerate}[(a)]
+      \item AJR argue that a close association exists between early institutions and institutions today. To make this claim, what variables do they use and what regressions do they run? Are all the aforementioned variables statistically significant? If not, which ones are significant and which ones are insignificant?
+      \item Describe the settler mortality data that AJR use in this paper. Why do they suspect that a link might exist between settler mortality and early institutions?
+      \item AJR claim that ``early institutions were shaped, at least in part, by settlements, and that these settlements were affected by mortality.'' What empirical evidence do they provide to support this claim?
+    \end{enumerate}
+  \end{problem}
+  \begin{solution}
+    \begin{tcolorbox}[colback = white, title = (a)]
+      AJR regress democracy in 1900 and constraints on executive in 1900 with average protection against expropriation risk at the time of writing the paper. They found that these variables were statistically significant.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (b)]
+      AJR argue that early European settler mortality --- which was primarily through disease --- helps to explain early institutional results because a high rate of settler mortality would have led Europeans to import more slaves. They mostly use data from Philip Curtin.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (c)]
+      The claim that early institutions were shaped by settlements, which were in turn shaped by settler mortality, is shown via the regressions in Panel B in Table 3, which find that early settler mortality shape the constraints on executive power in 1900 and democracy in 1900.
+    \end{tcolorbox}
+  \end{solution}
+  \begin{problem}{Part IV: Instrumental Variables}
+    \begin{enumerate}[(a)]
+      \item In the first stage, the ``average protection against expropriation risk'' variable is regressed on early settler mortality. Table 4 estimates nine different regressions (each representing a slightly different specification). What is the sign on the log settler mortality variable? Is log settler mortality statistically significant in each specification?
+      \item In the second stage, per capita income is regressed on the fitted values of the ``average protection against expropriation risk'' variable, obtained from the first stage regression. What is the sign on the ``average protection against risk'' variable? Is this variable statistically significant in each specification?
+      \item Do these empirical results imply that differences in institutions cause differences in per capita GDP?
+    \end{enumerate}
+  \end{problem}
+  \begin{solution}
+    \begin{tcolorbox}[colback = white, title = (a)]
+      The sign on the log settler mortality variable is negative in each scenario, and is statistically significant in each case.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (b)]
+      The sign on the average protection against expropriation risk variable is positive, and is statistically significant even when accounting for various dummy variables that could account for differences in GDP per capita.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (c)]
+      These empirical results do imply that differences in institutions do cause differences in per capita GDP because early settler mortality is directly correlated with institutions and nothing else.
+    \end{tcolorbox}
+  \end{solution}
+  \begin{problem}{Part V: Robustness}
+    Briefly describe the robustness checks that AJR perform in section V. (Note: Skip Section B “Overidentification tests” on pages 1393-1395. It is not necessary that you read that section.) Why is it important for Acemoglu, Johnson and Robinson to perform robustness checks? More broadly, why is it important for economists in general to perform robustness checks?
+  \end{problem}
+  \begin{solution}
+    AJR need to perform robustness checks on their instrumental variables and regressions in order to avoid the idea that their statistical methods would introduce excess complications that muddy up their thesis. More generally, robustness checks are important to avoid the idea that statistical methods return the results they're expected to return.
+  \end{solution}
+  \begin{problem}{Part VI: Your Thoughts}
+    Acemoglu, Johnson and Robinson have made a strong case that differences in institutions can cause differences in per capita income levels across countries. Do you agree with their findings? Why or why not?
+  \end{problem}
+  \begin{solution}
+    I agree with the broad thesis of Acemoglu et al.'s work (that institutions have a substantial effect on economic outcomes, even with all else equal), but AJR's paper was very flawed (since the early settler mortality data is bad, and the connection between early settler mortality and average protection against risk expropriation was later shown to be non-robust by Albouy).
+  \end{solution}
+\end{document}

@@ -1,0 +1,92 @@
+
+\documentclass[10pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Notes on Fundamental Group}
+\begin{document}{
+\noindent Suppose we cut two disks out of a larger disk, let this equal to $X$. Pick $x_0\in A$, and let $f,g: I\rightarrow X$ be loops centered at $x_0$. Then, $f\cdot g$ is equivalent to moving along $f(I)$ for the first half of the interval $I$, then moving along $g(I)$ for the second half of the interval $I$. Note here that $f\cdot g$ and $g\cdot f$ (analogous to $f\cdot g$) need not self-intersect at $x_0$ because they are homotopic.\\
+\\
+Two paths are \textbf{path homotopic} if they start and end at the same point. In the example below, the points are not path homotopic.
+  \begin{quote}
+    Let $\alpha: I\rightarrow X$, $\beta: I\rightarrow X$, $\alpha(0)=\beta(0)=x_0$, $\alpha(1)=\beta(1)=x_1$. Then, $\alpha$ is path homotopic to $\beta$ if $\exists H:I\times I\rightarrow X$ where $H_0 = \alpha$, $H_1 = \beta$, $H_t(0)=x_0$ and $H_t(1)=x_1$.
+  \end{quote}
+  In this respect, it $f\cdot g$ and $g\cdot f$ are not path homotopic to each other in the above example. If $f_1$ and $f_2$ are path homotopic, then we say that they are in the same equivalence class.
+  \[
+    [f_1] = \{f: f\sim_{x_0}f_i\}
+  \]
+  Let $[f]\cdot[g] = [f\cdot g]$. We will have to show that this is well defined.\\
+  \\
+  Consider the following loops $f$ and $g$ on $T^2$. We know that $f$ is not path homotopic to $g$. However, we can show that $f\cdot g$ and $g\cdot f$ are path homotopic to each other with the following set of diagrams. Because $f\cdot g = g\cdot f$, we have that the group created by the equivalence class of functions is abelian.\\
+  \\
+  The fundamental group is the set of all equivalence classes of a loop under $\sim_p$. The product is defined as above. Because the fundamental group of $S^2\times S^1 = \mathbb{Z}$ while the fundamental group of $S^3 = \{1\}$, we know that $S^2\times S^1\not\simeq S^3$. 
+}\end{document}

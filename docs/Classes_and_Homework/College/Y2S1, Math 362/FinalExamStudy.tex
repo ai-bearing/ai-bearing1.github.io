@@ -1,0 +1,214 @@
+\documentclass[12pt]{extarticle}
+\title{Final Exam Study}
+\author{Avinash Iyer}
+\date{}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Final Exam Study}
+\begin{document}
+\section*{Metric Spaces and Open Sets}%
+A \textbf{distance metric} is a way of measuring between two points in a set. The following are the requirements for the distance metric:
+\begin{itemize}
+	\item $\forall x,y\in X, d(x,y)\in \mathbb{R}$ and $d(x,y)\geq 0$.
+	\item $d(x,x) = 0$
+	\item $d(x,y) = d(y,x)$ (symmetry)
+	\item $d(x,z) \leq d(x,y) + d(y,z)$ (triangle inequality)
+\end{itemize}
+Some basic metrics on $\mathbb{R}^n$ are defined below:
+\begin{itemize}
+	\item Euclidean Metric: $d(x,y) = \sqrt{(x_1-y_1)^2 + \cdots + (x_n-y_n)^2}$.
+	\item Discrete Metric: $d(x,y) = 0$ if $x = y$, $d(x,y) = 1$ otherwise.
+	\item Taxicab Metric: $d(x,y) = \sum_{i = 1}^{n}|x_i-y_i|$.
+\end{itemize}
+A set with a distance metric is known as a \textbf{Metric Space}. A \textbf{Open Ball}, denoted $B_{r}(x) = \{y\in X \mid d(x,y)<r\}$. A set $A$ is open if $\exists r>0$ such that $B_{r}(x)\subseteq A$ for every $x\in A$.
+\begin{quote}
+	A set is open iff it is a union of open balls.
+\end{quote}
+Forward direction proof: Let $A$ be an open set in $X$. Then, for all $x\in A$, $\exists r>0$ such that $B_{r}(x) \subseteq A$. As $\bigcup B_{r}(x) = A$, this means $A$ is the union of open balls. The backward direction proof is omitted.\\
+\section*{Closed Sets in Metric Spaces}%
+A \textbf{limit point} of a set is a point not necessarily in a set where $\forall r>0, B_{r}(x)\cap A-\{x\} \neq \emptyset$, or that every ball around the point $x$ intersects $A$ at a point other than $x$. The set of all limit points of $A$ is the \textbf{boundary} of $A$, denoted $\plain{bd}(A)$. The closure of $A$ is equal to $A\cup \plain{bd}(A)$.
+  \begin{quote}
+    A set is closed if and only if it contains all its limit points.
+  \end{quote}
+A closed set is a set whose complement is open. A set can be closed, open, both, or neither. The proof of the statement above is as follows:
+  \begin{quote}
+    Let $A$ be a closed set in the metric space $X$. Suppose $A$ does not contain all its limit points. Then, $\exists x\in X$ such that $\forall r>0, B_{r}(x)\cap (A-\{x\}) \neq \emptyset$. This means that $\overline{A}$ is not open in $X$, meaning that $A$ isn't closed. Since we have reached a contradiction, we are forced to assume that every limit point of $A$ is in $A$.\\
+    In the reverse direction, let $A$ be a set in $X$ that contains all its limit points. Then, $\forall x$ such that $\forall r>0, B_{r}(x)\cap (A-\{x\})\neq \emptyset$, $x\in A$. Then, for any point $y$ not in $A$, $\exists s>0$ such that $B_{s}(y)\not\in A$. This means $\overline{A}$ is open in $X$, so $A$ is closed.
+  \end{quote}
+ \section*{Topology}%
+ A \textbf{topology} on a set is a definition of open subsets of the set, with the following conditions:
+   \begin{itemize}
+     \item The union of two open sets is open
+     \item The finite intersection of two open sets is open
+     \item The empty set and the whole set are open
+   \end{itemize}
+The \textbf{discrete topology} on the set is the powerset of the set (essentially, every subset is open). The \textbf{indiscrete topology} on the set is one where only the emptyset and the whole set are open.
+\section*{Functions}%
+A \textbf{function} or a \textbf{map} corresponds elements of one set with elements of another set. They are denoted as follows:
+\[
+  f: X\rightarrow Y
+\]
+Where $X$ is the domain and $Y$ is the codomain. Specifically we are interested in continuous functions, and what we can do with them. The following is the definition of a continuous function between two metric spaces:
+   \begin{quote}
+     Let $f: X\rightarrow Y$ be a function between two metric spaces. Then, if $\forall \epsilon>0, \exists \delta>0$ such that $\forall y$ where $d_{X}(a,y)< \delta \rightarrow d_{Y}(f(a),f(y))<\epsilon$, then $f$ is continuous at $a$. A function is continuous is if it is continuous at every point.
+   \end{quote}
+We will prove that for $f: X\rightarrow Y$ that $f(B_{r}(k))\subseteq B_{s}(f(k))$ if $f$ is continuous. Since $f$ is continuous, this means that $\forall \epsilon>0, \exists \delta>0$ such that if $d(a,y)<\delta$, then $d(f(a),f(y))<\epsilon$. Therefore, if $y\in B_{\delta}(a)$ then $f(y)\in B_{\epsilon}(f(a))$. Therefore, $f(B_{\delta}(a))\subseteq B_{\epsilon}(f(a))$ for some $\delta$.
+     \begin{quote}
+       $f:X\rightarrow Y$ is continuous if and only if the preimage of any open set in the codomain is open in the domain.
+     \end{quote}
+Suppose $f$ is continuous, and let $B$ be an open subset of $Y$. Since $B$ is open, $\forall b\in B, \exists r>0$ such that $B_{r}(b)\subseteq B$. Since $f$ is continuous, $\exists s>0$ such that $f(B_{s}(a))\subseteq B_{r}(b)\subseteq B$ for some $A$ in the preimage of $B$. Therefore, $\exists s>0$ such that $B_{s}(a)\subseteq f^{-1}(B)$ for all $a\in f^{-1}(B)$, which means $f^{-1}(B)$ is open.\\
+     \\
+Suppose the preimage of every open set in $Y$ is open in $X$. Let $B\subseteq Y$ be open. Since by assumption, $f^{-1}(B)$ is open, $\forall a\in B, \exists s>0$ such that $B_{s}(a)\subseteq f^{-1}(B)$. By the definition of preimage, we have that $f(B_{s}(a))\subseteq B$. Since $f(a)\in f(B_{s}(a))\subseteq B$, we have that $\exists r>0$ such that $B_{r}(f(a))\subseteq B$. By letting $\epsilon = r$ and $\delta = s$, we get that $y\in B_{s}(a)\rightarrow f(y)\in B_{r}(f(a))$, meaning that $d(a,y)<\delta\rightarrow d(f(a),f(y))<\epsilon$.\\
+\\
+The definition of a function between topological spaces is the above definition (the preimage of any open set is open).
+\section*{Properties of Topological Spaces}%
+The \textbf{subspace topology} is defined as follows.
+  \begin{quote}
+    Let $A\subseteq X$ where $X$ is a topological space. A subset $W\subseteq A$ is open if $W = A\cap V$ for some open subset $V$ in $X$.
+  \end{quote}
+We can show the \textbf{restriction lemma}, defined as follows and proof after.
+  \begin{quote}
+    Let $f:X\rightarrow Y$ be a continuous function. Let $A\subseteq X$ and $B\subseteq Y$ such that $f(A)\subseteq B$. Then, $f\vert_{A}: A\rightarrow B$, the function with domain restricted to $A$, is continuous, where $A$ and $B$ are given the subspace topology.
+  \end{quote}
+  Let $W$ be an open subset of $B$. Then, $W = B\cap D$ for some $D$ open in $X$. So, $f^{-1}(W) = f^{-1}(B\cap D) = f^{-1}(B)\cap f^{-1}(D)$ by rules of set algebra. By definition, since $f(A)\subseteq B$, and $g(A) = f(A)$ where $g = f\vert_{A}$, we have that $A\subseteq f^{-1}(B) = g^{-1}(B)$. Therefore, $A\cap f^{-1}(D)\subseteq f^{-1}(B)\cap f^{-1}(D) = g^{-1}(B)\cap f^{-1}(D)$, and that $g^{-1}(B) \subseteq A$, so $A\cap f^{-1}(D) = f^{-1}(W)$. Since $f^{-1}(D)$ is open by the definition of a continuous function, we have that $A\cap f^{-1}(D)$ must be open, meaning that $g$ is continuous.
+\section*{Connectedness}%
+A set $X$ is \textbf{disconnected} if there do not exist two nonempty open subsets $A,B$ where $A\cup B = X$ and $A\cap B = \emptyset$.
+  \begin{quote}
+    A set is disconnected iff there exists a nonempty open proper subset which is both open and closed
+  \end{quote}
+  Proving in the forwards direction, let $X$ be a disconnected set. Then, $\exists A,B$ open in $X$ where $A\cup B= X$ and $A\cap B = \emptyset$, and $A,B$ are nonempty. This means that $A$ is open, and $\overline{A} = B$ is also open, meaning $A$ is closed. Additionally, $A$ cannot equal the whole set as $B$ must be nonempty. Therefore, $A$ is a nonempty proper subset of $X$ which is both open and closed.\\
+  \\
+Proving in the backward direction, suppose $A\subseteq X$ is a nonempty proper subset which is both open and closed. Then, $A\cup \overline{A} = X$ by definition, and $ \overline{A} $ is open. Since $A$ is a proper subset, $ \overline{A} \neq \emptyset$, and by definition of complement, $A\cap \overline{A} = \emptyset$, so $X$ is disconnected.
+  \begin{quote}
+    The continuous image of a connected set is connected.
+  \end{quote}
+Let $f:X\rightarrow Y$ be a continuous function, and let $X$ be connected. Suppose toward contradiction that $f(X)$ is disconnected. Then, $\exists A,B\subseteq f(X)$ where $A$ and $B$ are nonempty, open sets in $f(X)$ whose disjoint union is equal to $f(X)$. Therefore, $f(X) = A\cup B$ where $A\cap B = \emptyset$. Then, $f^{-1}(f(X)) = f^{-1}(A\cup B)$, and $X\subseteq f(X)$, so $X = f^{-1}(A\cup B)$. By the rules of sets, we then have that $X = f^{-1}(A)\cup f^{-1}(B)$, and that $f^{-1}(A\cap B) = f^{-1}(A) \cap f^{-1}(B)$. Since $f$ is continuous, $f^{-1}(A)$ and $f^{-1}(B)$ are open in $X$ and nonempty, while $f^{-1}(A)\cap f^{-1}(B) = f^{-1}(\emptyset) = \emptyset$. So $X$ is disconnected, and we reach a contradiction.
+\section*{Compactness}%
+  \begin{quote}
+    The continuous image of a compact set is compact.
+  \end{quote}
+  Let $f:X\rightarrow Y$ be a continuous function where $X$ is compact. Let $F = \{B_i\}$ be an open cover of $f(X)$. Then, $f(X) = \bigcup_{B_i\in F} B_i$ where $B_i\subseteq X$ is open. Taking inverses, we get that $f^{-1}(f(X)) = f^{-1}\left(\bigcup_{B_i\in F}B_i\right)$, and by the rules of sets, we get that $X = \bigcup_{B_i\in F}f^{-1}(B_i)$. Since $X$ is compact, this means $\exists F'\subseteq F$ where $F'$ is finite. So, we have that $f(X) = f\left(\bigcup_{B_i\in F'}f^{-1}(B_i)\right) = \bigcup_{B_i\in F'}f(f^{-1}(B_i))\subseteq \bigcup_{B_i\in F'}B_i$. So, every open cover of $f(X)$ has a finite subcover, meaning $f(X)$ is compact.
+  \begin{quote}
+    Any closed subset of a compact space is compact.
+  \end{quote}
+  Let $X$ be a compact topological space and $A\subseteq X$ be closed. We will construct an open cover $F = \{B_i\}$ of $A$ using the second definition, or that $A\subseteq \bigcup_{B_i\in F}B_i$ where $B_i\subseteq X$ is open. By the definition of closed, we have that $\overline{A}$ is open in $X$, meaning that $A\cup\overline{A} = X$, or $\bigcup F \cup \overline{A} = X$. Since $X$ is compact, we have that $\exists F'$ finite in $\bigcup F \cup \overline{A}$ such that $X = \bigcup F'$, where $\overline{A}$ is or is not in $F'$. Therefore, we have that $A = \subseteq \bigcup F'$ as $F'$ is an open cover of $X$, so $A$ is compact.
+  \begin{quote}
+    Let $B_1\supseteq B_2\supseteq B_3\supseteq \cdots$ be nested, nonempty, closed subsets of a compact topological space $X$. Show that their intersection, $\bigcap B_i$ is nonempty.
+  \end{quote}
+  Suppose toward contradiction that $\bigcap B_i = \emptyset$. Then, $X = \overline{\bigcap B_i} = \bigcup\overline{B_i}$. Since $X$ is compact, and $\overline{B_i}$ is open by definition of closed sets, this means $F = \{\overline{B_i}\}$ is an open cover of $X$ that has a finite subcover $F' = \{B_{i_1},B_{i_2},\dots,B_{i_k}\}$ for some max value $k$. Therefore, this means $X = \bigcup F'$, meaning $\overline{X} = \emptyset = \bigcap B_i = B_{i_{k}}$ by the definition of intersection, meaning $B_{i_{k}}$ is empty, which violates one of our assumptions and we have reached a contradiction. Therefore, we are forced to conclude that $\bigcap B_i$ is nonempty.
+  \begin{quote}
+    Every nonempty compact subset of $\mathbb{R}$ contains a minimum and maximum value.
+  \end{quote}
+Suppose $C$ is a compact subset of $\mathbb{R}$ that has no minimum. Let $F = \{(b,\infty):b\in C\}$. Then, $C\subseteq \bigcup F$, as any element has an element less than it in $C$, and since $C$ is compact, $\exists F'$ finite in $F$ such that $C = \bigcup F'$. Then, $F' = \{(b_1,\infty),(b_2,\infty),\dots,(b_n,\infty)\}$. Without loss of generality, let $b_1 = \textrm{min}\{b_1,b_2,\dots,b_n\}$. Therefore, $C\subseteq (b_1,\infty)$. However, $b_1\in C$ by definition, but $C\subseteq (b_1,\infty)$ is a subset of a set that does not contain $b_1$, meaning that $b_1$ is both an element of and not an element of $C$, which yields our contradiction. Therefore, $C$ must have a minimum value.\\
+
+\noindent Suppose $C\subset \mathbb{R}$ does not have a maximum. Let $F = \{(-\infty,a):a\in C\}$. By this construction, $C\subseteq \bigcup F$, as $C$ not having a maximum means every element has an element greater than it in $C$, meaning that $\exists F'$ finite in $F$ such that $C\subseteq \bigcup F'$. Therefore, $F' = \{(-\infty,a_1),(-\infty,a_2),\dots,(-\infty,a_n)\}$. Without loss of generality, let $a_1 = \textrm{max}\{a_1,a_2,\dots,a_n\}$. Then, $C\subseteq (-\infty,a_1)$ by the definition of intervals. However, $a_1\in C$, but $C\subseteq (-\infty,a_1)$, implying $C$ does not contain $a_1$, which means $a_1$ is both in $C$ and not in $C$, which is a contradiction. Therefore, $C$ contains a maximum value.
+  \begin{quote}
+    A continuous function maps limit points to limit points.
+  \end{quote}
+  Let $f:X\rightarrow Y$ be a function that has the property where $p$ is a limit point of $A$ implies $f(p)$ is a limit point of $f(A)$, and $B\subseteq Y$ be closed. Suppose toward contradiction that $f^{-1}(B)$ is not closed. Then, there must be a limit point $p\in X$ of $f^{-1}(B)$ where $p\not\in f^{-1}(B)$. Therefore, $p\in \overline{f^{-1}(B)} \rightarrow p\in f^{-1}(\overline{B})$. So, $f(p)\in \overline{B}$. However, since $p$ is a limit point of $f^{-1}(B)$, $f(p)$ must be a limit point of $f(f^{-1}(B))$. As $f(f^{-1}(B))\subseteq B$, $f(p)$ must be a limit point of $B$, and since $B$ is closed, $f(p)\in B$. Thus, $f(p)\in B\land f(p)\in \overline{B}$, which is a contradiction. Therefore, $f^{-1}(B)$ must be closed, so $f$ is continuous by the continuous map property. 
+  \begin{quote}
+    A function where the preimage of every closed set is closed is continuous. 
+  \end{quote}
+Let $f:X\rightarrow Y$ be a function where if $B\subseteq Y$ is closed, $f^{-1}(B)$ is closed in $X$. Since $B$ is closed, $\overline{B}$ is open in $Y$ by definition. Then, $f^{-1}(\overline{B}) = \overline{f^{-1}(B)}$ is open in $X$ as $f^{-1}(B)$ is closed in $X$ by assumption. Therefore, $f$ is continuous.
+  \begin{quote}
+    If $X$ and $Y$ are homeomorphic topological spaces, then $X$ is simply connected if and only if $Y$ is simply connected.
+  \end{quote}
+  Let $f:X\rightarrow Y$ be a homeomorphism, and suppose $X$ is simply connected. Then, $X$ is path connected and every loop is null-homotopic. Since $X$ is path connected, $\exists p:I\rightarrow X$ such that $p$ is continuous. Then, $f\circ p: I\rightarrow Y$ is continuous as it is a composition of continuous functions, meaning that $Y$ is path connected. Similarly, since every loop in $X$ is null-homotopic, this means that for $\ell:S^1\rightarrow X,~\exists H:S^{1}\times I\rightarrow X$ such that $H_0(x) = \ell(x)$ and $H_1(x) = b$. Therefore, for $f\circ \ell: S^1\rightarrow Y,~\exists G:S^1\times I\rightarrow Y$ defined as $G_t(x) = f(H_t(x))$. Since $G_0(x) = f(H_0(x)) = f\circ \ell(x)$ and $G_1(x) = f(H_1(x)) = f(b)$, we have that $f\circ \ell$ is null-homotopic, meaning that $Y$ is simply connected. Since $f$ is a homeomorphism, we have that $f^{-1}$ is continuous, meaning that the previous two proofs also apply to the reverse direction by substituting $f^{-1}$ for $f$.
+  \begin{quote}
+     If $\sim$ is an equivalence relation on $X$ and $X$ is path connected, then $X/\sim$ is path connected
+  \end{quote}
+Since $X$ is path connected, we have that $\exists f: I\rightarrow X$ for all $a,b\in X$ where $f$ is continuous.\\
+
+\noindent The quotient map $q:X\rightarrow X/\sim$ is continuous by assumption.\\
+
+\noindent So, $q\circ f:I\rightarrow X/\sim$ is continuous as it is the composition of continuous functions, meaning that $X/\sim$ is path connected.
+\pagebreak
+  \begin{quote}
+    Prove that for metric spaces $(X,d_X)$ and $(Y,d_Y)$ and $X$ is compact, then every continuous function $f:X\rightarrow Y$ is uniformly continuous.
+  \end{quote}
+  Let $X$ and $Y$ be metric spaces, $f:X\rightarrow Y$ be continuous, and $X$ is compact. Since $f$ is continuous, we have from a previous result that $\forall \epsilon>0,~\exists \delta>0$ such that for any $x\in X$, $f(B_{\delta}(x))\subseteq B_{\epsilon}(f(x))$. Consider the set defined as the following: $A = \bigcup_{y\in X}B_{\delta}(x)$ where $f(y)\in B_{\epsilon}(f(x))$ with the previous rules. Then, $A$ is an open cover of $X$ as every element of $X$ is in $A$, and vice versa. Since $A$ is an open cover of $X$ and $X$ is compact, this means $X$ has a finite subcover, implying there is a set $F = \{y_1,y_2,\dots,y_n\}$ such that $\bigcup_{y\in F} B_{\delta}(x) = X$. So, there are values $\Delta = \{\delta_1,\delta_2,\dots,\delta_n\}$ corresponding to $d(x,y_1),d(x,y_2),\dots,d(x,y_n)$. By the set construction, this set must contain values of $\delta_i$ such that $y\in B_{\delta_i}(x) \rightarrow f(y)\in B_{\epsilon}(f(x))$ for every value of $\epsilon$ greater than zero. So, we can pick a value $\delta = \textrm{min}\{\delta_1,\delta_2,\dots,\delta_n\}$, so $f$ is uniformly continuous.
+  \begin{quote}
+    Every path connected space is connected.
+  \end{quote}
+Suppose $X$ is a disconnected set. Then, $X = A\cup B$ where $A,B\subseteq X$ are nonempty and open, and $A\cap B = \emptyset$. Consider the function $f:I\rightarrow X$. Since $I$ is connected, $f$ can only be continuous if $f(I)$ is also connected for every $a,b\in X$. Let $C = f(I) \cap A$ and $D = f(I)\cap B$. Since $X = A\cup B$ and $A$ and $B$ are nonempty, there must be $a\in A, b\in B$ such that $a,b\in f(I)$ for some $f$. Then, $C$ and $D$ are nonempty, and as $A$ and $B$ are open in $X$, $C$ and $D$ must be open in $f(I)$, and $C\cup D = (A\cup B)\cap f(I) = X\cap f(I) = f(I)$. Additionally, $C\cap D = A\cap B = \emptyset$, meaning that $C$ and $D$ are disjoint. So, $f(I)$ is disjoint, meaning $f$ is not continuous, so $X$ is not path connected.
+  \begin{quote}
+    Let $X_1$ and $X_2$ be simply connected topological spaces. Show that $X_1\times X_2$ is simply connected.
+  \end{quote}
+To show path connectedness, we need to show that $\exists f:I\rightarrow X_1\times X_2$ such that $f$ is continuous for any distinct $(a_1,a_2),(b_1,b_2)\in X_1\times X_2$. We know that $\exists p_1:I\rightarrow X_1$ that is continuous for any distinct $a_1,b_1\in X_1$, and similarly for $p_2:I\rightarrow X_2$ for any distinct $a_2,b_2\in X_2$. We can define $f:I\rightarrow X_1\times X_2$ as $f(x) = (p_1(x),p_2(x))$. Since both of the ``component functions'' of $f$ are continuous for any distinct $(a_1,a_2),(b_1,b_2)\in X_1\times X_2$, we know that $f$ is continuous, meaning that $X_1\times X_2$ is path connected.\\
+
+\noindent Since $X_1$ is simply connected, we know that for any $\ell_1:S^1\rightarrow X_1$ and constant map $g_1:S^1\rightarrow X_1$, $\exists H: S^1\times I\rightarrow X_1$ where $H_0(x) = \ell_1(x)$ and $H_1(x) = g_1(x)$. Similarly, since $X_2$ is simply connected, we know that for any $\ell_2:S^1\rightarrow X_2$ and constant map $g_2:S^1\rightarrow X_2$, $\exists G:S^1\times I\rightarrow X_2$ such that $G_0(x) = \ell_2(x)$ and $G_1(x) = g_2(x)$. We can then construct a homotopy as follows. Let $F:S^1\times I\rightarrow X_1\times X_2$ be defined such that $F_0(x) = (\ell_1(x),\ell_2(x))$ and $F_1(x) = (g_1(x),g_2(x))$. $F$ is a null homotopy as at $F_0$, we have a loop in $X_1\times X_2$, and at $F_1$, we have a constant map. Therefore, $X_1\times X_2$ is null-homotopic, meaning $X_1\times X_2$ is simply connected. 
+\pagebreak
+  \begin{quote}
+    Every compact set in a metric space is bounded and closed.
+  \end{quote}
+  Let $A$ be a compact subset of $(X,d)$. For some $x\in A$, we have that $A \subseteq \bigcup_{k\in \mathbb{Z}^{+}}B_{k}(x)$, and since $A$ is compact, this means there is a finite set $F = \{k_1,k_2,\dots,k_n\}$ such that $A \subseteq \bigcup_{k\in F}B_{k}(x)$. By the definition of open balls, this means $A\subseteq B_{k_n}(x)$ where $k_n = \textrm{max}(F)$. So, $A$ is bounded.\\
+
+  \noindent Let $A$ be a compact subset of $(X,d)$ and $p\in \overline{A}$. We can construct an open cover of $A$ by the following: $A\subseteq \bigcup_{k\in \mathbb{Z}^+}\overline{\textrm{cl}\left(B_{1/k}(p)\right)}$. Since $A$ is compact, we know that this must have a finite subcover, meaning that there is a maximum value of $k$, $k'$, such that $A \subseteq \overline{\textrm{cl}(B_{1/k'}(p))}$. Therefore, we have that $B_{1/k'}(p)\subseteq \overline{A}$, meaning that $\overline{A}$ is open, so $A$ is closed.
+\end{document}

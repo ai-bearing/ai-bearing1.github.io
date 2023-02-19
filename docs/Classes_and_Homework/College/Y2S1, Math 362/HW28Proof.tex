@@ -1,0 +1,84 @@
+
+\documentclass[8pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Homework 28 Proof}
+\begin{document}{
+  \begin{quote}
+    Show that every continuous function $f: X\rightarrow Y$ maps limit points to limit points. 
+  \end{quote}
+  We will prove in the forward direction first (i.e., if a function maps limit points to limit points, then it is continuous). Suppose $S\subseteq Y$ is open. Then, $\overline{S}$ is closed. We claim that $f^{-1}(S)$ cannot contain a limit point of $A = f^{-1}(\overline(S))$. Suppose toward contradiction that $\overline{A}$ contains a limit point $p$ of $A$. Then, since $p$ is a limit point of $A$, $f(p)$ is a limit point of $f(A)$ by our assumption; so, $f(p)\in f(f^{-1}(\overline{S}))\subseteq \overline{S}$ as $\overline{S}$ is closed. But, since $p$ is in $\overline{A}$, so $f(p)\in f(\overline{A} = \overline{\overline{S}}) = S$. So $f(p)\in S$ and $f(p)\in \overline{S}$, which is a contradiction.\\
+  \\
+  By claim, no limit point of $A$ is in $\overline{A}$. So every limit point of $A$ is in $A$. So $A$ is closed, so $f^{-1}(\overline{S})$ is closed, so $f$ is continuous.
+
+}\end{document}

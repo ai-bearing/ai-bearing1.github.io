@@ -1,0 +1,119 @@
+\documentclass[8pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+% text + color boxes
+\usepackage{tcolorbox}
+\newtcolorbox{mathbox}[1]{title = {#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Calculating GDP: Notes}
+\begin{document}{
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      Year & $P$ Apples & $Q$ Apples & $P$ Computers & $Q$ Computers\\
+      \hline
+      2026 & 2 & 500 & 1000 & 5 \\
+      2027 & 3 & 550 & 1000 & 6\\
+      \hline
+    \end{tabular}
+\end{center} 
+\begin{itemize}
+    \item Calculating Nominal GDP: Take prices of goods in that year and quantities produced in that year, and add up across the economy.
+    \item For example, in 2026, we can find the following:
+      \[\textrm{NGDP}_{2026} = (2)(500) + (1000)(5) = 6000\]
+    \item Similarly for 2027, we can find the nominal GDP as follows:
+      \[
+        \textrm{NGDP}_{2027} = (3)(550) + (1000)(6) = 7100
+      \]
+    \item We can also calculate Real GDP by using different base years' prices:
+      \[
+      \textrm{RGDP}_{2026} = 6500
+      \]
+    \[
+      \textrm{RGDP}_{2027} = 7650
+    \]
+    \item To calculate percentage change in RGDP, we set a base year's prices and find the change in output.
+    \item Calculating the percentage change in RGDP using the initial year as the base price, we get the \textit{Laspeyres Index}
+    \item Meanwhile, if we used the final year as the base price, we would get \textit{Paasche Index}
+    \item The \textit{Fisher Index} is the arithmetic mean of the Laspeyres Index and the Paasche Index.
+    \item We use chain weighting approach to find real GDP by taking the Fisher index, $f$, and solving for $x$ in the following equation:
+      \[(1+f)(x) = \textrm{NGDP}_{\textrm{current}}\]
+    \item We can also calculate inflation as follows:
+        \begin{align*}
+          \textrm{NGDP} &= P\times \textrm{RGDP} \\
+          \%\Delta\textrm{NGDP} &\approx \%\Delta P \times \%\Delta\textrm{RGDP}
+        \end{align*}
+    \item The change in the price level, $\%\Delta P$, is the \textit{GDP Deflator}, a measure of inflation.
+    \item $\%\Delta P$ can also be calculated as $\%\Delta \textrm{NGDP} - \%\Delta\textrm{RGDP}$, where RGDP is calculated using the various indices.
+  \end{itemize}
+}\end{document}

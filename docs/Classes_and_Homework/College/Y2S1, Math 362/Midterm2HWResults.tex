@@ -1,0 +1,439 @@
+\documentclass[8pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+\usepackage{mathtools}
+\usepackage{enumerate}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+\newcommand{\open}{\underset{\clap{\tiny open}}{\subseteq}}
+\newcommand{\closed}{\underset{\clap{\tiny closed}}{\subseteq}}
+\newcommand{\finite}{\underset{\clap{\tiny finite}}{\subseteq}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Midterm 2 Study Guide}
+\begin{document}{
+\section*{HW 9}
+\subsection*{Problem 1}
+\begin{quote}
+	Is the open unit ball in $\mathbb{R}^3$ compact? Prove your answer.
+\end{quote}
+The open unit ball in $\mathbb R^3$ is not compact, as the following is an open cover with no finite subcover.
+\[
+	B_{1}(0,0,0) = \bigcup_{n\in\mathbb{Z}^{+}} B_{\tiny 1-\frac{1}{n}}(0,0,0)
+\]
+For any finite $n$, we get that the set on the right side is lacking some component of $B_{1}(0,0,0)$.
+\subsection*{Problem 2}
+\begin{quote}
+	Every discrete topological space is compact.
+\end{quote}
+Consider the topological space of $\mathbb R$ under the discrete metric. Then, $\mathbb{R}_d= \bigcup_{x\in\mathbb{R}} \{x\}$. Since every set in $\mathbb{R}$ is open, this is an open cover of $\mathbb R$. However, any finite subset of the quantity on the right hand side does not cover $\mathbb{R}_d$. Therefore, $\mathbb{R}_d$ is not compact.
+\begin{quote}
+	No discrete topological space is compact.
+\end{quote}
+Let $X$ be a finite discrete topological space. Then, $X = \bigcup_{x\in X} \{x\}$, is an open cover, which is also finite, so $X$ is compact.
+\subsection*{Problem 3}
+\begin{quote}
+	Prove that the union of two compact subsets of a topological space is compact.
+\end{quote}
+Let $A$ and $B$ be compact subsets of $X$. Then, for some open cover of $A = \bigcup_{i\in I} C_{i}, C_{i}$, $\exists F\underset{\clap{\scriptsize finite}}{\subseteq} I$ such that $A = \bigcup_{i\in F} C_i$. Similarly, for $B = \bigcup_{j\in J}D_j, D_{j}\underset{\clap{\scriptsize open}}{\subseteq} B$, $\exists G\finite J$ such that $B = \bigcup_{j\in G} D_{j}$. Then, $A\cup B = \bigcup_{C_{i}\in X,D_{j}\in Y} C_{i}\cup D_{j}$. Let $E_{ij} = C_{i}\cup D_{j}$. Then, since $A$ and $B$ are compact, we have $A\cup B = \bigcup_{i\in F, j\in G}E_{ij}$, which is a finite number of $E_{ij}$ as $F$ and $G$ are finite. Therefore, $A\cup B$ is finite.
+\subsection*{Problem 4}
+\begin{quote}
+	Prove that the union of infinitely many compact subsets of a topological space need not be compact.
+\end{quote}
+Consider the following union of compact subsets in $\mathbb{R}$.
+\[
+[0,\infty) = \bigcup_{n\in\mathbb{Z}^{+}} [n,n+1]
+\]
+The set $[0,\infty)$ is not compact, yet each of the subsets $[n,n+1]$ is compact.
+\subsection*{Problem 5}
+\begin{quote}
+	Prove that the continuous image of a compact set is compact.
+\end{quote}
+Let $f:X\rightarrow Y$ be a continuous function. Let $A\subseteq X$ be compact. Let $f(A) = \bigcup_{i\in I} C_{i}$ be an open cover of $f(A)$. Then, $f^{-1}(f(A)) = A = f^{-1}\left(\bigcup_{i\in I}C_{i}\right) = \bigcup_{i\in I}f^{-1}(C_{i})$ by a previous result. Since $f$ is continuous, $f^{-1}(C_{i})$ is open, meaning that $A = \bigcup_{i\in I}f^{-1}(C_{i})$ is an open cover of $A$, and since $A$ is compact, there is a finite subcover $F\in I$, so $f(A)$ has a finite subcover as $A$ has a finite subcover. Therefore, $f(A)$ is compact.
+\subsection*{Problem 6}
+\begin{quote}
+	Prove that the following two definitions of a compact space are correct:
+	\begin{itemize}
+		\item A set $A$ is compact if for every collection $F$ of sets open in $X$ with $A\subseteq \bigcup_{W\in F}W$, there is a finite $F'\subseteq F$ with $A\subseteq\bigcup_{W\in F'} W$.
+		\item $A$ is compact if $A$ with the subspace topology is a compact topological space.
+	\end{itemize}
+\end{quote}
+Suppose $A$ is compact with the first definition. Then, $A = A\cap \left(\bigcup_{W\in F} W\right) = \bigcup_{V\in F} V$ for $V = W\cap A$. Since $F'$ is finite and a subset of $F$, this means $A = A\cap \left(\bigcup_{W\in F'} W\right) = \bigcup_{V\in F'} V$. So $A$ is a compact topological space, as $V\open A$. Since all these steps are reversible, we get that the two definitions are equal.
+\pagebreak
+\section*{HW 10}
+\subsection*{Problem 1}
+\begin{quote}
+	Prove that every compact subset of a nonempty metric space is bounded.
+\end{quote}
+Let $A \subseteq X$ be a compact set and $x\in X$. Since $X = \bigcup_{k\in \mathbb{N}}B_{k}(x)$, we can find $A = A\cap \left(\bigcup_{k\in\mathbb{N}}B_{k}(x)\right) = \bigcup_{k\in \mathbb{N}}(A\cap B_{k}(x))$. Since this is an open cover of $A$ as $B_{k}(x)\open X$ and $A\cap B_{k}(x)\open A$ by the subspace topology, this open cover has a finite subcover as $A$ is compact. This means there is a maximum $k'$ such that $A = \bigcup_{1}^{k'}(A\cap B_{k}(x))$. So, $A\subset B_{k'+1}(x)$, so $A$ is bounded.
+\subsection*{Problem 2}%
+\begin{quote}
+	Prove every compact subset of a metric space is closed.
+\end{quote}
+Let $A$ be a compact subset of a metric space $X$. Suppose towards contradiction that $A$ is not closed. Then, $\exists x\in X$ such that $x$ is a limit point of $A$ but $x\not\in A$. Then, consider the set $K = \bigcup_{n\in\mathbb{R}}\overline{\plain{cl}\left(B_{\tiny 1/n}(x)\right)}$. This is a union of open sets as it is a union of complements of closed sets, and since $K = X$, $A\subseteq K$. However, since $x$ is a limit point, $\forall r>0$, $B_{r}(x)\cap A-\{x\} \neq \emptyset$. Therefore, $K$ is an open cover of $A$ but does not have a finite subcover, so $A$ is not compact. Therefore, we have reached a contradiction, so $A$ is closed.
+\subsection*{Problem 3}%
+\begin{quote}
+	Let $I = [0,1]$. Show every continuous map $f:I\rightarrow \mathbb{R}$ is bounded.
+\end{quote}
+Since $I = [0,1]$, $I$ is closed and bounded, so $I$ is compact. Since $f$ is continuous, this means that $f(I)$ must also be compact. So, by the Heine-Borel theorem, $f(I)$ must be closed and bounded. So $f$ is bounded.
+\begin{quote}
+	Give an example of an unbounded continouous function $f:(0,1)\rightarrow \mathbb{R}$
+\end{quote}
+\[f(x) = \tan\left(\frac{\pi}{2}x - \frac{\pi}{2}\right)\]
+\subsection*{Problem 4}%
+\begin{quote}
+	Suppose $X$ is a discrete topological space with at least two points. Show $X$ is disconnected.
+\end{quote}
+Let $a,b\in X$ be nonequal points in $X$. Then, $\{a\}\open X$ and $\{b\}\open X$, but $\{a\}\cap\{b\} = \emptyset$. Therefore, $X$ is disconnected.
+\subsection*{Problem 5}%
+\begin{quote}
+	Show that if $X$ has the discrete topology, then $X$ is totally disconnected.
+\end{quote}
+We want to show the following:
+\begin{itemize}
+	\item If $a \in X$, $\{a\}\open X$ and $\{a\}$ is connected: Since $X$ has the discrete topology, $\{a\}$ is open, and every element of $\{a\}$ is just $a$, which is equal to itself, so by vacuous truth, $\{a\}$ is connected.
+	\item Any subset $A\subseteq X$ where $|A|\geq 2$ is disconnected: by the previous problem, we have that any two non-equal elements of $A$ are themselves disconnected sets, so $A$ is disconnected.
+\end{itemize}
+The converse does hold.
+\subsection*{Problem 6}%
+
+\begin{quote}
+	Prove that the Cantor set as a subset of $\mathbb R$ is totally disconnected.
+\end{quote}
+For any $a,b\in C$ where $a<b$, then $a = \frac{k}{3^n}$ and $b = \frac{l}{3^n}$, but the set $[a,b]$ is missing its middle third, so $c = \frac{a+b}{2} \not\in C$. Since for any non-singleton set $[a,b]\in C$, the set is disconnected. So, $C$ is totally disconnected.
+\pagebreak
+\section*{HW 11}
+
+\subsection*{Problem 1}%
+
+\begin{quote}
+	Let $X,Y$ be sets with $A,C\subseteq X$, $B,D\subseteq Y$. Show $(A\times B)\cap (C\times D) = E\times F$ for some $E\subseteq X$, $F\subseteq Y$
+\end{quote}
+Let $(a,b)\in (A\times B)\cap(C\times D)$. Then, $a\in A\cap C$ and $b\in B\cap D$. Let $E = A\cap C$ and $F = B\cap D$. Then, $(a,b)\in E\times F\subseteq X$. So $(A\times B)\cap (C\times D) \subseteq E\times F$. Similarly, if $(a,b)\in E\times F$, we have that $a\in A\cap C$, $b\in B\cap D$, so $(a,b)\in (A\times B)\cap(C\times D)$, so $E\times F = (A\times B)\cap(C\times D)$.
+\begin{quote}
+	Show this means the product topology is close under finite intersections.
+\end{quote}
+Let $X\times Y$ be a topological space under the product topology. Then, any open set can be expressed as $M = \bigcup_{i\in I, j\in J} A_{i}\times B_{j}$ for $A_{i}\open X$, $B_{i}\open Y$. Similarly, another open set in $X\times Y$ can be expressed as $N = \bigcup_{k\in K, l\in L}C_{k}\times D_{l}$ where $C_{k}\open X,D_{l}\open Y$. Then, $M\cap N = \bigcup_{o\in O, p\in P}E_{o}\times P_{p}$ by the previous result. Since the finite intersection of open sets is open, $M\cap N$ is open as it is the union of open sets $E_{o}\open X$ and $P_{p}\open Y$.
+\subsection*{Problem 2}%
+
+\begin{quote}
+	Prove every open rectangle is a union of open balls.
+\end{quote}
+Let $(a,b)\times (c,d)$ be an open rectangle in $\mathbb{R}^2$. Then, for some point $(x,y)\in (a,b)\times (c,d)$, we can find a radius $r = \textrm{min}\{d(x,a),d(x,b),d(y,c),d(y,d)\}$. Then, $B_{r}(x,y)\subseteq (a,b)\times (c,d)$, so $A = (a,b)\times(c,d) = \bigcup_{(x,y)\in A} B_{r}(x,y)$.
+\begin{quote}
+	Prove every open ball is a union of open rectangles.
+\end{quote}
+Let $B_{r}(x,y)$ be an open ball in $\mathbb{R}^2$. Then, for any $(a,b)\in B_{r}(x,y)$, we can find $k$ such that $B_{k\sqrt 2}(a,b)\subseteq (x,y)$. Then, the set $(a-k,a+k)\times (b-k,b+k)$ is an open rectangle which is a subset of the open ball $B_{k\sqrt 2}(a,b)$, which is a subset of $B_{r}(x,y)$, so $(a-k,a+k)\times(b-k,b+k)$ is an open rectangle subset of $B_{r}(x,y)$. So, $B = B_{r}(x,y) = \bigcup_{(a,b)\in B}(a-k,a+k)\times(b-k,b+k)$.
+\subsection*{Problem 3}%
+
+\begin{quote}
+	Let $\mathcal{T}_1 = \mathbb{R}^2$ under the Euclidean metric and $\mathcal{T}_2$ be the product topology on $\mathbb{R}\times \mathbb{R}$. Show these two topologies are equivalent.
+\end{quote}
+First, we will show that every element of $\mathcal{T}_{2}$ is a union of open rectangles. Let $A,B\open \mathbb{R}$. Then, $A = \bigcup_{a,b\in E}(a,b)$ and $B = \bigcup_{c,d\in F}(c,d)$ by the definition of open sets in $\mathbb{R}$. So, $A\times B$, which is open in $\mathcal{T}_2$, is equal to $\bigcup_{a,b\in E}(a,b) \times \bigcup_{c,d\in F}(c,d)$. Using a rule we can take for granted, we have that $A\times B = \bigcup_{a,b\in E, c,d\in F}(a,b)\times(c,d)$, which is a union of open rectangles. \newline
+\newline
+Let $A\in \mathcal{T}_{1}$. Then, $A$ is an open set in $\mathbb{R}^2$, so by a previous result, $A$ is a union of open balls. So, $A$ is a union of open rectangles in $\mathbb{R}^2$, so $A\in \mathcal{T}_1$. Similarly, if $B\in \mathcal{T}_2$, then $B$ is a union of open rectangles in $\mathbb{R}^2$, so $B$ is in $\mathcal{T}_{1}$, so $\mathcal{T}_1 = \mathcal{T}_2$.
+\subsection*{Problem 4}%
+
+\begin{quote}
+	Let $V,W,X,Y$ be topological spaces, $V\simeq X$, $W\simeq Y$. Show $V\times W \simeq X\times Y$.
+\end{quote}
+Let $f:V\rightarrow X$, $g:W\rightarrow Y$ be homeomorphisms. Then, $f$ and $g$ are continuous bijections with continuous inverses. Let $h:(V\times W) \rightarrow (X\times Y)$ be defined as $h(v,w) = (f(v),g(w))$. We want to show that $h$ is a homeomorphism.
+\begin{itemize}
+	\item Since $f$ and $g$ are bijections and are the ``constituent functions'' of $h$, we know that $h$ is a bijection.
+	\item Let $A\open X\times Y$. Then, $A = \bigcup_{i\in I} A_{i}\times B_{i}$ for $A_{i}\open X, B_{i}\open Y$. So, $h^{-1}(A) = h^{-1}\left(\bigcup_{i\in I}A_{i}\times B_{i}\right) = \bigcup_{i\in I}h^{-1}(A_{i}\times B_{i}) = \bigcup_{i\in I}f^{-1}(A)\times g^{-1}(B)$ by rules of discrete math. So, since $f^{-1}$ and $g^{-1}$ are homeomorphisms, $f^{-1}(A_{i})\open V$ and $g^{-1}(B_{i})\open W$, so $h$ is continuous by the product topology.
+	\item Similarly, if $C \open V\times W$, then $h(C) \open X\times Y$, so $h^{-1}$ is continuous.
+	\item Therefore, since $h$ is a continuous bijection with a continuous inverse, $h$ is a homeomorphism, so $V\times W \simeq X\times Y$.
+\end{itemize}
+\pagebreak
+\section*{HW 12}%
+
+\subsection*{Problem 1}%
+
+\begin{quote}
+	Prove that the projection map $\pi_{i}: X_{1}\times X_{2} \rightarrow X_{i}$, defined as $\pi_{1}(x_{1},x_{2}) = x_{1}$ and similarly for $\pi_{2}$, is continuous.
+\end{quote}
+Let $A_{1}\open X_{1}$ and $A_{2}\open X_{2}$. Then, $\pi_{1}^{-1}(A_{1}) = A_{1}\times X_{2}$, and $\pi_{2}^{-1}(A_2) = X_{1}\times A_{2}$. By the product topology, we know that $A_{1}\times X_{2}\open X_{1}\times X_{2}$ because $A_{1}\open X_{1}$ and $X_{2}\open X_{2}$, and similarly $X_{1}\times A_{2} \open X_{1}\times X_{2}$, so $\pi_{1}$ and $\pi_2$ are continuous.
+\subsection*{Problem 2}%
+
+\begin{quote}
+	Let $Y,X_1,X_2$ be topological spaces. For each $i = 1,2$, let $f_{i}:Y\rightarrow X_{i}$ be a map. Prove $f:Y\rightarrow X_{1}\times X_{2}$ defined as $f(y) = (f_1(y),f_2(y))$ is continuous iff $f_1$ and $f_2$ are continuous.
+\end{quote}
+Let $f$ be continuous. Then, for any set open in the product topology $X_{1}\times X_{2}$, the inverse image of that set is open in $Y$. So, if $A = \bigcup_{i\in I}A_{i}\times B_{i}$ where $A_{i}\open X_{1}$ and $B_{i} \open X_{2}$, $f^{-1}(A) = f^{-1}\left(\bigcup_{i\in I}A_{i}\times B_{i}\right) = \bigcup_{i\in I}f^{-1}\left(A_{i}\times B_{i}\right)$. Since $f$ is continuous and $A_{i}\times B_{j}\open X_{1}\times X_{2}$ by the definition of product topology, we have that $f^{-1}\left(A_{i}\times B_{i}\right) \open Y$. Therefore, $f^{-1}\left(A_{i}\times B_{i}\right) = f_{1}^{-1}(A_{i})\cap f_{2}^{-1}(B) \open Y$. Since the intersection of two open sets is open, we have that $f_{1}^{-1}(A_i)$ and $f_2^{-1}(B_i)$ are open in $Y$, so $f_{1}$ and $f_{2}$ are continuous. \newline
+\newline
+Let $f_{1}$ and $f_{2}$ be continuous. Then, for all $A_{i}\open X_{1}$, $f_1^{-1}\open Y$, and for all $B_{i}\open X_{2}$, $f_{2}^{-1}(B_i)\open Y$. So, for any $A\open X_{1}\times X_{2}$, we have $A = \bigcup_{i\in I}A_{i}\times B_{i}$ for $A_{i}\open X_{1}$, $B_{i}\open X_{2}$. Then, $f^{-1}(A) = \bigcup_{i\in I}f^{-1}\left(A_{i}\times B_{i}\right)$. Similarly to the previous result, we have $f^{-1}(A_{i}\times B_{i}) = f_{1}^{-1}(A_{i})\cap f_{2}^{-1}(B_i)$. Since $f_{1}^{-1}(A_i)\open Y$ and $f_{2}^{-1}(B_i)\open Y$, we have that $f^{-1}\left(A_{i}\times B_{i}\right)\open Y$, so $f^{-1}(A)$ is a union of open sets, which is open. So, $f$ is continuous.
+\subsection*{Problem 3}%
+
+\begin{quote}
+	For nonempty topological spaces $X,Y$, show that $\forall x\in X, \{x\}\times Y\simeq Y$ under subspace topology.
+\end{quote}
+Let $f:\{x\}\times Y \rightarrow Y$ be defined as $f(x,y) = y$. Since $x$ is non-changing, we know that $\forall y\in Y,\exists (x,b)\in \{x\}\times Y$ such that $f(x,b) = y$, namely setting $y$ to be the second coordinate, meaning $f$ is surjective. Similarly, if $f(x,a) = f(x,b)$, then we have that $a = b$, $(x,a) = (x,b)$, meaning $f$ is injective. Therefore, $f$ is a bijection.\\
+\\
+To prove continuity, we must show that $A\open Y \rightarrow f^{-1}(A)\open \{x\}\times Y$. For any $A\open Y$, we have that $f^{-1}(A) = \{x\}\times A$. Since $\{x\}\open \{x\}$ by subspace topology and $A\open Y$, we have that $\{x\}\times A \open \{x\}\times Y$ by the product topology, so $f$ is continuous. Similarly, let $\{x\}\times A \open \{x\}\times Y$. Then, $f(\{x\},A) = A$, and since $\{x\}\open \{x\}$, we have that $A\open Y$ by the product topology, so $f^{-1}$ is continuous.
+\subsection*{Problem 4}%
+\begin{quote}
+	Consider $S^1$ as a subpsace of $\mathbb{R}^2$. For each of the following, determine whether $f:X\rightarrow S^1$ is a homeomorphism for $f(x) = (\cos(2\pi x),\sin(2\pi x))$, and justify reasoning.
+	\begin{itemize}
+		\item $X_1 = [0,1]\subset \mathbb{R}$
+		\item $X_2 = [0,1) \subset \mathbb{R}$
+	\end{itemize}
+\end{quote}
+$f:X_1\rightarrow S^1$ is \textbf{not} a homeomorphism, as the point at $(0,1)$ can be mapped to both $\{0\}$ and $\{ 1\}$. Meanwhile, $f:X_{2}\rightarrow S^1$ is a homeomorphism, because every open interval that passes through the point at $(0,1)$ can be split into two intervals that are open in $[0,1)$.
+\subsection*{Problem 5}%
+
+\begin{quote}
+	Find an equivalence relation $\sim$ on $I^2$ such that $I^2/\sim$ is homeomorphic to $S^{1}\times I$, and find a homeomorphism and prove it is well-defined.
+\end{quote}
+Let $\sim = \{(0,a)\sim (1,a)\}$. Then, we can find $f:I^2/\sim \righatrrow S^{1}\times I$ by doing $f(x,y) = (\cos(2\pi x),\sin(2\pi x), y)$. Since $\cos, \sin,$ and $y$ are all well-defined functions, we have that $f$ is a well-defined function for any $x,y\in [0,1]$.
+\begin{quote}
+	Find an equivalence relation such that $I^{2}/\sim$ is homeomorphic to a torus.
+\end{quote}
+Let $\sim := \{(0,a)\sim(1,a),(b,0)\sim(b,1)\}$. Then, $I^2/\sim$ is a torus.
+\pagebreak
+\section*{HW 13}%
+\subsection*{Problem 1}%
+\begin{quote}
+	Let $Q = \mathbb{R}/\{x\sim(x+1)\}$. What familiar topological space is $Q$ homeomorphic to?
+\end{quote}
+$Q \simeq S^{1}$, as for any element $x\in [0,1)$, $x+n\in Q$ for all $n\in \mathbb{Z}$. Therefore, $Q$ can be represented as the real line wrapping around itself an infinite number of times, making it homeomorphic to a circle. For the homeomorphism, let $f:Q\rightarrow S^{1}$ be defined as $f(p) = (\cos(2\pi p),\sin(2\pi p))$ where $[p]\in Q$ and $p \in [0,1)$.
+\subsection*{Problem 2}%
+\begin{quote}
+	Let $Q = \mathbb{R}^2/\{(x,y)\sim(x+1,y)\sim(x,y+1)\}$. Which familiar topological space is $Q$ homeomorphic to?
+\end{quote}
+Since the equivalence relation on $\mathbb{R}^2$ is the two dimensional analog to $S^1$ in the previous example, we have that $Q \simeq S^1\times S^1$, which is also homeomorphic to $[0,1)\times [0,1)$. We can find a homeomorphism $f:Q\rightarrow [0,1)\times [0,1)$ defined as $f([a],[b) = (a,b)$where $a,b\in [0,1)$.
+\subsection*{Problem 3}%
+
+\begin{quote}
+	Let $P = S^{1}/\{(x,y)\sim(-x,-y)\}$. Show that $P$ is homeomorphic to $S^{1}$, and find a homeomorphism without proof.
+\end{quote}
+When looking at $S^1$ with polar coordinates, we have that $\theta$ ranges from $[0,\pi)$, and that when $\theta = \pi$, $\theta = 0$ as well, which means $P$ is a semicircle, with $f:P\rightarrow S^1$ defined as $f(r,\theta) = (r,2\theta)$ for $\theta\in[0,\pi)$.
+\subsection*{Problem 4}%
+
+\begin{quote}
+	Do problem 5.6 on page 37 in \textit{Intuitive Topology}.
+\end{quote}
+\pagebreak
+\section*{HW 14}%
+
+\subsection*{Problem 1}%
+\begin{quote}
+	State which of the following spaces are homeomorphic to each other.
+\end{quote}
+Answer is omitted due to inability to draw.
+\subsection*{Problem 2}%
+\begin{quote}
+	Which of the following letters considered as subspaces of $\mathbb{R}^2$ are manifolds?
+	\begin{center}
+		\textsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+	\end{center}
+\end{quote}
+The letters that in sans serif are manifolds are ones which do not contain a tripoint or quadripoint, meaning that the following are manifolds:
+\begin{center}
+	\textsf{CDIJLMNOSUVWZ}
+\end{center}
+\subsection*{Problem 3}%
+\begin{quote}
+	How many connected non-homeomorphic 1-manifolds are there?
+\end{quote}
+\begin{itemize}
+	\item $[0,1]$
+	\item $[0,1)$
+	\item $(0,1)$
+	\item $S^1$
+\end{itemize}
+\subsection*{Problem 4}%
+\begin{quote}
+	Is an open ball in $\mathbb{R}^n$ minus its center a manifold? More precisely, let $x\in \mathbb{R}^n$. Is $B_{r}(x)-\{x\}$ a manifold? Prove your answer.
+\end{quote}
+Since for every $y\in B_{r}(x)-\{x\}$, we can find an open ball by letting $s = \plain{min}(d(y,x),r-d(y,x))$ under the Euclidean metric, and letting $B_{s}(y)$ be our point. Since for every point we can find an open ball, we have that every point is locally homeomorphic to $\mathbb{R}^n$, so $B_{r}(x)-\{x\}$ is a manifold.
+\subsection*{Problem 5}%
+\begin{quote}
+	Is $S^1/\{(1,0)\sim (-1,0)\}$ a manifold?
+\end{quote}
+Since $S^1/\{(1,0)\sim (-1,0)\}$ can be expressed as a lemniscate, which is not locally homeomorphic at the quadripoint center, the set is \textbf{not} a manifold.
+\begin{quote}
+	Is $S^1/\{(x,y)\sim (-x,-y)\}$ a manifold?
+\end{quote}
+Since $S^1/\{(x,y)\sim (-x,-y)\}$ is homeomorphic to $S^1$, and since $S^1$ is a manifold, so is $S^1/\{(x,y)\sim (-x,-y)\}$.
+\pagebreak
+\section*{HW 15}%
+\subsection*{Problem 1}%
+\begin{quote}
+	For each of the following manifolds, state without proof (i) its dimension; (ii) its boundary (if it has any); (iii) whether it is compact; (iv) whether or not it's closed.
+\end{quote}
+Answer is omitted.
+\subsection*{Problem 2}%
+
+\begin{quote}
+	State, without proof, whether or not each of the following topological spaces is a manifold (with or without boundary)
+\end{quote}
+Answer is omitted.
+\subsection*{Problem 3}%
+\begin{quote}
+	Show for all $x\in S^1$, $S^{1}-\{x\} \simeq (0,1) \subset \mathbb{R}$.
+\end{quote}
+We can express $x\in S^1$ as $(1,\theta)$ for some $\theta\in [0,2\pi)$. So, $S^1-\{x\} = [0,\theta)\cup(\theta,2\pi)$. We can transform $x$ so $\theta = 0$ by taking $f:S^1-\{x\} \rightarrow S^1-\{(1,0)\}$ by taking $f(1,\theta) = \theta - \theta'$ for $x = (1,\theta')$. Then, we can find $g:S^1-\{(1,0)\}$ by taking $g(1,\theta) = \frac{\theta}{2\pi} $.
+\subsection*{Problem 4}%
+\begin{quote}
+	Let $X = \plain{cl}(B_{1}(0,0)) - B_{0.5}(0,0)$, $Y = S^1 \times [0,1]$. Find a homeomorphism without proof $f:X\rightarrow Y$
+\end{quote}
+By letting $f:X\rightarrow Y$ by taking $f(r,\theta) = (\cos(\theta),\sin(\theta),2r)$ for $\theta \in [0,2\pi)$ and $r\in [0.5,1]$ in polar coordinates, and $(\sin\theta, \cos\theta, 2r)$ in cartesian coordinates.
+\subsection*{Problem 5}%
+
+\begin{quote}
+	Prove that every closed subset of a compact topological space is compact.
+\end{quote}
+Let $X$ be a compact topological space and let $A\closed X$. Let $C$ be an open cover of $A$. Then, $C:= \{V_{\alpha}\mid \alpha\in I\}$, where $V_{\alpha}\open A$. So, $V_{\alpha} = U_{\alpha}\cap A$, where $U_{\alpha}\open X$. Then, $A = \bigcup_{\alpha\in I}V_{\alpha}\subseteq \bigcup U_{\alpha}$. So, since $X = A\cup \overline{A}$, we have $X = \bigcup U_{\alpha}\cup \overline{A}$. Since $A$ is closed, $F:=\{U_{\alpha}\mid \alpha\in I\}\cup \overline{A}$ is an open cover of $X$. This means $\exists F'\finite F$ as $X$ is compact. So, $X = \bigcup_{\alpha\in I'}U_{\alpha} \cup \overline{A}$ where $I'$ is finite. So, since $A\subseteq X$, we have $A\subseteq \bigcup_{i\in I'}U_{\alpha} \cup \overline{A}$. Since $A\not\subseteq \overline{A}$ by definition of complement, we have $A\subseteq \bigcup_{i\in I'}U_{\alpha}$. So, $A = \left(\bigcup_{\alpha\in I}U_{\alpha}\right)\cap A$, so $A = \bigcup{\alpha\in I'}V_{\alpha}$. So, $C$ has a finite subcover $I':=\{V_{\alpha}\mid \alpha\in I'\}$, so $A$ is compact.
+\pagebreak
+\section*{HW 16}%
+
+\subsection*{Problem 1}%
+
+\begin{quote}
+	Let $A\subseteq M$. Prove that $\plain{int}(A)$ is the union of all subsets $B\subseteq A$ such that $B\open M$.
+\end{quote}
+For the forward direction, let $x\in \plain{int}(A)$. Then, $\exists B\open M$ such that $x\in B$, by the topological definition of interior. So, for all $x\in A$, we have that $x\in \bigcup_{i\in I}B_{i}$ for some index set $I$, $B_{i}\subseteq A$, and $B_{i}\open M$. So $\plain{int}(A)\subseteq \bigcup_{i\in I}B_{i}$.\\
+\\
+In the reverse direction, let $x\in \bigcup_{i\in I}B_{i}$ where $B_{i}\subseteq A$ and $B_{i}\open M$. Then, $\exists B_{k}$ such that $x\in B_{k}$, and since $B_{k}\subseteq A$ and $B_{k}\open M$, we have that $x\in A$ and $\exists B_{k}\open M$ such that $x\in B_{k}$, so $x\in \plain{int}(A)$. So $\bigcup_{i\in I}B_{i}\subseteq \plain{int}(A)$\\
+\\
+So, by the definition of set equality, $\plain{int}(A) = \bigcup_{i\in I}B_{i}$.
+\begin{quote}
+	Prove that $\plain{cl}(A) = \bigcap_{i\in I}B_{i}$ where $A\subseteq B_{i}$ and $B_{i}\closed M$.
+\end{quote}
+Forward direction: Let $x\in \plain{cl}(A)$. Then, if $x\in A$, we know that $x\in \plain{cl}(B_{i})$ by assumption. Otherwise, if $x\in \plain{bd}(A)$, we have that $\exists C\open M$ such that $x\in C \rightarrow y\in A$ where $y\neq x$, and since $y\in A$, $y\in \plain{cl}(B_{i})$, So, $x\in \plain{cl}(B_{i})$ by the definition of closure. Since $B_{i}$ is a closed set, we know that $\plain{cl}(B_{i}) = B_{i}$, so $x\in B_{i}$, meaning that $A\subseteq \bigcap_{i\in I}B_{i}$.\\
+\\
+Reverse direction: By definition of closure, we know that $A\subseteq \plain{cl}(A)$, and $\plain{cl}(A)$ is closed. So, if $x\in \bigcap_{i\in I}B_{i}$, then $x\in \plain{cl}(A)$ because, if $x$ is in every closed superset of $A$, and $A\subseteq \plain{cl}(A)$, then $x\in \plain{cl}(A)$. So, $\bigcap_{i\in I}B_{i}\subseteq \plain{cl}(A)$.\\
+\\
+So, by the definition of set equality, $\textrm{cl}(A) = \bigcap_{i\in I}B_{i}$.
+\subsection*{Problem 2}%
+
+\begin{quote}
+	Find an example of nested, nonempty, closed subsets $B_{1}\supseteq B_{2}\supseteq\cdots$ of $\mathbb{R}$ such that $\bigcap B_{i} = \emptyset$.
+\end{quote}
+Let $B_{i} = [i,\infty)$. Each of these sets is closed as their complement is $(-\infty,i)$, but their intersection is $\emptyset$.
+\begin{quote}
+	Let $B_{1}\supseteq B_{2}\supseteq B_{3}\supseteq\cdots$ be nonempty closed subsets of a compact topological space $X$. Prove that their intersection $\bigcap B_{i}$ is nonempty.
+\end{quote}
+Suppose that $\bigcap B_{i} = \emptyset$. Then, $X = \overline{\bigcap B_{i}} = \bigcup\overline{B_{i}}$. Since $\overline{B_{i}}\open X$ by the definition of a closed set, $X = \bigcup\overline{B_{i}}$ is a union of open sets, meaning that $F:=\{\overline B_{i}\mid i\in I\}$ is an open cover of $X$. Since $X$ is compact, we have $F'\finite F$, meaning $F = \{B_{1},\dots,B_{n}\}$. So, $\bigcap_{i\in F'}B_{i} = \emptyset$ as $\bigcup_{i\in F'}B_{i} = X$. Since $B_{i}$ are nested and $\bigcap_{i\in F'} B_{i} = \emptyset = B_{n}$ where $n$ is the largest element of $F'$. So, $B_{n} = \emptyset$, which yields a contradiction. Therefore, $\bigcap B_{i} \neq \emptyset$.
+\begin{quote}
+	Let $B_{1}\supseteq B_{2}\supseteq \cdots $be nested, nonempty, closed, and compact subsets of $\mathbb{R}$. Is $\bigcap B_{i}$ necessarily nonempty?
+\end{quote}
+Since $B_1$ is compact in $\mathbb{R}$, we have that $B_1$ is closed and bounded, and since each $B_i\closed \mathbb{R}$, we have $\overline{B_i}\open \mathbb{R}$, so $\overline{B_{i}}\cap B_{1}\open B_{1}$, so $B_{i}\closed B_{1}$. Applying 2(b), we let $X = B_1$, meaning that $\bigcap_{i\geq 2} B_{i}$ is nonempty. Since $B_1$ is a nonempty superset of $\bigcap_{i\geq 2}$, $\bigcap_{i\geq 1}B_{i}$ is nonempty.
+\subsection*{Problem 3}%
+
+\begin{quote}
+	Using the Invariance of Domain Theorem, show that every compact 3-manifold embedded in $\mathbb{R}^3$ has boundary in both senses of the term.
+\end{quote}
+Suppose $M$ is a compact 3-manifold embedded in $\mathbb{R}^3$ that does not have boundary. So, $\forall x\in M$, $x$ has a neighborhood that is homeomorphic to $\mathbb{R}^3$. So, $\exists U\open M$ such that $x\in U$ and $U\simeq \mathbb{R}^3$, which means $\exists h: U\rightarrow \mathbb{R}^3$ where $h$ is a homeomorphism. Since $h$ is a homeomorphism, then $h^{-1}:\mathbb{R}^3\rightarrow U \subseteq M \subseteq \mathbb{R}^3$ is a homeomorphism. By the invariance of domain theorem, we have that $h^{-1}\left( \mathbb{R}^3\right) \open \mathbb{R}^3$. Let $W = h^{-1}\left(\mathbb{R}^3\right)$. Then, $W\open \mathbb{R}^3$. For all $x\in W_{x}$ where $W_{x}$ denotes the open set that contains $x$, we have that $x\in M$, meaning $M = \bigcup W_{x}$, so $M$ is open as it is the union of open sets. Meanwhile, $M$ is also closed as it is compact, and every compact set is closed and bounded in $\mathbb{R}^n$ by the Heine-Borel theorem. So, since $M$ is clopen, we get that $\mathbb{R}^3$ is not connected by a previous result, which is a contradiction. Therefore, $M$ has boundary.\\
+\\
+Let $x\in \partial M$. Since $M$ is closed, we have that $\plain{cl}(M) = M$, and $x\not\in \plain{int}(M)$ since there would exist a neighborhood around $x$ homeomorphic to $\mathbb{R}^3$, which violates the assumption that $x\in \partial M$. So, $x\in \plain{bd}(M)$.
+\pagebreak
+\section*{HW 17}%
+\subsection*{Problem 1}%
+\begin{quote}
+	Which of the surfaces are homeomorphic? Which are isotopic?
+\end{quote}
+Answer is omitted.
+\subsection*{Problem 2}%
+
+\begin{quote}
+	Each of the surfaces (a) and (b) is a closed disk with two flat ``strips'' glued as ``handles.'' (The one in (b) can also be described as a closed disk minus two open disks.) Give an argument to prove that (a) and (b) are not homeomorphic. Then, draw a series of pictures to show that a torus minus an open disk is homeomorphic to the surface given in (a).
+\end{quote}
+Answer is omitted.
+\subsection*{Problem 3}%
+
+\begin{quote}
+	Use the fact that $\mathbb{R}$ is connected to show that $S^1$ is connected.
+\end{quote}
+Since $\mathbb{R}$ is connected, and the map $f:\mathbb{R}\rightarrow S^1,f(x) = (\cos(2\pi x),\sin(2\pi x))$ is continuous, we have that $S^1$ must be connected.
+\subsection*{Problem 4}%
+\begin{quote}
+	Show $S^1$ cannot be embedded in $\mathbb{R}$.
+\end{quote}
+Let $f:S^1\rightarrow \mathbb{R}$ be a continuous injective function, where $f(S^1)\subset \mathbb{R}$ is an embedding. So, $f(S^{1})$ is connected because $S^1$ is connected and $f$ is continuous. Let $x,y,z\in S^1$, $x\neq y\neq z$. Because $f$ is injective, $f(x),f(y),f(z)\in f(S^1)\subseteq \mathbb{R}$. WLOG, let $f(x)<f(y)<f(z)$. Since $S^{1}-\{y\}\simeq (0,1)$ which is connected, we should have $f(S^{1}-\{y\})$ also be connected. Let $A = f(S^1-\{y\}) = f(S^{1})-f(y)$. So, $A = (A\cap (-\infty,f(y)))\cup (A\cap (f(y),\infty))$. The intervals are disjoint, non-empty ($f(x)\in (-\infty,f(y))$ and $f(z)\in (f(y),\infty)$), and open in $\mathbb{R}$ meaning $A\cap\{\textrm{the intervals}\}\open A$, so this is disconnected. So, we have reached a contradiction, so $f(S^1)$ cannot be an embedding.
+\pagebreak
+\section*{HW 18}
+\subsection*{Problem 1}
+\begin{quote}
+	Let $A = \{ (x,y,z)\in \mathbb{R}^3 \mid 0\leq x,y,z\leq 1, \textrm{ and at least two of $x,y,z$ are in the set }\{0,1\}\}$ Let $F = \textrm{bd}(\textrm{cl}(N_{0.1}(A)))$. Draw a picture of $F$, and find $n$ such that $F \simeq nT^2$.
+\end{quote}
+Picture is omitted. $F\simeq T^2$ as one can expand the size of the bottom square and push the top end down, creating a square within a square that is connected with diagonal lines. Each of these holes can be rounded, creating a $5$ holed torus. Therefore, $F\simeq 5T^2$.
+\subsection*{Problem 2}
+\begin{quote}
+	Let $(X,d)$ be a metric space. Prove or disprove: $\forall \epsilon>0, N_{\epsilon}(A) = \bigcup_{a\in A}B_{\epsilon}(A)$.
+\end{quote}
+Let $x\in N_{\epsilon}(A)$. Then, $d(x,a)<\epsilon$ for some $a\in A$. So, $x\in B_{\epsilon}(a)$, so $x\in \bigcup_{a\in A}B_{\epsilon}(a)$, so $N_{\epsilon}(A)\subseteq \bigcup_{a\in A}B_{\epsilon}(a)$. Similarly, let $x\in \bigcup_{a\in A}B_{\epsilon}(a)$. Then, $\exists a$ such that $d(x,a)<\epsilon$, so $x\in N_{\epsilon}(A)$, so $\bigcup_{a\in A}B_{\epsilon}(a)\subseteq N_{\epsilon}(A)$, so they are equal.
+\subsection*{Problem 3}
+\subsection*{Problem 4}
+\begin{quote}
+	Let $f:X\rightarrow Y$ be a homeomorphism between topological spaces. Prove that $A$ separates $X$ iff $f(A)$ separates $Y$.
+\end{quote}
+Suppose $A$ separates $X$. Then, $X-A$ is disconnected. So, $f(X-A)$ is disconnected, as connectedness is an invariant. So, $f(X)-f(A)$ is disconnected since $X-A = X\cap \overline{A}$ and $f(X\cap\overline{A}) = f(X)\cap\overline{f(A)} = f(X) - f(A)$. Since $f(X) = Y$ as $f$ is a homeomorphism, we have $Y-f(A)$ is disconnected. So $f(A)$ separates $Y$.\\
+\\
+Suppose $f(A)$ separates $Y$. Then, $Y-f(A)$ is disconnected. So, $f^{-1}(Y-f(A))$ is disconnected, as connectedness is an invariant. So, $f^{-1}(Y) - f^{-1}(f(A))$ is disconnected, meaning $X-A$ is disconnected, so $A$ separates $X$.
+}\end{document}

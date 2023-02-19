@@ -1,0 +1,90 @@
+\documentclass[8pt]{extarticle}
+\title{Midterm 2 Extra Credit}
+\author{Avinash Iyer}
+\date{November 5, 2022}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{}
+\begin{document}{
+\maketitle
+\section*{Question}
+Bob's Burgers has a production function of $Q = \sqrt{KL}$, where $L$ denotes workers and $K$ denotes burger flipping machines, and $Q$ is measured in hundreds. Because Bob is racist and will not hire nonwhite workers, he has a fixed number of workers $\overline{L} = 4$ in the short term. The prevailing wage rate is $20$ and the prevailing rental rate is $5$. What is the ideal number of burger flipping machines that Bob should order, and how many burgers can he produce?
+\section*{Solution}
+\begin{align*}
+	Q &= \sqrt{KL} \\
+	MRTS_{KL} &= \frac{\frac{\sqrt{L}}{2\sqrt{K}}}{\frac{\sqrt{K}}{2\sqrt{L}}} \\
+	\frac{L}{K} &= \frac{5}{20}\\
+	L &= \frac{K}{4} \\
+	4 &= \frac{K}{4}\\
+	K &= \boxed{16}\\
+	Q &= \sqrt{(16)(4)}\\
+	&= \boxed{8}
+\end{align*}
+}\end{document}

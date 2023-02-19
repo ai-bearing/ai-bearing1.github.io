@@ -1,0 +1,92 @@
+\documentclass[8pt]{extarticle}
+\title{Econ 250 HW 9}
+\author{Avinash Iyer}
+\date{November 16, 2022}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%a useful command
+\newcommand{\plain}[1]{\textrm{#1}}
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Econ 250 HW 9}
+\begin{document}{
+\maketitle
+\section*{The Evolution of Theory}
+\begin{itemize}
+	\item The podcast states that the business world started embracing shareholder theory starting from the 1970s after Milton Friedman wrote an article stating that the ``social responsibility'' of business was to increase its profits for shareholders. The old corporate model had become uncompetitive, and Friedman argued that companies that took on ``social responsibilities'' were inefficient. The reason why shareholders did badly, according to Mike Jensen, was that the corporate executive was using the shareholders' money for personal gain rather than maximizing profits for the shareholders.
+	\item I'm of the opinion that companies should only act to maximize value for shareholders, because the primary methods of ``social action'' are either the individuals themselves or the government. For example, I think that if we want to reduce poverty, we should have the government directly use some of its taxing power to provide social welfare for the poor, rather than expect companies to be benevolent. Similarly, the shareholders, if they value poverty reduction, should give their money directly to poor people via effective charities such as GiveDirectly and the GiveWell Maximum Impact Fund. Deviating from profit maximization provides too much leeway in the hands of the CEO and other executives, who have similar incentives to politicians in that they externalize the costs of their poor decisions on the shareholders.
+\end{itemize}
+\section*{Personal Production Functions}
+\begin{itemize}
+	\item I once maximized profit by switching from writing my Econ homework on GoodNotes to writing it in LaTeX. The primary reason was that my expected benefits from not only having more legible work but also having work that was well organized in a folder on my computer were higher than the costs from having to use Sublime Text and possibly spending more time on my homework. I considered the following, and after considering them I figured that switching to LaTeX was a good idea:
+	\begin{itemize}
+		\item The time that it took to set up LaTeX on my computer (not much, but I did have to install a new package for Sublime Text).
+		\item The learning curve (there wasn't much of any, I'm a somewhat experienced user and I can type at around 150 words per minute).
+		\item The difficulty of drawing graphs (I still use GoodNotes on my iPad to draw graphs, then I use the sync function to send them to my computer and I drop them into the images folder).
+	\end{itemize}
+	\item I spend a lot of time on Twitter (perhaps too much time), considering the opportunity cost of producing better school work or spending more time at the gym. I think a mixture of the addictiveness that Twitter has along with the fact that I have made lots of connections through the website keeps me coming back, even though I might feasibly benefit more from a different arrangement. Additionally, changing my habits is a very time consuming task, and even though I'm not maximizing my value by spending so much time on Twitter, switching habits to spend more time at the gym or on school work also has a high opportunity cost.
+\end{itemize}
+}\end{document}
