@@ -414,4 +414,30 @@
 
   We know that $Q_k$ is bipartite because we can create a bipartition where $X$ refers to the tuples with an odd number of $1$ elements, while $Y$ refers to the tuples with an even number of $1$ elements. We know that $X$ and $Y$ are independent sets, since odd and even numbers differ from other odd and even numbers respectively by $2$, so $X$ and $Y$ are a bipartition of $Q_k$.
 \end{problem}
+\begin{problem}{Miscellaneous Proofs and Results}
+  \begin{problem}{Extremal Problem}
+    The minimum number of edges in a connected graph with $n$ vertices is $n-1$.
+  \end{problem}
+  \begin{problem}{Proof}
+    Suppose $G$ has $n-2$ edges. Then, by a previous result, we know that $G$ must have at least $n-(n-2) = 2$ components.
+  \end{problem}
+  \begin{problem}{Connectedness Proof}
+    Let $G$ be a simple $n$-vertex graph. If $\delta(G) \geq \frac{n-1}{2}$, then $G$ is connected.
+  \end{problem}
+  \begin{problem}{Proof}
+    Let $G$ be a simple graph with $\delta(G) \geq \frac{n-1}{2}$, and let $x,y\in V(G)$. If $x\leftrightarrow y$, then we are done. Else, if $x\not\leftrightarrow y$, we have that $|N(x)| \geq \frac{n-1}{2}$, and $|N(y)| \geq \frac{n-1}{2}$. If $G$ were disconnected, it would be the case that $|N(x)\cup N(y)| = |N(x)| + |N(y)|$, implying that the total number of neighbors would be at least $n-1$. However, since there are $n-2$ vertices in the set $V(G) - \{x,y\}$, it must be the case that they share a common neighbor, meaning that there exists a path between $x$ and $y$.
+  \end{problem}
+  We say a graph is $H$-\textbf{free} if there is no induced subgraph of $G$ that is isomorphic to $H$.
+  \begin{itemize}
+    \item The Petersen Graph is triangle-free because its girth is $5$.
+    \item A $2$-regular graph is claw ($K_{1,3}$)-free because the claw graph contains a vertex of degree $3$.
+    \item $Q_k$ is $C_5$ free because $Q_k$ is bipartite, and bipartite graphs do not contain odd cycles.
+  \end{itemize}
+  \begin{problem}{Proposition}
+    The maximum number of edges in an $n$-vertex, triangle-free simple graph is $\lfloor n^2/4\rfloor$.
+  \end{problem}
+  \begin{problem}{Proof}
+    Let $G$ be a triangle-free simple $n$-vertex graph. Suppose $\Delta(G) = k$ and let $d(v) = k$. Since $G$ is triangle-free, we know that $N(v)$ is an independent set. This means that every edge in $G$ must be incident on some vertex in $V(G) - N(v)$. Therefore, $e(G) \leq \sum_{x\in (V - N(v))} d(x) \leq |V - N(v)|\Delta(G) = (n-k)(k)$. The maximum of the function $f(k) = (n-k)(k)$ is when $k = \lfloor n/2 \rfloor$ (assuming integral $k$), so the maximum number of edges is $\lfloor n^2/4\rfloor$.
+  \end{problem}
+\end{problem}
 \end{document}
