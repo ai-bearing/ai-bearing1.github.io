@@ -440,4 +440,34 @@
     Let $G$ be a triangle-free simple $n$-vertex graph. Suppose $\Delta(G) = k$ and let $d(v) = k$. Since $G$ is triangle-free, we know that $N(v)$ is an independent set. This means that every edge in $G$ must be incident on some vertex in $V(G) - N(v)$. Therefore, $e(G) \leq \sum_{x\in (V - N(v))} d(x) \leq |V - N(v)|\Delta(G) = (n-k)(k)$. The maximum of the function $f(k) = (n-k)(k)$ is when $k = \lfloor n/2 \rfloor$ (assuming integral $k$), so the maximum number of edges is $\lfloor n^2/4\rfloor$.
   \end{problem}
 \end{problem}
+\section*{2.1}%
+\begin{problem}{Definitions}
+  A \textbf{forest} is an acylic graph (that is, a graph that does not contain any cycles). A \textbf{tree} is a connected forest. So, a tree is a connected acyclic graph. A \textbf{leaf} (or \textbf{pendant vertex}) is a vertex of degree $1$ contained within a forest.\\
+
+  A \textbf{spanning subgraph} $H$ of a graph $G$ is a subgraph where $V(H) = V(G)$. If $H$ is a tree, we call it a \textbf{spanning tree}. \\
+
+  Since every forest is acyclic, forests thus do not contain any odd cycles, meaning that they are bipartite.
+\end{problem}
+\begin{problem}{Theorems and Proofs}
+  \begin{problem}{Proposition}
+    Every tree with at least $2$ vertices has at least $2$ leaves. Deleting a leaf from an $n$-vertex tree produces a tree with $n-1$ vertices.
+  \end{problem}
+  \begin{problem}{Proposition}
+    For an $n$-vertex graph $G$ with $n\geq 1$, the following are equivalent statements:
+    \begin{enumerate}[(a)]
+      \item $G$ is connected and acyclic
+      \item $G$ is connected and has $n-1$ edges
+      \item $G$ has $n-1$ edges and no cycles
+      \item $G$ has no loops and has, $\forall u,v\in V(G)$, exactly one unique $u,v$ path
+    \end{enumerate}
+  \end{problem}
+  Since any two vertices are connected via exactly one path, we will call this path $xTy$ for tree $T$.
+  \begin{problem}{Corollaries}
+    \begin{enumerate}[(a)]
+      \item Every edge of a tree is a cut-edge
+      \item Adding one edge to a tree forms exactly one cycle
+      \item Every connected graph contains a spanning tree
+    \end{enumerate}
+  \end{problem}
+\end{problem}
 \end{document}
