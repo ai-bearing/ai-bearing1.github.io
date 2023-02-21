@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 20 February, 2023
+Sadly seems like one of my pieces that was going to run for Wednesday is instead going to run for next week on a different topic. Very sad, but I guess this is part of the newspaper business more or less. I'll survive. I have made an [opinions](opinions.md) subpage where I'll store the various items that I have written but haven't found a home for.
+
+---
+
 ### 19 February, 2023
 I think after my first set of midterms, I'm going to switch from using Notion to just using a bunch of LaTeX documents and just hosting them at some link on this website. Notion seemed like a good idea when I started this process, but now it feels a bit cumbersome and I think it's just easier to use LaTeX. A bit sad, but I guess it's good to try things out.
 
