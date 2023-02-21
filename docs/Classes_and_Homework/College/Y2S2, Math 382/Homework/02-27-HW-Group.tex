@@ -1,0 +1,104 @@
+\documentclass[10pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+\usepackage[shortlabels]{enumitem}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+% text + color boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\newtcolorbox{problem}[1]{colback = white, title = {#1}, breakable}
+\newtcolorbox{solution}{colback = white, colframe = black!75!white, title = Solution, breakable}
+%including PDFs
+\usepackage{pdfpages}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ling Chen, Avinash Iyer, Nora Manukyan, Vincent Ng}
+\lhead{Homework Section 1.3, Group}
+\begin{document}{
+  \begin{problem}{1.3.17}
+    Let $G$ be a graph with at least two vertices. Prove or disprove:
+    \begin{enumerate}[(a)]
+      \item Deleting a vertex of degree $\Delta(G)$ cannot increase the average degree.
+      \item Deleting a vertex of degree $\delta(G)$ cannot decrease the average degree.
+    \end{enumerate}
+  \end{problem}
+  \begin{problem}{1.3.25}
+    Prove that every cycle of length $2r$ in a hypercube is contained within a subcube of dimension at most $r$. Can a cycle of length $2r$ be contained in a subcube of dimension less than $r$.
+  \end{problem}
+  \begin{problem}{1.3.31}
+    Using complete graphs and counting arguments, prove the following:
+    \begin{enumerate}
+      \item $\begin{pmatrix}n\\2\end{pmatrix} = \begin{pmatrix} k\\2 \end{pmatrix} + k(n-k) + \begim{pmatrix} n-k \\ 2 \end{pmatrix}$ for $0\leq k \leq n$.
+      \item If $\sum n_i = n$, then $\sum \begin{pmatrix}n_i \\ 2\end{pmatrix} \leq \begin{pmatrix}n \\ 2\end{pmatrix}$.
+    \end{enumerate}
+  \end{problem}
+  \begin{problem}{1.3.41}
+    Prove or disprove: if $G$ is an $n$-vertex simple graph with maximum degree $\lceil n/2 \rceil$ and minimum degree $\lfloor n/2 \rfloor - 1$, then $G$ is connected.
+  \end{problem}
+}\end{document}
