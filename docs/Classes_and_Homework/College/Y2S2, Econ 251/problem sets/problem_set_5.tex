@@ -79,7 +79,7 @@
 \fancyhf{}
 \rhead{Avinash Iyer}
 \lhead{Problem Set 5}
-\begin{document}{
+\begin{document}
   \begin{problem}{An Increase in Research Productivity}
     Suppose that the economy is on a balanced growth path in the Romer model. Then, in $2030$, research productivity $\overline{z}$ rises immediately and permanently to $\overline{z}'$.
     \begin{enumerate}[(a)]
@@ -174,4 +174,38 @@
       \item What is the growth rate of output per person in this economy?
     \end{enumerate}
   \end{problem}
-}\end{document}
+  \begin{solution}
+    \begin{tcolorbox}[colback = white, title = (a), breakable]
+      \begin{itemize}
+        \item In the first equation, we are assuming that output is a function of ideas, $A$, which have diminishing marginal product, and labor output.
+        \item In the second equation, the rate of new idea production is equal to the product of $\overline{z}$, the research productivity, and $L_{at}$, the labor force dedicated to research output, as well as the previous year's research (since we are assuming no ``idea depreciation'').
+        \item In the third equation, we have our resource constraint --- namely, that there is a finite number of laborers, split between labor output and research output.
+        \item In the fourth equation, we are defining the research labor to be a certain fraction, $\overline{\ell}$ of the total labor force $\overline{L}$.
+      \end{itemize}
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (b), breakable]
+      \begin{align*}
+        \Delta A_t &= \overline{z}\overline{\ell}\overline{L}A_t \\
+        \frac{\Delta A_t}{A_t} &= \overline{z}\overline{\ell}\overline{L}\\
+        \\
+        g_a &= \boxed{\overline{z}\overline{\ell}\overline{L}}
+      \end{align*}
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (c) and (d), breakable]
+      \begin{align*}
+        Y_t &= A_t^{1/2}L_{yt} \\
+        y_t &= A_t^{1/2} (1-\overline{\ell}) \\
+            &= A_0^{1/2} \left((1 + \overline{z}\overline{\ell}\overline{L})^t\right)^{1/2} (1-\overline{\ell}) \\
+            &=  A_0^{1/2} (1 + \overline{z}\overline{\ell}\overline{L})^{t/2} (1-\overline{\ell}) \\
+            \\
+        g_y &= \frac{\overline{z}\overline{\ell}\overline{L}}{2}
+      \end{align*}
+    \end{tcolorbox}
+  \end{solution}
+  \begin{problem}{Methodologies Used by Macroeconomists to Conduct Research}
+    How do the articles about development aid illustrate the various techniques used by economists to conduct research? Specifically, create a list of the various techniques that are discussed in these articles. Briefly, describe these techniques with concrete examples from the articles.
+  \end{problem}
+  \begin{problem}{Development Aid}
+    Development Aid. Based on the findings from the articles about development aid, how can development aid (1) reduce conflicts, (2) increase human capital attainment and (3) increase access to water.
+  \end{problem}
+\end{document}
