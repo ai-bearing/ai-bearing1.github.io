@@ -84,6 +84,14 @@
   \begin{problem}{1.3.3}
     Let $u$ and $v$ be adjacent vertices in $G$. Prove that $uv$ belongs to at least $d(u) + d(v) - n(G)$ triangles in $G$.
   \end{problem}
+  \begin{solution}
+    Let $u\leftrightarrow v \in G$. In order for $uv$ to be in a triangle in $G$, $u$ and $v$ must share a common neighbor. By using the property of inclusion and exclusion, we can find the set as follows:
+    \begin{align*}
+      |N(u) \cup N(v)| &= |N(u)| + |N(v)| - |N(u) \cap N(v)| \\
+      |N(u) \cap N(v)| &= |N(u)| + |N(v)| - |N(u) \cup N(v)| \\
+                       &= d(u) + d(v) - n(G)
+    \end{align*}
+  \end{solution}
   \begin{problem}{1.3.4}
     Prove that the graph below is isomorphic to $Q_4$.
     \begin{center}
@@ -133,6 +141,9 @@
       \end{tikzpicture} 
     \end{center}
   \end{problem}
+  \begin{solution}
+    We can assign tuples to the graph as follows:
+  \end{solution}
   \begin{problem}{1.3.6}
     Given graphs $G$ and $H$, determine the number of components and maximum degree in $G+H$ in terms of the parameters for $G$ and $H$.
   \end{problem}
