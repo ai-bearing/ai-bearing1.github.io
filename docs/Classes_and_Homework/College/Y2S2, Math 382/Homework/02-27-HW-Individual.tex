@@ -212,6 +212,20 @@
   \begin{problem}{1.3.7}
     Determine the maximum number of edges in a bipartite subgraph of $P_n$, $C_n$, and $K_n$.
   \end{problem}
+  \begin{solution}
+    For the graph $P_n$, we will create a bipartition by starting at an endpoint of the path and alternating vertices in the sets $A$ and $B$. This is a bipartition since a path does not include any repeated vertices or edges, so $A$ and $B$ are independent sets. Therefore, the maximum number of edges in a bipartite subgraph of $P_n$ is the number of edges in $P_n$, which is $n-1$.\\
+
+    For $C_n$, we have two values of the maximum number of edges in a bipartite subgraph of $C_n$:
+    \begin{itemize}
+      \item If $n$ is even, then $C_n$ is a bipartite graph already, meaning that the maximum number of edges in a bipartite subgraph of $C_n$ is the number of edges in $C_n$, which is $n$.
+      \item If $n$ is odd, then $C_n$ is not a bipartite graph. After one edge deletion, we get that $C_n - e = P_n$, which is bipartite, so the maximum number of edges in a bipartite subgraph of $C_n$ is the number of edges in $P_n$, which is $n-1$.
+    \end{itemize}
+    For the graph $K_n$, there are two options for the maximum number of edges in a bipartite subgraph depending on the value of $n$:
+    \begin{itemize}
+      \item If $n$ is even, then the subgraph $K_{\frac{n}{2},\frac{n}{2}}$ is the maximal bipartite subgraph, meaning that the number of edges is equal to $n^2/4$. We know that $K_{\frac{n}{2},\frac{n}{2}}$ is a subgraph of $K_n$ because the vertex set is the same, and $K_n$ is complete, so any subset of edges is a subset of the edge set of $K_n$.
+      \item If $n$ is odd, then the subgraph $K_{\lfloor \frac{n}{2}\rfloor, \lceil \frac{n}{2}\rceil}$ is the maximal bipartite subgraph, because $\lfloor \frac{n}{2}\rfloor + \lceil \frac{n}{2}\rceil = n$ and $K_n$ is complete. Therefore, the total number of edges is $\lfloor \frac{n^2}{4}\rfloor$.
+    \end{itemize}
+  \end{solution}
   \begin{problem}{1.3.26 (a)}
     Count the $6$-cycles in $Q_3$.
   \end{problem}
