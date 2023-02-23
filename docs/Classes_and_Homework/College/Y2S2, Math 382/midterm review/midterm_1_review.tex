@@ -489,5 +489,12 @@
       \item Every connected graph contains a spanning tree
     \end{enumerate}
   \end{problem}
+  \begin{problem}{Proofs}
+    Because there are no cycles in a tree, this means no edges in a tree are in any cycles, meaning that there are no edges that could be deleted without increasing the number of components, so every edge in a tree is a cut-edge.\\
+
+    Let $e = xy$ where $e\notin E(T)$, and let $P = xTy$. Suppose $T+e$ contained more than one cycle --- this would mean that $T$ would end up having at least one cycle, as $T = T+e-e$. However, since $T$ contains no cycle, this means $T+e$ contains the specific cycle $P+e$, and only the specific cycle.\\
+
+    We can construct a spanning tree from a connected graph $G$ by searching for a cycle and deleting edges until there are no more cycles, until we get $G'$. Since we did not delete any vertices, and $E(G')\subseteq E(G)$, and there are no cycles in $G'$, this means $G'$ is a spanning tree of $G$.
+  \end{problem}
 \end{problem}
 \end{document}
