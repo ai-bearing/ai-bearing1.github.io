@@ -24,6 +24,7 @@ I am a math and econ student at Occidental College. I'm going to be using this w
 - [Graph Theory up to Midterm 1](https://aiyer.notion.site/Math-382-Notes-7eb7de261b55436b80fb75fbb861c929)
 - [Intermediate Macroeconomics up to Midterm 1](https://aiyer.notion.site/Intermediate-Microeconomics-Class-Notes-b8d4f978e5734db38662eb6e32a44bd6)
 - [Graph Theory Midterm 1 Review](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/midterm review/midterm_1_review.pdf)
+- [Graph Theory Homeworks up to Midterm 1](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/midterm review/homeworks_to_midterm_1.pdf)
 
 ### Fall 2022
 - [Topology Notes](https://aiyer.notion.site/Topology-Final-Exam-Notes-4603c14e5cb94f45a867fca3164d27a5)

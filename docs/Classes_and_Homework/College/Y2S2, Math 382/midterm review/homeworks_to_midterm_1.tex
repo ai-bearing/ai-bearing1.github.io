@@ -1,4 +1,4 @@
-\documentclass[8pt]{extarticle}
+\documentclass[10pt]{extarticle}
 \title{}
 \author{Avinash Iyer}
 \date{}
@@ -87,15 +87,12 @@
 \subsection*{Individual}
 \begin{problem}{1.1.1}
   Determine which complete bipartite graphs are complete graphs.
-\end{problem}
-\begin{solution}
+  \tcblower
   $K_{1,1}$ is the only complete bipartite graph that is complete
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.3}
   Using rectangular blocks whose entries are all equal, write down an adjacency matrix for $K_{m,n}$.
-\end{problem}
-\begin{solution}
-  
+  \tcblower
   \[
     K_{m,n} = \begin{bNiceMatrix}[first-row,first-col]
           & a_1 & a_2 & \cdots & a_m & b_1 & b_2 & \cdots & b_n \\
@@ -109,11 +106,10 @@
       b_n & 1 & 1 & \cdots & 1 & 0 & 0 & \cdots & 0 \\
     \end{bNiceMatrix}
   \]
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.5}
     Prove or disprove: If every vertex of a simple graph $G$ has degree 2, then $G$ is a cycle.
-\end{problem}
-\begin{solution}
+    \tcblower
   Let $G$ be the following graph:
     \begin{center}
         \begin{tikzpicture}
@@ -130,7 +126,7 @@
         \end{tikzpicture}
     \end{center}
     Every vertex in $G$ has a degree 2, yet $G$ is not a cycle. 
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.8}
     Prove that the 8 vertex graph below decomposes into copies of $K_{1,3}$ and also into copies of $P_4$
   \begin{center}
@@ -153,12 +149,11 @@
         \draw[thick] (1,-1) -- (2,-2);
       \end{tikzpicture}
   \end{center} 
-\end{problem}
-\begin{solution}
+  \tcblower
     \begin{center}
       \includegraphics[width=10cm]{1_1_8}
     \end{center}
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.9}
       Prove that the graph below is isomorphic to the complement of the previous graph
   \begin{center}
@@ -185,66 +180,173 @@
         \draw[thick] (-2,-2) -- (-1,1);
       \end{tikzpicture}
   \end{center} 
-\end{problem}
-\begin{solution}
+  \tcblower
   \begin{center}
-    \includegraphics[width=15cm]{1_1_9}
+    \includegraphics[width=10cm]{1_1_9}
   \end{center}
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.10}
    Prove or disprove: the complement of a simple disconnected graph must be connected.
-\end{problem}
-\begin{solution}
+   \tcblower
    Let $G$ be a graph that is disconnected. We want to show that $\forall x,y\in V(G), \exists xz$ path. We can split into two cases.
      \begin{itemize}
        \item Suppose $x\not\leftrightarrow y$ in $G$. Then, in $\overline{G}$, $x\leftrightarrow y$ by the definition of a graph complement.
        \item Suppose $x\leftrightarrow y$ in $G$. Then, since $G$ is disconnected, we know that there must be some $z\in V(G)$ such that there is no $xz$ path. Since there is no $xz$ path, then there is no $yz$ path. In particular, this means $x\not\leftrightarrow z$ and $y\not\leftrightarrow z$ in $G$. Therefore, in $\overline{G}$, we have that $x\leftrightarrow z$ and $y\leftrightarrow z$, meaning there is a path between $x$ and $y$.
      \end{itemize}
-\end{solution}
+\end{problem}
 \subsection*{Group}%
 \begin{problem}{1.1.13}
     Let $G$ be the graph whose vertex set is the set of $k$-tuples with coordinates $\{0,1\}$, with $x$ adjacent to $y$ if $x$ and $y$ differ by exactly one position. Determine whether $G$ is bipartite.
-\end{problem}
-\begin{solution}
+    \tcblower
   $G$ is bipartite --- we can find a bipartition by separating the set into a set of tuples which differ by an even number of positions and a set of tuples which differ by an odd number of positions. Since odd numbers differ from each other by at least $2$ places, and even numbers differ from each other by at least $2$ places, we know that each subset of tuples is not adjacent to each other, but is adjacent to the other set. 
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.26}
   Let $G$ be a graph with girth $4$ in which every vertex has degree $k$. Prove that $G$ has at least $2k$ vertices. Determine all such graphs with $2k$ vertices.
-\end{problem}
-\begin{solution}
+  \tcblower
   \noindent Suppose $G$ is a graph with girth $4$ with every vertex of degree $k$. Let $v_i\in V(G)$. Then, there must be $k$ vertices which $v_i$ is adjacent to. However, none of these vertices can be adjacent to themselves or $G$ would have girth $3$. Thus, we can form a bipartition such that $v_i$ is in a set of at least $k$ vertices such that each vertex is not adjacent to itself, and each vertex in this set is adjacent to $k$ vertices in a disjoint set where each vertex in this set is not adjacent to any other vertex in this set. Therefore, there are at least $2k$ vertices.\\
 
   \noindent The graphs with exactly $2k$ vertices are the $K_{n,n}$ complete bipartite graphs.
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.27}
     Let $G$ be a graph with girth 5. Prove that if every vertex of $G$ has degree at least $k$, then $G$ has at least $k^2+1$ vertices. For $k=2$ and $k=3$, find one such graph with $k^2+1$ vertices.
-\end{problem}
-\begin{solution}
+    \tcblower
   \noindent Let $G$ be a simple graph with girth 5. Suppose that every vertex of $G$ has degree $k$. Let $u\in V(G)$. Then, $u$ has $k$ adjacent vertices, each of which is not adjacent to each other (or else the girth of $G$ would be $3$). Let this set be $N$. The elements of $N$ cannot have any other common neighbors aside from $u$, or else the girth of $G$ would be $4$, meaning each has $k-1$ distinct neighbors. Therefore, the total number of vertices in our graph includes $u$, the elements of $N$ that are the $k$ distinct neighbors of $u$, and the $k(k-1)$ distinct vertices for each vertex in $N$. Therefore, our total is $1 + k + k(k-1) = k^2 + 1$.\\
 
   \noindent If there were any vertex with degree greater than $k$, then there would be additional vertices beyond the $k^2 + 1$ vertices necessary for a $k$-regular graph.\\
 
   \noindent For  $k=2$, we have the graph $C_5$ for an example of a graph with $k^2 + 1$ vertices, and for $k=3$ we have the Petersen graph.
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.30}
     Let $G$ be a simple graph with adjacency matrix $A$ and incidence matrix $M$. Prove that the degree of $v_i$ is the $i$th diagonal entry of $A^2$ and $MM^T$. What do the entries in position $(i,j)$ of $A^2$ and $MM^T$ say about $G$?
-\end{problem}
-\begin{solution}
+\tcblower
   \noindent Let $A$ be the adjacency matrix for a simple graph $G$. In $A$, every vertex's corresponding row and column are identical, meaning that the entry $A^2_{i,i}$ will be equal to $r_ic_i$ for row $i$ and column $i$ corresponding to $v_i$. Thus, $r_ic_i$ is equal to $|c_i|^2$, which is equal to the sum of the elements of $c_i$, which is equal to the degree of $v_i$.\\
 
   \noindent Let $M$ be the incidence matrix for a simple graph $G$. In $MM^T$, the diagonal element $MM^T_{i,i}$ will be equal to $r_i r_i^T$, where $r_i$ represents the edge incidence row of $v_i$. This is equal to $\left|r_i^T\right|^2$, which is equal to the sum of the elements of $r_i$, which is equal to the number of edges incident on $v_i$, which is equal to the degree of $v_i$.\\
 
   \noindent The entry in position $(i,j)$ in both $A^2$ and $MM^T$ shows whether vertices $v_i$ and $v_j$ are adjacent to each other.
-\end{solution}
+\end{problem}
 \begin{problem}{1.1.34}
     Decompose the Petersen graph into three connected subgraphs that are pairwise isomorphic. Also decompose it into copies of $P_4$.
-\end{problem}
-\begin{solution}
+    \tcblower
   \begin{center}
     \includegraphics[width = 15cm]{1_1_34.pdf}
   \end{center}
-\end{solution}
+\end{problem}
 \section*{1.2}%
 \subsection*{Individual}%
+\begin{problem}{1.2.1}
+    Determine whether the following statements are true or false:
+      \begin{itemize}
+        \item Every disconnected graph has an isolated vertex.
+        \item A graph is connected if and only if some vertex is connected to all other vertices.
+        \item The edge set of every closed trail can be partitioned into edge sets of cycles.
+        \item If a maximal trail in a graph is not closed, then its endpoints have odd degree.
+      \end{itemize}
+      \tcblower
+      \begin{itemize}
+        \item False; we can imagine a graph with two components, each of which consists of $K_3$, where there are no isolated vertices.
+        \item True; since $\forall u,v\in G,\exists u,v$ path by the definition of a connected graph, this means any vertex must have a path to any other vertex.
+        \item True; every closed trail contains within it a cycle --- we can delete the edge set of this cycle, and find cycles within remaining components until we reach isolated vertices.
+        \item True; if there were a maximal trail with an endpoint of even degree, then we would be able to extend the trail further by re-entering the endpoint vertex.
+      \end{itemize}
+\end{problem}
+\begin{problem}{1.2.5}
+    Let $v$ be a vertex of a connected simple graph $G$. Prove that $v$ has a neighbor in every component of $G-v$. Explain why this allows us to conclude that no graph has a cut-vertex of degree 1.   
+    \tcblower
+    Suppose that $G-v$ is connected. Then, since $G$ is connected, and $v\in V(G)$, it must be the case that $v$ is connected to every component of $G-v$, meaning that it has a neighbor in every component of $G-v$ as $G-v$ is connected.\\
 
+    Now suppose that $G-v$ is disconnected, meaning that it has more than one component after removing $v$. Before, $v$ must have been connected to every vertex in $G$ as $G$ was a simple connected graph, and afterwards $G-v$ is no longer connected, meaning that $v$ is a cut-vertex. This means $v$ must have been adjacent to a vertex in each component of $G-v$, as removing the incident edges on $v$ along with $v$ increased the number of components from the original $1$ that was in $G$.\\
+
+    From this result, we can conclude that no cut-vertex has degree $1$ as removing a vertex of degree $1$ and its incident edges does not increase the number of components in $G$, since there is only one edge incident on a vertex of degree $1$.
+\end{problem}
+\begin{problem}{1.2.6}
+    In the graph below, find all the maximal paths, maximal cliques, and maximal independent sets. Also, find all the maximum paths, cliques, and independent sets. 
+      \begin{center}
+          \begin{tikzpicture}
+            \fill (0,0) circle (3pt);
+            \fill (-1,1) circle (3pt);
+            \fill (-1,-1) circle (3pt);
+            \fill (1,0) circle (3pt);
+            \node[anchor = south] at (0,0.1) {$c$};
+            \node[anchor = south] at (1,0.1) {$d$};
+            \node[anchor = east] at (-1.1,-1) {$a$};
+            \node[anchor = east] at (-1.1,1) {$b$};
+            \draw (-1,-1) -- (-1,1) -- (0,0) -- (-1,-1);
+            \draw (0,0) -- (1,0);
+          \end{tikzpicture}
+      \end{center}
+      \tcblower
+    \begin{itemize}
+        \item The maximal paths are as follows:
+       \begin{itemize}
+         \item $d,c,b,a$
+         \item $d,c,a,b$
+         \item $a,b,c,d$
+         \item $b,a,c,d$
+         \item $b,c,a$
+         \item $c,b,a$
+         \item $a,c,b$
+       \end{itemize}
+     \item The maximal cliques are $K_3$ consisting of $a,b,c$ and $K_2$ consisting of $c,d$.
+     \item The maximal independent sets are $\{a,d\}$ and  $\{b,d\}$.
+     \item The maximum path is any of those paths listed above with length $4$.
+     \item The maximum clique is $K_3$.
+     \item The maximum independent sets are those listed above with size $2$.
+    \end{itemize}
+\end{problem}
+\begin{problem}{1.2.8}
+    Determine the values of $m$ and $n$ such that $K_{m,n}$ is Eulerian. 
+    \tcblower
+    \[
+      m,n\in 2\mathbb{Z}^{+}
+    \]
+\end{problem}
+\begin{problem}{1.2.10}
+      Prove or disprove:
+      \begin{enumerate}[(a)]
+          \item Every Eulerian bipartite graph has an even number of edges.
+          \item Every Eulerian simple graph with an even number of vertices has an even number of edges.
+        \end{enumerate}
+        \tcblower
+      \begin{tcolorbox}[colback = white, title = (a)]
+        Let $G$ be an Eulerian bipartite graph. Since $G$ is Eulerian, it must contain an Eulerian cycle, meaning that as seen above, there are an even number of vertices, meaning that there are an even number of edges in $G$. 
+      \end{tcolorbox}
+
+      \begin{tcolorbox}[colback = white, title = (b)]
+        Let $G$ be an Eulerian simple graph with an even number of vertices. Since $G$ is Eulerian, this means there must be an Eulerian circuit $C$ that traverses every edge exactly once in $G$. Every vertex in $G$ must have even degree (or else we would require a backtrack in our Eulerian cycle, which is not a circuit); a simple pairing of the vertices would yield that we have $\lfloor n/2\rfloor $ edges, and to complete the cycle we need $2(n/2) + 2k$ edges for $n$ vertices and some integer $k$. Therefore, there must be an even number of edges.
+      \end{tcolorbox}
+\end{problem}
+\subsection*{Group}%
+\begin{problem}{1.2.20}
+  Let $v$ be a cut-vertex of a simple graph $G$. Prove that $\overline{G} - v$ is connected.
+  \tcblower
+  Let $x,y,v\in V(\overline{G})$, where $v$ is a cut-vertex of $G$.\\
+
+  Suppose $x$ and $y$ belong to distinct components of $G-v$. Then, $xy\not\in E(G)$, meaning that $xy\in E(\overline{G})$, meaning there is an $x,y$ path in $\overline{G}$, so there is an $x,y$ path in $\overline{G}-v$.\\
+
+  Suppose $x$ and $y$ are in the same component of $G-v$. Since $v$ is a cut-vertex, this means there must be at least two components in $G-v$. Let $H_1$ be the component that $x,y$ are in, while $\exists w\in H_2$ is a vertex in $H_2$ disjoint from $H_1$. Since $H_1$ and $H_2$ are disjoint, this means the components do not contain any edges between them, so $x\not\leftrightarrow w$ and $y\not\leftrightarrow w$ in $G-v$ --- however, this means that $x\leftrightarrow w$ and $y\leftrightarrow w$ in $\overline{G}$, meaning that $\exists x,y$ path in $\overline{G} - v$.
+\end{problem}
+\begin{problem}{1.2.22}
+  Prove that a graph is connected if and only if for every partition of its vertices into two nonempty sets, there is an edge with endpoints in both sets. 
+  \tcblower
+  Let $G$ be a graph where there exists a partition of its vertices into two non-empty sets such that there is no edge with endpoints in both sets. Call these sets $A$ and $B$. By our assumptions, $\forall u\in A$ and $\forall v\in B$, $\nexists e$ such that $e = uv$. Therefore, we cannot create a path between any $u\in A$ and any $v\in B$ as there is no edge to connect any element in $A$ and any element in $B$. Therefore, $G$ is disconnected.\\
+
+  Suppose $G$ is a disconnected graph. Then, $G$ contains more than one component --- we can create a partition of $V(G)$ by letting $H_1,H_2,\dots,H_k$ refer to the $k$ components of $G$. Each of these components is necessarily disjoint from every other component. By taking $H = H_1\cup H_2\cup\dots\cup H_{k-1}$ as one set and $H_k$ as our other set, we know that $H_1,\dots,H_k$ are all disjoint, meaning that $H$ and $H_k$ are disjoint, meaning that there is no edge connecting any vertex $H$ with any vertex in $H_k$, meaning we have created a partition of $G$ such that there exists no edge between any vertex in one set and any vertex in the other set.
+\end{problem}
+\begin{problem}{1.2.26}
+  Prove that a graph $G$ is bipartite if and only if every subgraph $H$ of $G$ has an independent set consisting of at least half of $V(H)$.
+  \tcblower
+  Suppose $G$ is bipartite. Then, there exists a partition of the vertices $V = X\sqcup Y$ such that $X$ and $Y$ are independent sets. Let $H$ be a subgraph of $G$, and let $H_X = X\cap V(H)$ and $H_Y = Y\cap H$. Because $H$ is a subgraph of $G$, each vertex of $H$ must be an element of either $H_X$ or $H_Y$, or that $V(H) = H_X \sqcup H_Y$. WLOG, let $|H_X|>|H_Y|$. Since $H_X\subseteq X$ and $X$ is an independent set, $H_X$ is an independent subset consisting of at least half of $V(H)$.\\
+
+  Suppose every subgraph of $G$ has an independent set consisting of at least half of $V(H)$. We will suppose toward contradiction that $G$ is not bipartite. Then, $G$ must contain an odd cycle, $H_1$. However, an independent set of $H_1$ consists of at most $\lfloor \frac{|V(H_1)|}{2}\rfloor < \frac{|V(H_1)|}{2}$, otherwise two vertices would be adjacent. Because $H_1$ is an independent set with less than half of the elements of $V(H)$, we have reached a contradiction. Therefore, $G$ must be bipartite.
+\end{problem}
+\begin{problem}{1.2.38}
+  Prove that every $n$-vertex graph with at least $n$ edges contains a cycle.
+  \tcblower
+  We proceed via induction as follows:\\
+
+  For the base case where $|V(G)| = 1$, we know that there is a cycle with one edge that connects back on the vertex.\\
+
+  For the case where $|V(G)| > 1$, if $v\in V(G)$ has degree at most $1$, then $G-v$ has $n-1$ vertices and at least $n-1$ edges, so by our inductive hypothesis, we know that $G-v$ contains a cycle. Meanwhile, if $\forall v\in V(G), d(v)\geq 2$, we know by Lemma 1.2.25 that $G$ contains a cycle.
+\end{problem}
 \end{document}
