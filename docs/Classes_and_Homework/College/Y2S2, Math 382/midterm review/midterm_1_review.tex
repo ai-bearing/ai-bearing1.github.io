@@ -305,15 +305,10 @@
   \end{problem}
   \begin{problem}{Proof}
     We will proceed via induction as follows:
-    \begin{itemize}
-      \item Base case: if $\ell = 1$, then we know that this is a cycle.
-      \item Inductive Hypothesis:
-        \begin{itemize}
-          \item Find a repeated vertex $x$ within $W$ aside from the starting point $u$ itself. That is, $W = u,\dots,x,\dots,x,\dots,u$.
-          \item If there is no repeated vertex other than $u$ itself, then we have an odd cycle.
-          \item Else, consider $W' = x,\dots,x$ and $W'' = u,\dots,x,\dots,u$ found by deleting the first instance of $x$ and the remaining edges between that first instance and the second instance of $x$.
-          \item We know that since $\ell(W)$ is odd, and $\ell(W) = \ell(W') + \ell(W'')$, we must have that one of $\ell(W')$ or $\ell(W'')$ must be odd.
-        \end{itemize}
+    \begin{description}[font=\scshape]
+      \item[Base Case] If $\ell = 1$, then we know that this is a cycle.
+      \item [Inductive Hypothesis] Find a repeated vertex $x$ within $W$ aside from the starting point $u$ itself. That is, $W = u,\dots,x,\dots,x,\dots,u$. If there is no repeated vertex other than $u$ itself, then we have an odd cycle.
+      \item[Proof] Else, consider $W' = x,\dots,x$ and $W'' = u,\dots,x,\dots,u$ found by deleting the first instance of $x$ and the remaining edges between that first instance and the second instance of $x$. We know that since $\ell(W)$ is odd, and $\ell(W) = \ell(W') + \ell(W'')$, we must have that one of $\ell(W')$ or $\ell(W'')$ must be odd.
     \end{itemize}
   \end{problem}
   \begin{problem}{Proposition}
@@ -363,9 +358,10 @@
     ($\Rightarrow$) Whenever we ``enter'' a vertex during an Eulerian circuit, we also have to ``exit'' the vertex at an edge. If a vertex is not on the trail, then it has no incident edges and so the vertex is a trivial component. Additionally, if $G$ has multiple components, then there is no trail connecting all components and so $G$ cannot be Eulerian.\\
 
     ($\Leftarrow$) Suppose all vertices of $G$ are of even degree and $G$ has only one nontrivial component. Let $e(G) = |E(G)|$
-    \begin{itemize}
-      \item In the base case, suppose $e(G) = 0$. Then, there is an Eulerian circuit and every vertex is of even degree (namely, $0$).
-      \item If $e(G) > 0$, then every vertex in $G$ has a degree at least $2$. This means $\exists C\subseteq G$ where $C$ is a cycle. If we delete the edges of the cycle, then the vertices of $G$ have their degree reduced by either $0$ or $2$, so $G$ retains the property that its vertices are all of even degree. In each nontrivial component of $G-C$, by the inductive hypothesis, they contain within themselves an Eulerian circuit. We can construct an Eulerian circuit by walking along the edges of $C$, and whenever we reach a nontrivial component of $G-C$, find an Eulerian circuit within each component, then go back along $C$.
+    \begin{description}[font=\scshape]
+      \item[Base Case] Suppose $e(G) = 0$. Then, there is an Eulerian circuit and every vertex is of even degree (namely, $0$).
+      \item[Inductive Hypothesis] If $e(G) > 0$, then every vertex in $G$ has a degree at least $2$. This means $\exists C\subseteq G$ where $C$ is a cycle. If we delete the edges of the cycle, then the vertices of $G$ have their degree reduced by either $0$ or $2$, so $G$ retains the property that its vertices are all of even degree. In each nontrivial component of $G-C$, by the inductive hypothesis, they contain within themselves an Eulerian circuit.
+      \item[Proof] We can construct an Eulerian circuit by walking along the edges of $C$, and whenever we reach a nontrivial component of $G-C$, find an Eulerian circuit within each component, then go back along $C$.
     \end{itemize}
   \end{problem}
 \end{problem}
@@ -522,11 +518,12 @@
   \end{itemize}
   \begin{problem}{Proof}
     We will use induction to prove as follows:
-    \begin{description}[font=\normalfont]
-      \item[Base Case:] Suppose $T$ has $0$ edges. Then, $T$ is contained within $G$ because $G$ is a simple graph with at least one vertex.
-      \item[Inductive Hypothesis:] If $e(T) < k$ and $\delta(G) \geq e(T)$, then $G$ contains a copy of $T$. Suppose that $e(T) = k$ and $T$ contains a leaf $v$. Then, $T-v$ is a tree with $e(T-v) = k-1$. Since $e(T-v)<k$ and $\delta(G) \geq e(T-v)$, the inductive hypothesis implies that $G$ contains a subgraph isomorphic to $T-v$. 
-      \item[Proving for $k+1$:] Let $u$ be a vertex adjacent to $v$, and let $x$ be the vertex that corresponds to $u$. Since $d_{G}(x)\geq k$ and $u$ contains maximum $k-1$ neighbors not equal to $u$ (since $T-v$ contains $k$ vertices), this means $\exists y\in G$ such that $x\leftrightarrow y$, where $y$ corresponds to $v\in T$.
+    \begin{description}[font=\scshape]
+      \item[Base Case] Suppose $T$ has $0$ edges. Then, $T$ is contained within $G$ because $G$ is a simple graph with at least one vertex.
+      \item[Inductive Hypothesis] If $e(T) < k$ and $\delta(G) \geq e(T)$, then $G$ contains a copy of $T$. Suppose that $e(T) = k$ and $T$ contains a leaf $v$. Then, $T-v$ is a tree with $e(T-v) = k-1$. Since $e(T-v)<k$ and $\delta(G) \geq e(T-v)$, the inductive hypothesis implies that $G$ contains a subgraph isomorphic to $T-v$. 
+      \item[Proof] Let $u$ be a vertex adjacent to $v$, and let $x$ be the vertex that corresponds to $u$. Since $d_{G}(x)\geq k$ and $u$ contains maximum $k-1$ neighbors not equal to $u$ (since $T-v$ contains $k$ vertices), this means $\exists y\in G$ such that $x\leftrightarrow y$, where $y$ corresponds to $v\in T$.
     \end{description}
+    This inequality is not sharp --- the graph $K_4$ has $\delta(G) = 3$, but cannot fit a tree of size $4$ because a tree of size $4$ has order $5$.
   \end{problem}
 \end{problem}
 \begin{problem}{Graph Measures}
