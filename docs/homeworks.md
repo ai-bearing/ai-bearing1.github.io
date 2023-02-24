@@ -17,7 +17,7 @@ Every time we do a problem set, we also have to self-grade it for corrections.
 - [Problem Set 2](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_2.pdf)
   - [Problem Set 2, graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_2_graded.pdf)
 - [Problem Set 3](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_3.pdf)
-  - [Problem Set 3, graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problem sets/problem_set_3_graded.pdf)
+  - [Problem Set 3, graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_3_graded.pdf)
 - [Problem Set 4](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_4.pdf)
   - Note: I did not get this problem set self-graded.
 - [Problem Set 5](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_5.pdf)
