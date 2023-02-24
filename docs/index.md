@@ -10,10 +10,7 @@ I am a math and econ student at Occidental College. I'm going to be using this w
 ## [My CV](https://ai-bearing.github.io/CVDraft.pdf)
 
 ## Interests
-- Abstract Algebra and Topology
-- Urbanism
-- Liberalism
-- Weightlifting
+- Math
 - Coffee
 - Writing
 
@@ -35,5 +32,3 @@ I am a math and econ student at Occidental College. I'm going to be using this w
 - [Blog-ish](blog.md)
 - [Articles for *The Occidental*](https://theoccidentalnews.com/author/iyera)
 - [Advent of Code](adventofcode.md)
-- [R Workthrough](NSP_R_Workthrough.md)
-
