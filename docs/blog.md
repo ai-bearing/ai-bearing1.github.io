@@ -1,10 +1,15 @@
 ---
 layout: page
-title: "Blog-ish"
+title: "Microblog"
 permalink: /blog.html
 ---
 ## What this is
 This is less of a typical blog and more an online journal where I write down my thoughts on various things that are on my mind at that period in time. I'm going to try to update this regularly. I will try to keep profanity to a minimum, but readers are advised that there will probably be a nonzero amount of profanity.
+
+---
+
+### 24 February, 2023
+Rain, rain, go away, come again another day (when it's not close to midterm season). Hopefully I will get the jump on studying for midterms, first one is on Wednesday at 8:30 am for Macro, covering a bunch of models that are largely fake.
 
 ---
 
