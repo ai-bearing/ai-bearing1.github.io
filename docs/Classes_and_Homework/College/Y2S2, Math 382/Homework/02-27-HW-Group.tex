@@ -111,6 +111,11 @@
   \begin{problem}{1.3.25}
     Prove that every cycle of length $2r$ in a hypercube is contained within a subcube of dimension at most $r$. Can a cycle of length $2r$ be contained in a subcube of dimension less than $r$.
   \end{problem}
+  \begin{solution}
+    Let $C$ be a cycle of length $2r$ in $Q_n$. Then, $C$ contains $2r$ $n$-tuples. For every tuple in $C$, there exists a ``switched'' tuple where every coordinate is equal to its other, corresponding coordinate, except for one. Since $C$ is a cycle, every coordinate that is switched must be returned to its original state at the end of the cycle --- since there are $2r$ switches (corresponding to the $2r$ vertices), this means there are $r$ coordinates that are switched, then switched back sometime along the cycle's path. This means the other $n-r$ coordinates are fixed, implying that $C\subseteq Q_r$, the $r$-dimensional subcube of $Q_k$.\\
+
+    There is a cycle of length $8$ in $Q_3$, defined as follows: $000 \rightarrow 001 \rightarrow 011 \rightarrow 010 \rightarrow 110 \rightarrow 111 \rightarrow 101 \rightarrow 100 \rightarrow 000$.
+  \end{solution}
   \begin{problem}{1.3.31}
     Using complete graphs and counting arguments, prove the following:
     \begin{enumerate}[(a)]
