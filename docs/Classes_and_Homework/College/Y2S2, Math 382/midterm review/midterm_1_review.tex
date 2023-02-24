@@ -194,6 +194,19 @@
   \begin{quote}
     The simple graph whose vertices are the 2-element subsets of a 5 element set, and whose edges are the pairs of disjoint 2-element sets.
   \end{quote}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw (18:2cm) -- (90:2cm) -- (162:2cm) -- (234:2cm) --
+      (306:2cm) -- cycle;
+      \draw (18:1cm) -- (162:1cm) -- (306:1cm) -- (90:1cm) --
+      (234:1cm) -- cycle;
+      \foreach \x in {18,90,162,234,306}{
+      \draw (\x:1cm) -- (\x:2cm);
+      \filldraw (\x:2cm) circle (3pt);
+      \filldraw (\x:1cm) circle (3pt);
+      }
+    \end{tikzpicture}
+  \end{center}
   We can show a couple theorems using this definition of the Petersen Graph.
   \begin{problem}{Propositions about the Petersen Graph}
     \begin{itemize}
@@ -203,20 +216,11 @@
     \end{itemize}
   \end{problem}
   \begin{problem}{Solution}
-    \begin{quote}
-      Every vertex in the Petersen graph has degree 3.
-    \end{quote}
-    Because there are $3$ elements in $[5] = \{1,2,3,4,5\}$ not equal to any given set of two numbers, we know that the number of vertices adjacent to any given element is $\begin{pmatrix} 3\\ 2\end{pmatrix} = 3$.
-    \begin{quote}
-      If two vertices are non-adjacent in the Petersen graph, they share exactly one common neighbor.
-    \end{quote}
-    Suppose two elements $v_1\neq v_2$ are in $V(G_p)$ where $v_1\not\leftrightarrow v_2$. Then, it must be the case that $v_1\cap v_2\neq 0$, meaning that $|v_1\cap v_2| = 1$, and $|v_1\cup v_2| = 3$, implying that $|[5] - v_1\cup v_2| = 2$. There is only one $v_k\in V(G_p)$ such that $v_k$ has two elements, defined as $v_k = [5] - (v_1\cup v_2)$.
-    \begin{quote}
-      The girth (or length of the shortest cycle) of the Petersen graph is $5$.
-    \end{quote}
-    Suppose $G_p$ has a cycle of length $3$. Since a cycle of $3$ would be isomorphic to $K_3$, this means there are three disjoint vertices $v_1,v_2,v_3\in V(G)$, implying that $|v_1 \cup v_2 \cup v_3| = |v_1| + |v_2| + |v_3| = 6$. However, the original set has cardinality $5$.\\
+    Because there are $3$ elements in $[5] = \{1,2,3,4,5\}$ not equal to any given set of two numbers, we know that the number of vertices adjacent to any given element is $\begin{pmatrix} 3\\ 2\end{pmatrix} = 3$.\\ 
 
-    Suppose there were a $4$-cycle --- this would mean that two vertices share a common neighbor, which we previously showed was not possible in $G_p$.
+    Suppose two elements $v_1\neq v_2$ are in $V(G_p)$ where $v_1\not\leftrightarrow v_2$. Then, it must be the case that $v_1\cap v_2\neq 0$, meaning that $|v_1\cap v_2| = 1$, and $|v_1\cup v_2| = 3$, implying that $|[5] - v_1\cup v_2| = 2$. There is only one $v_k\in V(G_p)$ such that $v_k$ has two elements, defined as $v_k = [5] - (v_1\cup v_2)$.\\
+
+    Suppose $G_p$ has a cycle of length $3$. Since a cycle of $3$ would be isomorphic to $K_3$, this means there are three disjoint vertices $v_1,v_2,v_3\in V(G)$, implying that $|v_1 \cup v_2 \cup v_3| = |v_1| + |v_2| + |v_3| = 6$. However, the original set has cardinality $5$. Suppose there were a $4$-cycle --- this would mean that two vertices share a common neighbor, which we previously showed was not possible in $G_p$.
   \end{problem}
 \end{problem}
 \begin{problem}{Decompositions}
@@ -454,6 +458,11 @@
   \begin{problem}{Proposition}
     Every tree with at least $2$ vertices has at least $2$ leaves. Deleting a leaf from an $n$-vertex tree produces a tree with $n-1$ vertices.
   \end{problem}
+  \begin{problem}{Proof}
+    Let $T$ be a tree with $n(T)\geq 2$, and let $P = x_1x_2\dots x_k$ be a maximal path in $T$. Since all trees are connected, we have that $n(P)\geq 2$, and since $x_1$ cannot have any other neighbors (or else $P$ would not be maximal, or $T$ would contain a cycle), it is the case that $x_1$ has degree $1$, as does $x_k$.\\
+
+    Since $x_1$ and $x_k$ have degree $1$, deleting one of them would reduce the number of edges and number of vertices by $1$, yielding a new tree.
+  \end{problem}
   \begin{problem}{Proposition}
     For an $n$-vertex graph $G$ with $n\geq 1$, the following are equivalent statements:
     \begin{enumerate}[(a)]
@@ -496,5 +505,37 @@
 
     We can construct a spanning tree from a connected graph $G$ by searching for a cycle and deleting edges until there are no more cycles, until we get $G'$. Since we did not delete any vertices, and $E(G')\subseteq E(G)$, and there are no cycles in $G'$, this means $G'$ is a spanning tree of $G$.
   \end{problem}
+\end{problem}
+\begin{problem}{More Propositions}
+  Let $T$ and $T'$ be spanning trees of connected graph $G$. 
+  \begin{itemize}
+    \item Then, $\forall e\in E(T)-E(T')$, $\exists e'\in E(T')-E(T)$ such that $T-e+e'$ is a spanning tree.
+    \item Then, $\forall e\in E(T) - E(T')$, $\exists e'\in E(T') - E(T)$ such that $T'+e-e'$ is a spanning tree.
+  \end{itemize}
+  \begin{problem}{Proofs}
+    Let $e\in E(T)-E(T')$. Since $T$ is a tree, $e$ is a cut-edge --- therefore, $T-e$ is split into two components, $H_1$ and $H_2$. Since $T'$ is connected, we know that $\exists e'\in E(T')$ such that $e$ connects a vertex in $H_1$ and a vertex in $H_2$. Notice that $T-e+e'$ is a connected graph with $n-1$ vertices, meaning that $T-e+e'$ is still a tree. Therefore, $T-e+e'$ is a spanning tree.\\
+
+    Let $e\in E(T)-E(T')$. Since $T'$ is a tree, by a previous result we know that $T'+e$ has exactly one cycle. Since $T'+e$ contains a cycle $C$, we know that there exists another edge $e'$ in the cycle that is not in $T$. Since $e'$ isn't a cut-edge (as it is within $C$), we can delete it, reducing the total number of cycles by $1$, yielding a new spanning tree.
+  \end{problem}
+  \begin{itemize}
+    \item If $T$ is a tree with $k$ edges and $G$ is a simple graph with $\delta(G)\geq k$, then $T$ is a subgraph of $G$. 
+  \end{itemize}
+  \begin{problem}{Proof}
+    We will use induction to prove as follows:
+    \begin{description}[font=\normalfont]
+      \item[Base Case:] Suppose $T$ has $0$ edges. Then, $T$ is contained within $G$ because $G$ is a simple graph with at least one vertex.
+      \item[Inductive Hypothesis:] If $e(T) < k$ and $\delta(G) \geq e(T)$, then $G$ contains a copy of $T$. Suppose that $e(T) = k$ and $T$ contains a leaf $v$. Then, $T-v$ is a tree with $e(T-v) = k-1$. Since $e(T-v)<k$ and $\delta(G) \geq e(T-v)$, the inductive hypothesis implies that $G$ contains a subgraph isomorphic to $T-v$. 
+      \item[Proving for $k+1$:] Let $u$ be a vertex adjacent to $v$, and let $x$ be the vertex that corresponds to $u$. Since $d_{G}(x)\geq k$ and $u$ contains maximum $k-1$ neighbors not equal to $u$ (since $T-v$ contains $k$ vertices), this means $\exists y\in G$ such that $x\leftrightarrow y$, where $y$ corresponds to $v\in T$.
+    \end{description}
+  \end{problem}
+\end{problem}
+\begin{problem}{Graph Measures}
+  The \textbf{distance} is the length of the \textit{shortest} path between $u$ and $v$, denoted $d(u,v)$.\\
+
+  The \textbf{diameter} is found by $\max\limits_{u,v\in V(G)}d(u,v)$.\\
+
+  The \textbf{eccentricity} of a vertex is found by $\epsilon(u) = \max\limits_{v\in V(G)}d(u,v)$. The radius is then found by $\min \epsilon(u)$.
+
+  The diameter and the maximum eccentricity are equivalent.
 \end{problem}
 \end{document}
