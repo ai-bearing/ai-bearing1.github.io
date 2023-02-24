@@ -235,10 +235,12 @@
     Count the $6$-cycles in $Q_3$.
   \end{problem}
   \begin{solution}
-    Without loss of generality, we are starting from tuple $(0,0,0)$, henceforth $000$. Starting from $000$ going to $001$. We can then map out the paths as follows:\\
-
-    \Tree [.000 [.001 [.011 [.111 [.110 100 ] ] [.010 [.110 100 ] ] ] [.101 [.111 [.110 010 ] ] [.100 [.110 010 ] ] ] ] ] \\
-    
-    Since there are three starting options from $000$, namely $001$, $010$, and $100$, we can see there are $12$ $6$-cycles in $Q_3$.
+    In order to find a $6$-cycle in $Q_3$, we select two vertices to delete and see if we can find a cycle from the graph $Q_3 - \{u,v\}$. Vertices are either adjacent, distance 2 (antipodal on the same face), or antipodal (distance 3) with each other.
+    \begin{description}[font=\scshape]
+      \item[Adjacent] If two vertices are adjacent, we can find one cycle from the remaining vertices after deletion. There are $(12)(3)/2$ sets of adjacent vertices, for a total of $18$ from this selection.
+      \item[Antipodal on the same face] If two vertices are antipodal, we cannot find a cycle from the remaining graph after deletion.
+      \item[Antipodal] If two vertices are antipodal, we can find one cycle from the remaining vertices after deletion. There are $4$ sets of antipodal vertices.
+    \end{description}
+    We find a total of $22$ $6$-cycles in $Q_3$.
   \end{solution}
 \end{document}
