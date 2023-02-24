@@ -208,22 +208,22 @@
   \noindent The graphs with exactly $2k$ vertices are the $K_{n,n}$ complete bipartite graphs.
 \end{problem}
 \begin{problem}{1.1.27}
-    Let $G$ be a graph with girth 5. Prove that if every vertex of $G$ has degree at least $k$, then $G$ has at least $k^2+1$ vertices. For $k=2$ and $k=3$, find one such graph with $k^2+1$ vertices.
-    \tcblower
-  \noindent Let $G$ be a simple graph with girth 5. Suppose that every vertex of $G$ has degree $k$. Let $u\in V(G)$. Then, $u$ has $k$ adjacent vertices, each of which is not adjacent to each other (or else the girth of $G$ would be $3$). Let this set be $N$. The elements of $N$ cannot have any other common neighbors aside from $u$, or else the girth of $G$ would be $4$, meaning each has $k-1$ distinct neighbors. Therefore, the total number of vertices in our graph includes $u$, the elements of $N$ that are the $k$ distinct neighbors of $u$, and the $k(k-1)$ distinct vertices for each vertex in $N$. Therefore, our total is $1 + k + k(k-1) = k^2 + 1$.\\
+  Let $G$ be a graph with girth 5. Prove that if every vertex of $G$ has degree at least $k$, then $G$ has at least $k^2+1$ vertices. For $k=2$ and $k=3$, find one such graph with $k^2+1$ vertices.
+  \tcblower
+  Let $G$ be a simple graph with girth 5. Suppose that every vertex of $G$ has degree $k$. Let $u\in V(G)$. Then, $u$ has $k$ adjacent vertices, each of which is not adjacent to each other (or else the girth of $G$ would be $3$). Let this set be $N$. The elements of $N$ cannot have any other common neighbors aside from $u$, or else the girth of $G$ would be $4$, meaning each has $k-1$ distinct neighbors. Therefore, the total number of vertices in our graph includes $u$, the elements of $N$ that are the $k$ distinct neighbors of $u$, and the $k(k-1)$ distinct vertices for each vertex in $N$. Therefore, our total is $1 + k + k(k-1) = k^2 + 1$.\\
 
-  \noindent If there were any vertex with degree greater than $k$, then there would be additional vertices beyond the $k^2 + 1$ vertices necessary for a $k$-regular graph.\\
+  If there were any vertex with degree greater than $k$, then there would be additional vertices beyond the $k^2 + 1$ vertices necessary for a $k$-regular graph.\\
 
-  \noindent For  $k=2$, we have the graph $C_5$ for an example of a graph with $k^2 + 1$ vertices, and for $k=3$ we have the Petersen graph.
+  For  $k=2$, we have the graph $C_5$ for an example of a graph with $k^2 + 1$ vertices, and for $k=3$ we have the Petersen graph.
 \end{problem}
 \begin{problem}{1.1.30}
     Let $G$ be a simple graph with adjacency matrix $A$ and incidence matrix $M$. Prove that the degree of $v_i$ is the $i$th diagonal entry of $A^2$ and $MM^T$. What do the entries in position $(i,j)$ of $A^2$ and $MM^T$ say about $G$?
 \tcblower
-  \noindent Let $A$ be the adjacency matrix for a simple graph $G$. In $A$, every vertex's corresponding row and column are identical, meaning that the entry $A^2_{i,i}$ will be equal to $r_ic_i$ for row $i$ and column $i$ corresponding to $v_i$. Thus, $r_ic_i$ is equal to $|c_i|^2$, which is equal to the sum of the elements of $c_i$, which is equal to the degree of $v_i$.\\
+  Let $A$ be the adjacency matrix for a simple graph $G$. In $A$, every vertex's corresponding row and column are identical, meaning that the entry $A^2_{i,i}$ will be equal to $r_ic_i$ for row $i$ and column $i$ corresponding to $v_i$. Thus, $r_ic_i$ is equal to $|c_i|^2$, which is equal to the sum of the elements of $c_i$, which is equal to the degree of $v_i$.\\
 
-  \noindent Let $M$ be the incidence matrix for a simple graph $G$. In $MM^T$, the diagonal element $MM^T_{i,i}$ will be equal to $r_i r_i^T$, where $r_i$ represents the edge incidence row of $v_i$. This is equal to $\left|r_i^T\right|^2$, which is equal to the sum of the elements of $r_i$, which is equal to the number of edges incident on $v_i$, which is equal to the degree of $v_i$.\\
+  Let $M$ be the incidence matrix for a simple graph $G$. In $MM^T$, the diagonal element $MM^T_{i,i}$ will be equal to $r_i r_i^T$, where $r_i$ represents the edge incidence row of $v_i$. This is equal to $\left|r_i^T\right|^2$, which is equal to the sum of the elements of $r_i$, which is equal to the number of edges incident on $v_i$, which is equal to the degree of $v_i$.\\
 
-  \noindent The entry in position $(i,j)$ in both $A^2$ and $MM^T$ shows whether vertices $v_i$ and $v_j$ are adjacent to each other.
+  The entry in position $(i,j)$ in both $A^2$ and $MM^T$ shows whether vertices $v_i$ and $v_j$ are adjacent to each other.
 \end{problem}
 \begin{problem}{1.1.34}
     Decompose the Petersen graph into three connected subgraphs that are pairwise isomorphic. Also decompose it into copies of $P_4$.
@@ -251,70 +251,70 @@
       \end{itemize}
 \end{problem}
 \begin{problem}{1.2.5}
-    Let $v$ be a vertex of a connected simple graph $G$. Prove that $v$ has a neighbor in every component of $G-v$. Explain why this allows us to conclude that no graph has a cut-vertex of degree 1.   
-    \tcblower
-    Suppose that $G-v$ is connected. Then, since $G$ is connected, and $v\in V(G)$, it must be the case that $v$ is connected to every component of $G-v$, meaning that it has a neighbor in every component of $G-v$ as $G-v$ is connected.\\
+  Let $v$ be a vertex of a connected simple graph $G$. Prove that $v$ has a neighbor in every component of $G-v$. Explain why this allows us to conclude that no graph has a cut-vertex of degree 1.   
+  \tcblower
+  Suppose that $G-v$ is connected. Then, since $G$ is connected, and $v\in V(G)$, it must be the case that $v$ is connected to every component of $G-v$, meaning that it has a neighbor in every component of $G-v$ as $G-v$ is connected.\\
 
-    Now suppose that $G-v$ is disconnected, meaning that it has more than one component after removing $v$. Before, $v$ must have been connected to every vertex in $G$ as $G$ was a simple connected graph, and afterwards $G-v$ is no longer connected, meaning that $v$ is a cut-vertex. This means $v$ must have been adjacent to a vertex in each component of $G-v$, as removing the incident edges on $v$ along with $v$ increased the number of components from the original $1$ that was in $G$.\\
+  Now suppose that $G-v$ is disconnected, meaning that it has more than one component after removing $v$. Before, $v$ must have been connected to every vertex in $G$ as $G$ was a simple connected graph, and afterwards $G-v$ is no longer connected, meaning that $v$ is a cut-vertex. This means $v$ must have been adjacent to a vertex in each component of $G-v$, as removing the incident edges on $v$ along with $v$ increased the number of components from the original $1$ that was in $G$.\\
 
-    From this result, we can conclude that no cut-vertex has degree $1$ as removing a vertex of degree $1$ and its incident edges does not increase the number of components in $G$, since there is only one edge incident on a vertex of degree $1$.
+  From this result, we can conclude that no cut-vertex has degree $1$ as removing a vertex of degree $1$ and its incident edges does not increase the number of components in $G$, since there is only one edge incident on a vertex of degree $1$.
 \end{problem}
 \begin{problem}{1.2.6}
-    In the graph below, find all the maximal paths, maximal cliques, and maximal independent sets. Also, find all the maximum paths, cliques, and independent sets. 
-      \begin{center}
-          \begin{tikzpicture}
-            \fill (0,0) circle (3pt);
-            \fill (-1,1) circle (3pt);
-            \fill (-1,-1) circle (3pt);
-            \fill (1,0) circle (3pt);
-            \node[anchor = south] at (0,0.1) {$c$};
-            \node[anchor = south] at (1,0.1) {$d$};
-            \node[anchor = east] at (-1.1,-1) {$a$};
-            \node[anchor = east] at (-1.1,1) {$b$};
-            \draw (-1,-1) -- (-1,1) -- (0,0) -- (-1,-1);
-            \draw (0,0) -- (1,0);
-          \end{tikzpicture}
-      \end{center}
-      \tcblower
-    \begin{itemize}
-        \item The maximal paths are as follows:
-       \begin{itemize}
-         \item $d,c,b,a$
-         \item $d,c,a,b$
-         \item $a,b,c,d$
-         \item $b,a,c,d$
-         \item $b,c,a$
-         \item $c,b,a$
-         \item $a,c,b$
-       \end{itemize}
-     \item The maximal cliques are $K_3$ consisting of $a,b,c$ and $K_2$ consisting of $c,d$.
-     \item The maximal independent sets are $\{a,d\}$ and  $\{b,d\}$.
-     \item The maximum path is any of those paths listed above with length $4$.
-     \item The maximum clique is $K_3$.
-     \item The maximum independent sets are those listed above with size $2$.
-    \end{itemize}
+  In the graph below, find all the maximal paths, maximal cliques, and maximal independent sets. Also, find all the maximum paths, cliques, and independent sets. 
+    \begin{center}
+        \begin{tikzpicture}
+          \fill (0,0) circle (3pt);
+          \fill (-1,1) circle (3pt);
+          \fill (-1,-1) circle (3pt);
+          \fill (1,0) circle (3pt);
+          \node[anchor = south] at (0,0.1) {$c$};
+          \node[anchor = south] at (1,0.1) {$d$};
+          \node[anchor = east] at (-1.1,-1) {$a$};
+          \node[anchor = east] at (-1.1,1) {$b$};
+          \draw (-1,-1) -- (-1,1) -- (0,0) -- (-1,-1);
+          \draw (0,0) -- (1,0);
+        \end{tikzpicture}
+    \end{center}
+    \tcblower
+  \begin{itemize}
+      \item The maximal paths are as follows:
+     \begin{itemize}
+       \item $d,c,b,a$
+       \item $d,c,a,b$
+       \item $a,b,c,d$
+       \item $b,a,c,d$
+       \item $b,c,a$
+       \item $c,b,a$
+       \item $a,c,b$
+     \end{itemize}
+   \item The maximal cliques are $K_3$ consisting of $a,b,c$ and $K_2$ consisting of $c,d$.
+   \item The maximal independent sets are $\{a,d\}$ and  $\{b,d\}$.
+   \item The maximum path is any of those paths listed above with length $4$.
+   \item The maximum clique is $K_3$.
+   \item The maximum independent sets are those listed above with size $2$.
+  \end{itemize}
 \end{problem}
 \begin{problem}{1.2.8}
-    Determine the values of $m$ and $n$ such that $K_{m,n}$ is Eulerian. 
-    \tcblower
-    \[
-      m,n\in 2\mathbb{Z}^{+}
-    \]
+  Determine the values of $m$ and $n$ such that $K_{m,n}$ is Eulerian. 
+  \tcblower
+  \[
+    m,n\in 2\mathbb{Z}^{+}
+  \]
 \end{problem}
 \begin{problem}{1.2.10}
-      Prove or disprove:
-      \begin{enumerate}[(a)]
-          \item Every Eulerian bipartite graph has an even number of edges.
-          \item Every Eulerian simple graph with an even number of vertices has an even number of edges.
-        \end{enumerate}
-        \tcblower
-      \begin{tcolorbox}[colback = white, title = (a)]
-        Let $G$ be an Eulerian bipartite graph. Since $G$ is Eulerian, it must contain an Eulerian cycle, meaning that as seen above, there are an even number of vertices, meaning that there are an even number of edges in $G$. 
-      \end{tcolorbox}
+  Prove or disprove:
+  \begin{enumerate}[(a)]
+      \item Every Eulerian bipartite graph has an even number of edges.
+      \item Every Eulerian simple graph with an even number of vertices has an even number of edges.
+    \end{enumerate}
+    \tcblower
+  \begin{tcolorbox}[colback = white, title = (a)]
+    Let $G$ be an Eulerian bipartite graph. Since $G$ is Eulerian, it must contain an Eulerian cycle, meaning that as seen above, there are an even number of vertices, meaning that there are an even number of edges in $G$. 
+  \end{tcolorbox}
 
-      \begin{tcolorbox}[colback = white, title = (b)]
-        Let $G$ be an Eulerian simple graph with an even number of vertices. Since $G$ is Eulerian, this means there must be an Eulerian circuit $C$ that traverses every edge exactly once in $G$. Every vertex in $G$ must have even degree (or else we would require a backtrack in our Eulerian cycle, which is not a circuit); a simple pairing of the vertices would yield that we have $\lfloor n/2\rfloor $ edges, and to complete the cycle we need $2(n/2) + 2k$ edges for $n$ vertices and some integer $k$. Therefore, there must be an even number of edges.
-      \end{tcolorbox}
+  \begin{tcolorbox}[colback = white, title = (b)]
+    Let $G$ be an Eulerian simple graph with an even number of vertices. Since $G$ is Eulerian, this means there must be an Eulerian circuit $C$ that traverses every edge exactly once in $G$. Every vertex in $G$ must have even degree (or else we would require a backtrack in our Eulerian cycle, which is not a circuit); a simple pairing of the vertices would yield that we have $\lfloor n/2\rfloor $ edges, and to complete the cycle we need $2(n/2) + 2k$ edges for $n$ vertices and some integer $k$. Therefore, there must be an even number of edges.
+  \end{tcolorbox}
 \end{problem}
 \subsection*{Group}%
 \begin{problem}{1.2.20}
