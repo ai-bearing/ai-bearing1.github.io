@@ -4,6 +4,5 @@ author: Avinash Iyer
 description:
   Welcome to my website!
 header_pages:
-  #- blog.md
   - adventofcode.md
   - homeworks.md
