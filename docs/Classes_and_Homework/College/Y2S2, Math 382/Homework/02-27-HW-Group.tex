@@ -120,10 +120,24 @@
   \end{problem}
   \begin{solution}
     \begin{tcolorbox}[colback = white, title = (a), breakable]
-      $K_n$ edge decomposition.
+      We can consider a partition of the edges of $K_n$ into the edge set of $K_k$ and $K_{n-k}$, and some connector edges.\\
+
+      The edge set of $K_n$ has cardinality $\begin{pmatrix}n\\2\end{pmatrix}$, the edge set of $K_k$ has cardinality $\begin{pmatrix}k\\2\end{pmatrix}$, and the edge set of $K_{n-k}$ has cardinality $\begin{pmatrix}n-k \\ 2\end{pmatrix}$. In order for this set of edges to be a full partition, we need to connect all the vertices in $K_k$ and all the edges in $K_{n-k}$, which takes $k(n-k)$ edges. Therefore, we have shown the following result:
+      \[
+        \begin{pmatrix}
+          n\\
+          2
+        \end{pmatrix} = \begin{pmatrix}
+          k\\
+          2
+        \end{pmatrix} + \begin{pmatrix}
+          n-k\\
+          2
+        \end{pmatrix} + k(n-k)
+      \] 
     \end{tcolorbox}
     \begin{tcolorbox}[colback = white, title = (b), breakable]
-      Cluster graphs vs. $K_n$.
+      Consider the graph $G$, where $|V(G)| = n$ with maximal clique components $H_{1},\dots,H_{k}$. Each of these components has $e(H_i) = \begin{pmatrix}|V(H_i)| \\ 2\end{pmatrix}$, with total $\sum_{i=1}^{k}\begin{pmatrix}|V(H_i)| \\ 2\end{pmatrix}$. In comparison, if we consider $e(K_{G})$, where $K_G$ is defined as the complete graph on the vertices of $G$, then that value is $\begin{pmatrix}n \\ 2\end{pmatrix}$, and $n = \sum_{i = 1}^{k}|V(H_i)|$. Therefore, the size of the edge set of $G$ is less than or equal to the sum of the sizes of the edge sets of maximal clique components $H_i$ (because the maximal clique components of $G$ could just be $G$ itself).
     \end{tcolorbox}
   \end{solution}
   \begin{problem}{1.3.41}
