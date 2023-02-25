@@ -236,10 +236,10 @@
   \end{problem}
   \begin{solution}
     In order to find a $6$-cycle in $Q_3$, we select two vertices to delete and see if we can find a cycle from the graph $Q_3 - \{u,v\}$. Vertices are either adjacent, distance 2 (antipodal on the same face), or antipodal (distance 3) with each other.
-    \begin{description}[font=\scshape]
-      \item[Adjacent] If two vertices are adjacent, we can find one cycle from the remaining vertices after deletion. There are $(12)(3)/2$ sets of adjacent vertices, for a total of $18$ from this selection.
-      \item[Antipodal on the same face] If two vertices are antipodal, we cannot find a cycle from the remaining graph after deletion.
-      \item[Antipodal] If two vertices are antipodal, we can find one cycle from the remaining vertices after deletion. There are $4$ sets of antipodal vertices.
+    \begin{description}[font=\normalfont\scshape]
+      \item[Adjacent:] If two vertices are adjacent, we can find one cycle from the remaining vertices after deletion. There are $(12)(3)/2$ sets of adjacent vertices, for a total of $18$ from this selection.
+      \item[Antipodal on the same face:] If two vertices are antipodal, we cannot find a cycle from the remaining graph after deletion.
+      \item[Antipodal:] If two vertices are antipodal, we can find one cycle from the remaining vertices after deletion. There are $4$ sets of antipodal vertices.
     \end{description}
     We find a total of $22$ $6$-cycles in $Q_3$.
   \end{solution}
