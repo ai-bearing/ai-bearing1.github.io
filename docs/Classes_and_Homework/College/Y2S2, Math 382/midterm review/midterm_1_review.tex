@@ -305,11 +305,11 @@
   \end{problem}
   \begin{problem}{Proof}
     We will proceed via induction as follows:
-    \begin{description}[font=\scshape]
+    \begin{description}[font=\normalfont\scshape]
       \item[Base Case] If $\ell = 1$, then we know that this is a cycle.
       \item [Inductive Hypothesis] Find a repeated vertex $x$ within $W$ aside from the starting point $u$ itself. That is, $W = u,\dots,x,\dots,x,\dots,u$. If there is no repeated vertex other than $u$ itself, then we have an odd cycle.
       \item[Proof] Else, consider $W' = x,\dots,x$ and $W'' = u,\dots,x,\dots,u$ found by deleting the first instance of $x$ and the remaining edges between that first instance and the second instance of $x$. We know that since $\ell(W)$ is odd, and $\ell(W) = \ell(W') + \ell(W'')$, we must have that one of $\ell(W')$ or $\ell(W'')$ must be odd.
-    \end{itemize}
+    \end{description}
   \end{problem}
   \begin{problem}{Proposition}
     If an edge appears exactly once in a closed walk $W$, then $W$ contains a cycle through that edge, $e$.
@@ -358,11 +358,11 @@
     ($\Rightarrow$) Whenever we ``enter'' a vertex during an Eulerian circuit, we also have to ``exit'' the vertex at an edge. If a vertex is not on the trail, then it has no incident edges and so the vertex is a trivial component. Additionally, if $G$ has multiple components, then there is no trail connecting all components and so $G$ cannot be Eulerian.\\
 
     ($\Leftarrow$) Suppose all vertices of $G$ are of even degree and $G$ has only one nontrivial component. Let $e(G) = |E(G)|$
-    \begin{description}[font=\scshape]
+    \begin{description}[font=\normalfont\scshape]
       \item[Base Case] Suppose $e(G) = 0$. Then, there is an Eulerian circuit and every vertex is of even degree (namely, $0$).
       \item[Inductive Hypothesis] If $e(G) > 0$, then every vertex in $G$ has a degree at least $2$. This means $\exists C\subseteq G$ where $C$ is a cycle. If we delete the edges of the cycle, then the vertices of $G$ have their degree reduced by either $0$ or $2$, so $G$ retains the property that its vertices are all of even degree. In each nontrivial component of $G-C$, by the inductive hypothesis, they contain within themselves an Eulerian circuit.
       \item[Proof] We can construct an Eulerian circuit by walking along the edges of $C$, and whenever we reach a nontrivial component of $G-C$, find an Eulerian circuit within each component, then go back along $C$.
-    \end{itemize}
+    \end{description}
   \end{problem}
 \end{problem}
 \begin{problem}{Other Important Lemmas}
@@ -531,8 +531,15 @@
 
   The \textbf{diameter} is found by $\max\limits_{u,v\in V(G)}d(u,v)$.\\
 
-  The \textbf{eccentricity} of a vertex is found by $\epsilon(u) = \max\limits_{v\in V(G)}d(u,v)$. The radius is then found by $\min \epsilon(u)$.
+  The \textbf{eccentricity} of a vertex is found by $\epsilon(u) = \max\limits_{v\in V(G)}d(u,v)$. The radius is then found by $\min \epsilon(u)$. \\
 
   The diameter and the maximum eccentricity are equivalent.
+\end{problem}
+\begin{problem}{Examples}
+  The Petersen graph has diameter of $2$ (because every pair of non-adjacent vertices has one common neighbor), which is the same as its radius.\\
+
+  The diameter of $C_n$ is either $n/2$ or $\lfloor n/2 \rfloor$. This is also equal to its radius.
+
+
 \end{problem}
 \end{document}
