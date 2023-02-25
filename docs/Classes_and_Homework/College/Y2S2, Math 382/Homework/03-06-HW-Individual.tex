@@ -1,0 +1,126 @@
+\documentclass[8pt]{extarticle}
+\title{}
+\author{Avinash Iyer}
+\date{}
+\usepackage[shortlabels]{enumitem}
+
+%font setup
+%
+%\usepackage[math]{anttor}
+
+%paper setup
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage{fancyhdr}
+
+%symbols
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%chemistry stuff
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+%plotting
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{natbib}
+
+%graphics stuff
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%code stuff
+%when using minted, make sure to add the -shell-escape flag
+%you can use lstlisting if you don't want to use minted
+%\usepackage{minted}
+%\usemintedstyle{pastie}
+%\newminted[javacode]{java}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+%\newminted[cppcode]{cpp}{frame=lines,framesep=2mm,linenos=true,fontsize=\footnotesize,tabsize=3,autogobble,}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+% text + color boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\newtcolorbox{problem}[1]{colback = white, title = {#1}, breakable}
+\newtcolorbox{solution}{colback = white, colframe = black!75!white, title = Solution, breakable}
+%including PDFs
+\usepackage{pdfpages}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Avinash Iyer}
+\lhead{Homework Section 2.1, Individual}
+\begin{document}{
+  \begin{problem}{2.1.2}
+    Let $G$ be a graph:
+    \begin{enumerate}[(a)]
+      \item Prove that $G$ is a tree if and only if $G$ is connected and every edge is a cut-edge.
+      \item Prove that $G$ is a tree if and only if adding any edge with endpoints in $V(G)$ creates exactly one cycle.
+    \end{enumerate}
+  \end{problem}
+  \begin{solution}
+    \begin{tcolorbox}[colback = white, title = (a), breakable]
+      \begin{description}[font=\normalfont\scshape]
+        \item[($\Rightarrow$)] Let $G$ be a tree. Thus, $G$ is connected (by definition), and acyclic. Since $G$ is acyclic, this means that there are no edges within cycles, so by definition, every edge is a cut-edge.
+        \item[($\Leftarrow$)] Let $G$ be a connected graph such that every edge is a cut-edge. Since there are no non-cut-edge edges, this means there are no cycles in $G$, so $G$ is a connected acyclic graph, or a tree.
+      \end{description}
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback = white, title = (b), breakable]
+      \begin{description}[font=\normalfont\scshape]
+        \item[($\Rightarrow$)] Let $G$ be a tree, and let $e$ be an edge such that $e\notin E(G)$, and $e = uv$. Then, we create a cycle from the path $uTv + e$ --- since there is only one path $uTv$, this means that $uTv+e$ is a unique cycle.
+        \item[($\Leftarrow$)] Suppose toward contradiction that adding $e$ to the tree $G$ yielded more than one cycle in the graph $G+e$. Then, the graph $G = G + e - e$ would have at least one cycle, as we deleted an edge from one cycle in a graph with more than one cycle. However, since we assumed that $G$ was a tree, we have reached a contradiction, meaning that $e$ added exactly one cycle to the tree $G$.
+      \end{description}
+    \end{tcolorbox}
+  \end{solution}
+  \begin{problem}{2.1.6}
+    Let $T$ be a tree with average degree $a$. In terms of $a$, find $n(T)$.
+  \end{problem}
+  \begin{solution}
+    \begin{align*}
+      d_{\textrm{avg}} &= \frac{2e(T)}{n(T)}\\
+                    a  &= \frac{2(n(T) - 1)}{n(T)} \\
+                    an &= 2n-2 \\
+              (a-2)n &= -2 \\
+              n &= \boxed{\frac{-2}{a-2}} \tag*{Needs to be corroborated}
+    \end{align*}
+  \end{solution}
+  \begin{problem}{2.1.7}
+    Prove that every $n$-vertex graph with $m$ edges has at least $n-m+1$ cycles.
+  \end{problem}
+  \begin{problem}{2.1.12}
+    Compute the diameter and radius of $K_{m,n}$.
+  \end{problem}
+  \begin{problem}{2.1.13}
+    Prove that every graph with diameter $d$ has an independent set with at least $\lfloor\frac{1+d}{2}\rfloor$ vertices.
+  \end{problem}
+}\end{document}
