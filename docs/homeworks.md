@@ -27,4 +27,4 @@ Every time we do a problem set, we also have to self-correct it.
 
 ### Midterm Review
 - [Midterm 1 Review](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/midterm review/midterm_1_review.pdf)
-  - Midterm 1 Review, Graded (To Come)
+  - [Midterm 1 Review, Graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/midterm review/midterm_1_review_graded.pdf)

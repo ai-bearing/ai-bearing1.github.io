@@ -104,4 +104,26 @@
 
     \end{tikzpicture}
   \end{center}
+  \pagebreak
+  \begin{center}
+    \begin{tikzpicture}[scale = 3]
+      \filldraw (18:1cm) circle(2pt);
+      \filldraw (90:1cm) circle(2pt);
+      \filldraw (162:1cm) circle(2pt);
+      \filldraw (234:1cm) circle(2pt);
+      \filldraw (306:1cm) circle(2pt);
+      \filldraw (18:2cm) circle(2pt);
+      \filldraw (90:2cm) circle(2pt);
+      \filldraw (162:2cm) circle(2pt);
+      \filldraw (234:2cm) circle(2pt);
+      \filldraw (306:2cm) circle(2pt);
+      \draw[thick] (18:2cm) -- (90:2cm) -- (162:2cm) -- (234:2cm) -- (306:2cm) -- cycle;
+      \draw[thick] (18:1cm) -- (162:1cm) -- (306:1cm) -- (90:1cm) -- (234:1cm) -- cycle;
+      \draw[thick] (18:2cm) -- (18:1cm)
+            (90:2cm) -- (90:1cm)
+            (162:2cm) -- (162:1cm)
+            (234:2cm) -- (234:1cm)
+            (306:2cm) -- (306:1cm);
+    \end{tikzpicture}
+  \end{center}
 }\end{document}
