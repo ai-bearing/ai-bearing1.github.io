@@ -144,6 +144,43 @@
   \begin{solution}
     We can assign tuples to the graph as follows:
     \begin{center}
+
+      \begin{tikzpicture}
+        % \draw[thin, gray] (-3,-3) grid (3,3);
+        % drawing points
+        \filldraw (0.5,0.5) circle (2pt);
+        \node [anchor = west] at (0.5,0.5) {\tiny $0000$};
+        \filldraw (-0.5,0.5) circle (2pt);
+        \node [anchor = east] at (-0.5,0.5) {\tiny $0001$};
+        \filldraw (0.5,-0.5) circle (2pt);
+        \node [anchor = west] at (0.5,-0.5) {\tiny $0010$};
+        \filldraw (-0.5,-0.5) circle (2pt);
+        \node [anchor = east] at (-0.5,-0.5) {\tiny $0011$};
+        \filldraw (1,0.75) circle (2pt);
+        \node [anchor = west] at (1,0.75) {\tiny $0100$};
+        \filldraw (-1,0.75) circle (2pt);
+        \node [anchor = east] at (-1,0.75) {\tiny $0101$};
+        \filldraw (-1,-0.75) circle (2pt);
+        \node [anchor = east] at (-1,-0.75) {\tiny $0111$};
+        \filldraw (1,-0.75) circle (2pt);
+        \node [anchor = west] at (1,-0.75) {\tiny $0110$};
+        \filldraw (0.5,1.5) circle (2pt);
+        \node [anchor = west] at (0.5,1.5) {\tiny $1000$};
+        \filldraw (-0.5,1.5) circle (2pt);
+        \node [anchor = east] at (-0.5,1.5) {\tiny $1001$};
+        \filldraw (-0.5,-1.5) circle (2pt);
+        \node [anchor = east] at (-0.5,-1.5) {\tiny $1011$};
+        \filldraw (0.5,-1.5) circle (2pt);
+        \node [anchor = west] at (0.5,-1.5) {\tiny $1010$};
+        \filldraw (1.25,2) circle (2pt);
+        \node [anchor = west] at (1.25,2) {\tiny $1100$};
+        \filldraw (-1.25,2) circle (2pt);
+        \node [anchor = east] at (-1.25,2) {\tiny $1101$};
+        \filldraw (1.25,-2) circle (2pt);
+        \node [anchor = west] at (1.25,-2) {\tiny $1110$};
+        \filldraw (-1.25,-2) circle (2pt);
+        \node [anchor = east] at (-1.25,-2) {\tiny $1111$};
+      \end{tikzpicture} \\ 
       \begin{tikzpicture}
         % \draw[thin, gray] (-3,-3) grid (3,3);
         % drawing points
@@ -237,10 +274,10 @@
   \begin{solution}
     In order to find a $6$-cycle in $Q_3$, we select two vertices to delete and see if we can find a cycle from the graph $Q_3 - \{u,v\}$. Vertices are either adjacent, distance 2 (antipodal on the same face), or antipodal (distance 3) with each other.
     \begin{description}[font=\normalfont\scshape]
-      \item[Adjacent:] If two vertices are adjacent, we can find one cycle from the remaining vertices after deletion. There are $(12)(3)/2$ sets of adjacent vertices, for a total of $18$ from this selection.
+      \item[Adjacent:] If two vertices are adjacent, we can find one cycle from the remaining vertices after deletion. There are $(8)(3)/2$ sets of adjacent vertices, for a total of $12$ from this selection.
       \item[Antipodal on the same face:] If two vertices are antipodal, we cannot find a cycle from the remaining graph after deletion.
       \item[Antipodal:] If two vertices are antipodal, we can find one cycle from the remaining vertices after deletion. There are $4$ sets of antipodal vertices.
     \end{description}
-    We find a total of $22$ $6$-cycles in $Q_3$.
+    We find a total of $16$ $6$-cycles in $Q_3$.
   \end{solution}
 \end{document}

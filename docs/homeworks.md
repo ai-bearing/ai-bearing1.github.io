@@ -5,9 +5,10 @@ permalink: /homeworks.html
 ---
 
 ## Graph Theory
-- [Section 1.1](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/Homework/02-03-HW-Individual.pdf)
-- [Section 1.2](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/Homework/02-15-HW-Individual.pdf)
-- [Section 1.3](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/Homework/02-27-HW-Individual.pdf)
+This class has both individual and group homeworks — I have included the individual homeworks here as well as my large document of all previous homework solutions.
+- [Section 1.1, Individual](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/Homework/02-03-HW-Individual.pdf)
+- [Section 1.2, Individual](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/Homework/02-15-HW-Individual.pdf)
+- [Section 1.3, Individual](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/Homework/02-27-HW-Individual.pdf)
 - [Up to Midterm 1](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/midterm review/homeworks_to_midterm_1.pdf)
 
 ## Intermediate Macroeconomics
@@ -22,3 +23,4 @@ Every time we do a problem set, we also have to self-grade it for corrections.
   - Note: I did not get this problem set self-graded.
 - [Problem Set 5](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_5.pdf)
   - [Problem Set 5, graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_5_graded.pdf)
+
