@@ -115,12 +115,27 @@
     \end{align*}
   \end{solution}
   \begin{problem}{2.1.7}
-    Prove that every $n$-vertex graph with $m$ edges has at least $n-m+1$ cycles.
+    Prove that every $n$-vertex graph with $m$ edges has at least $m-n+1$ cycles.
   \end{problem}
+  \begin{solution}
+    \begin{description}[font=\normalfont\scshape]
+      \item[Base Case] If $m = 0$, then since this graph has zero edges, it has zero cycles, and since $0\geq 1-n$, we have proven the base case.
+      \item[Inductive Hypothesis] For an $n$-vertex graph with $0\leq k\leq m$ vertices, then $G$ has at least $k-n+1$ cycles.
+      \item[Proof] If $e$ is an edge within a cycle of $G$, then $G-e$ has $k-1$ edges, and has seen a reduction of $1$ cycle, so $G-e$ has at least $(k-1)-n+1 = (k-n+1)-1$ cycles. If $e$ is not within a cycle, then $G$ has seen no reduction in cycles, but $G-e$ is predicted to have at least $(k-n+1)-1$ cycles, which it does by our assumption. Therefore, we have proven the inductive hypothesis for both cases.
+    \end{description}
+  \end{solution}
   \begin{problem}{2.1.12}
     Compute the diameter and radius of $K_{m,n}$.
   \end{problem}
+  \begin{solution}
+    The diameter of $K_{m,n}$ is equal to $2$ --- for vertices in the same independent set, it requires two edges to traverse between them.\\
+
+    The radius of $K_{m,n}$ is also $2$ --- the eccentricity of every vertex in $K_{m,n}$ is $2$, so the radius must also be $2$.
+  \end{solution}
   \begin{problem}{2.1.13}
     Prove that every graph with diameter $d$ has an independent set with at least $\lfloor\frac{1+d}{2}\rfloor$ vertices.
   \end{problem}
+  \begin{solution}
+    Let $G$ be a graph with diameter $d$, and let $v\in G$ be a vertex with eccentricity $d$. 
+  \end{solution}
 }\end{document}
