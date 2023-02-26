@@ -12,7 +12,8 @@ This class has both individual and group homeworks — I have included the indiv
 - [Up to Midterm 1](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/midterm review/homeworks_to_midterm_1.pdf)
 
 ## Intermediate Macroeconomics
-Every time we do a problem set, we also have to self-grade it for corrections.
+### Problem Sets
+Every time we do a problem set, we also have to self-correct it.
 - [Problem Set 1](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_1.pdf)
   - [Problem Set 1, graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_1_graded.pdf)
 - [Problem Set 2](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_2.pdf)
@@ -20,7 +21,10 @@ Every time we do a problem set, we also have to self-grade it for corrections.
 - [Problem Set 3](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_3.pdf)
   - [Problem Set 3, graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_3_graded.pdf)
 - [Problem Set 4](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_4.pdf)
-  - Note: I did not get this problem set self-graded.
+  - Note: I did not get this problem set self-corrected.
 - [Problem Set 5](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_5.pdf)
   - [Problem Set 5, graded](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/problemsets/problem_set_5_graded.pdf)
 
+### Midterm Review
+- [Midterm 1 Review](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/midterm review/midterm_1_review.pdf)
+  - Midterm 1 Review, Graded (To Come)
