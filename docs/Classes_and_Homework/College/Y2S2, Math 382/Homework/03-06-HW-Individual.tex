@@ -1,4 +1,4 @@
-\documentclass[8pt]{extarticle}
+\documentclass[10pt]{extarticle}
 \title{}
 \author{Avinash Iyer}
 \date{}
@@ -80,7 +80,7 @@
 \fancyhf{}
 \rhead{Avinash Iyer}
 \lhead{Homework Section 2.1, Individual}
-\begin{document}{
+\begin{document}
   \begin{problem}{2.1.2}
     Let $G$ be a graph:
     \begin{enumerate}[(a)]
@@ -133,9 +133,9 @@
     The radius of $K_{m,n}$ is also $2$ --- the eccentricity of every vertex in $K_{m,n}$ is $2$, so the radius must also be $2$.
   \end{solution}
   \begin{problem}{2.1.13}
-    Prove that every graph with diameter $d$ has an independent set with at least $\lfloor\frac{1+d}{2}\rfloor$ vertices.
+    Prove that every graph with diameter $d$ has an independent set with at least $\left\lceil\frac{1+d}{2}\right\rceil$ vertices.
   \end{problem}
   \begin{solution}
-    Let $G$ be a graph with diameter $d$, and let $v\in G$ be a vertex with eccentricity $d$. 
+    Let $G$ be a graph with diameter $d$, and let $u\in V(G)$ be a vertex with eccentricity $d$. Let $P$ be a maximal $u,v$ path of length $d$. Then, $P$ has $d+1$ vertices. So, $P$ has a maximal independent set containing every other vertex, with total cardinality of $\left\lceil \frac{d+1}{2} \right\rceil$. Therefore, $G$ has an independent set with at least $\left\lceil\frac{d+1}{2}\right\rceil$ vertices.
   \end{solution}
-}\end{document}
+\end{document}
