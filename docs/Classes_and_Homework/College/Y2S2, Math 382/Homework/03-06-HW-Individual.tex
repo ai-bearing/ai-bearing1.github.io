@@ -87,8 +87,7 @@
       \item Prove that $G$ is a tree if and only if $G$ is connected and every edge is a cut-edge.
       \item Prove that $G$ is a tree if and only if adding any edge with endpoints in $V(G)$ creates exactly one cycle.
     \end{enumerate}
-  \end{problem}
-  \begin{solution}
+    \tcblower
     \begin{tcolorbox}[colback = white, title = (a), breakable]
       \begin{description}[font=\normalfont\scshape]
         \item[($\Rightarrow$)] Let $G$ be a tree. Thus, $G$ is connected (by definition), and acyclic. Since $G$ is acyclic, this means that there are no edges within cycles, so by definition, every edge is a cut-edge.
@@ -101,11 +100,10 @@
         \item[($\Leftarrow$)] Suppose toward contradiction that adding $e$ to the tree $G$ yielded more than one cycle in the graph $G+e$. Then, the graph $G = G + e - e$ would have at least one cycle, as we deleted an edge from one cycle in a graph with more than one cycle. However, since we assumed that $G$ was a tree, we have reached a contradiction, meaning that $e$ added exactly one cycle to the tree $G$.
       \end{description}
     \end{tcolorbox}
-  \end{solution}
+  \end{problem}
   \begin{problem}{2.1.6}
     Let $T$ be a tree with average degree $a$. In terms of $a$, find $n(T)$.
-  \end{problem}
-  \begin{solution}
+    \tcblower
     \begin{align*}
       d_{\textrm{avg}} &= \frac{2e(T)}{n(T)}\\
                     a  &= \frac{2(n(T) - 1)}{n(T)} \\
@@ -113,29 +111,26 @@
               (a-2)n &= -2 \\
               n &= \boxed{\frac{-2}{a-2}} \tag*{Needs to be corroborated}
     \end{align*}
-  \end{solution}
+  \end{problem}
   \begin{problem}{2.1.7}
     Prove that every $n$-vertex graph with $m$ edges has at least $m-n+1$ cycles.
-  \end{problem}
-  \begin{solution}
+    \tcblower
     \begin{description}[font=\normalfont\scshape]
       \item[Base Case] If $m = 0$, then since this graph has zero edges, it has zero cycles, and since $0\geq 1-n$, we have proven the base case.
       \item[Inductive Hypothesis] For an $n$-vertex graph with $0\leq k\leq m$ vertices, then $G$ has at least $k-n+1$ cycles.
       \item[Proof] If $e$ is an edge within a cycle of $G$, then $G-e$ has $k-1$ edges, and has seen a reduction of $1$ cycle, so $G-e$ has at least $(k-1)-n+1 = (k-n+1)-1$ cycles. If $e$ is not within a cycle, then $G$ has seen no reduction in cycles, but $G-e$ is predicted to have at least $(k-n+1)-1$ cycles, which it does by our assumption. Therefore, we have proven the inductive hypothesis for both cases.
     \end{description}
-  \end{solution}
+  \end{problem}
   \begin{problem}{2.1.12}
     Compute the diameter and radius of $K_{m,n}$.
-  \end{problem}
-  \begin{solution}
+    \tcblower
     The diameter of $K_{m,n}$ is equal to $2$ --- for vertices in the same independent set, it requires two edges to traverse between them.\\
 
     The radius of $K_{m,n}$ is also $2$ --- the eccentricity of every vertex in $K_{m,n}$ is $2$, so the radius must also be $2$.
-  \end{solution}
+  \end{problem}
   \begin{problem}{2.1.13}
     Prove that every graph with diameter $d$ has an independent set with at least $\left\lceil\frac{1+d}{2}\right\rceil$ vertices.
-  \end{problem}
-  \begin{solution}
+    \tcblower
     Let $G$ be a graph with diameter $d$, and let $u\in V(G)$ be a vertex with eccentricity $d$. Let $P$ be a maximal $u,v$ path of length $d$. Then, $P$ has $d+1$ vertices. So, $P$ has a maximal independent set containing every other vertex, with total cardinality of $\left\lceil \frac{d+1}{2} \right\rceil$. Therefore, $G$ has an independent set with at least $\left\lceil\frac{d+1}{2}\right\rceil$ vertices.
-  \end{solution}
+  \end{problem}
 \end{document}
