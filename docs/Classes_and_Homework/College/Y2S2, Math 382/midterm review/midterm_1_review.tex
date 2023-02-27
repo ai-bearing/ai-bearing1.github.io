@@ -480,7 +480,7 @@
 
       Let $G$ be a connected graph with $n-1$ edges. We will show that $G$ is acyclic. Locate all edges within $G$ that are contained within a cycle, and delete the edges until there are no cycles left, yielding a graph $G'$. Since $G'$ is acyclic, and we did not delete any vertices, we have that $e(G') = n-1$, which is equal to $e(G)$. Therefore, $e(G)$ must be acyclic.\\
 
-      Let $G$ be an acyclic graph with $n-1$ edges and no cycles. We will show that $G$ is connected. Since $G$ is acyclic, we know that it is a forest, implying that the components $H_1,\dots,H_k$ must also be acyclic. Additionally, we know that $\sum_{i = 1}^{k} n(H_i) = n$, and $\sum_{i = 1}^{k} e(H_i) = e(G)$. Since each of $H_1,\dots,H_k$ is acyclic, we have that $e(H_i) = n(H_i) - 1$, meaning $e(G) = n-1 = = \sum_{i = 1}^{k} e(H_i) = \left(\sum_{i = 1}^{k} n(H_i)\right) - k = n - k$, meaning $k = 1$. So, $G$ is connected as there is one component.\\
+      Let $G$ be an acyclic graph with $n-1$ edges and no cycles. We will show that $G$ is connected. Since $G$ is acyclic, we know that it is a forest, implying that the components $H_1,\dots,H_k$ must also be acyclic. Additionally, we know that $\sum_{i = 1}^{k} n(H_i) = n$, and $\sum_{i = 1}^{k} e(H_i) = e(G)$. Since each of $H_1,\dots,H_k$ is acyclic, we have that $e(H_i) = n(H_i) - 1$, meaning $e(G) = n-1 = \sum_{i = 1}^{k} e(H_i) = \left(\sum_{i = 1}^{k} n(H_i)\right) - k = n - k$, meaning $k = 1$. So, $G$ is connected as there is one component.\\
 
       Suppose $G$ has no loops and for every set of vertices $u,v\in V(G)$, $\exists!u,v$ path in $G$. Since for every $u,v$, there exists a $u,v$ path, we know that $G$ is connected. Assume toward contradiction that $G$ contains a cycle, and that $u,v\in C_k$. Then, by the definition of a cycle, there exist two paths from $u$ to $v$, so we have reached a contradiction with our assumption that there is a unique $u,v$ path. Therefore, $G$ must be acyclic as well as connected.\\
 
@@ -518,7 +518,7 @@
   \end{itemize}
   \begin{problem}{Proof}
     We will use induction to prove as follows:
-    \begin{description}[font=\scshape]
+    \begin{description}[font=\normalfont\scshape]
       \item[Base Case] Suppose $T$ has $0$ edges. Then, $T$ is contained within $G$ because $G$ is a simple graph with at least one vertex.
       \item[Inductive Hypothesis] If $e(T) < k$ and $\delta(G) \geq e(T)$, then $G$ contains a copy of $T$. Suppose that $e(T) = k$ and $T$ contains a leaf $v$. Then, $T-v$ is a tree with $e(T-v) = k-1$. Since $e(T-v)<k$ and $\delta(G) \geq e(T-v)$, the inductive hypothesis implies that $G$ contains a subgraph isomorphic to $T-v$. 
       \item[Proof] Let $u$ be a vertex adjacent to $v$, and let $x$ be the vertex that corresponds to $u$. Since $d_{G}(x)\geq k$ and $u$ contains maximum $k-1$ neighbors not equal to $u$ (since $T-v$ contains $k$ vertices), this means $\exists y\in G$ such that $x\leftrightarrow y$, where $y$ corresponds to $v\in T$.
