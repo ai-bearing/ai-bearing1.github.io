@@ -511,7 +511,7 @@
     \item Then, $\forall e\in E(T) - E(T')$, $\exists e'\in E(T') - E(T)$ such that $T'+e-e'$ is a spanning tree.
   \end{itemize}
   \begin{problem}{Proofs}
-    Let $e\in E(T)-E(T')$. Since $T$ is a tree, $e$ is a cut-edge --- therefore, $T-e$ is split into two components, $H_1$ and $H_2$. Since $T'$ is connected, we know that $\exists e'\in E(T')$ such that $e$ connects a vertex in $H_1$ and a vertex in $H_2$. Notice that $T-e+e'$ is a connected graph with $n-1$ vertices, meaning that $T-e+e'$ is still a tree. Therefore, $T-e+e'$ is a spanning tree.\\
+    Let $e\in E(T)-E(T')$. Since $T$ is a tree, $e$ is a cut-edge --- therefore, $T-e$ is split into two components, $H_1$ and $H_2$. Since $T'$ is connected, we know that $\exists e'\in E(T')$ such that $e$ connects a vertex in $H_1$ and a vertex in $H_2$. Notice that $T-e+e'$ is a connected graph with $n-1$ edges, meaning that $T-e+e'$ is still a tree. Therefore, $T-e+e'$ is a spanning tree.\\
 
     Let $e\in E(T)-E(T')$. Since $T'$ is a tree, by a previous result we know that $T'+e$ has exactly one cycle. Since $T'+e$ contains a cycle $C$, we know that there exists another edge $e'$ in the cycle that is not in $T$. Since $e'$ isn't a cut-edge (as it is within $C$), we can delete it, reducing the total number of cycles by $1$, yielding a new spanning tree.
   \end{problem}
@@ -540,8 +540,15 @@
 \begin{problem}{Examples}
   The Petersen graph has diameter of $2$ (because every pair of non-adjacent vertices has one common neighbor), which is the same as its radius.\\
 
-  The diameter of $C_n$ is either $n/2$ or $\lfloor n/2 \rfloor$. This is also equal to its radius.
+  The diameter of $C_n$ is either $n/2$ or $\lfloor n/2 \rfloor$. This is also equal to its radius.\\
 
+  The diameter of $Q_k$ is equal to $k$ --- this is because for any $k$-tuple, the longest path in $Q_k$ is that path which leads to a path which flips every one of the $k$ coordinates.
+\end{problem}
+\begin{problem}{Proposition \& Proof}
+  If $G$ is a simple graph, then $\textrm{diam }G \geq 3 \rightarrow \textrm{diam }\overline{G} \leq 3$.
+  \tcblower
+  Let $G$ be a simple graph with $\textrm{diam }G \geq 3$. Then, $\exists u,v\in G$ such that $u\not\leftrightarrow v$ and $N(u)\cap N(v) = \emptyset$. Let $A = N_{\overline{G}}(u)$ and $B = N_{\overline{G}}(v)$. Then, $A\cup B = V(G)$.\\
 
+  Let $x,y\in A$. Then, we can create a path $x,v,y$ between $x$ and $y$. Similarly, if $x,y\in B$, then we can create the path $x,u,y$, both of which are of size 2. Meanwhile, if $x\in A-B$ and $y\in B-A$, we can create a path $x,v,u,y$, which is an $x,y$ walk of size 3, which contains a $x,y$ path of maximum size $3$.
 \end{problem}
 \end{document}
