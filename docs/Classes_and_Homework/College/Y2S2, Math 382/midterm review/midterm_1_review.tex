@@ -425,7 +425,9 @@
     Let $G$ be a simple $n$-vertex graph. If $\delta(G) \geq \frac{n-1}{2}$, then $G$ is connected.
   \end{problem}
   \begin{problem}{Proof}
-    Let $G$ be a simple graph with $\delta(G) \geq \frac{n-1}{2}$, and let $x,y\in V(G)$. If $x\leftrightarrow y$, then we are done. Else, if $x\not\leftrightarrow y$, we have that $|N(x)| \geq \frac{n-1}{2}$, and $|N(y)| \geq \frac{n-1}{2}$. If $G$ were disconnected, it would be the case that $|N(x)\cup N(y)| = |N(x)| + |N(y)|$, implying that the total number of neighbors would be at least $n-1$. However, since there are $n-2$ vertices in the set $V(G) - \{x,y\}$, it must be the case that they share a common neighbor, meaning that there exists a path between $x$ and $y$.
+    Let $G$ be a simple graph with $\delta(G) \geq \frac{n-1}{2}$, and let $x,y\in V(G)$. If $x\leftrightarrow y$, then we are done.\\
+
+    Else, if $x\not\leftrightarrow y$, we have that $|N(x)| \geq \frac{n-1}{2}$, and $|N(y)| \geq \frac{n-1}{2}$. If $G$ were disconnected, it would be the case that $|N(x)\cup N(y)| = |N(x)| + |N(y)|$, implying that the total number of neighbors would be at least $n-1$. However, since there are $n-2$ vertices in the set $V(G) - \{x,y\}$, it must be the case that they share a common neighbor, meaning that there exists a path between $x$ and $y$.
   \end{problem}
   The \textbf{disjoint union} of graphs is shown via $G+H$ for graphs $G$ and $H$. A graph is the disjoint union of its various components.\\
 
