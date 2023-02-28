@@ -88,6 +88,11 @@
 \end{problem}
 \begin{problem}{2.1.27}
   Let $d_1,\dots,d_n$ be positive integers with $n\geq 2$. Prove that there exists a tree with vertex degrees $d_1,\dots,d_n$ if and only if $\sum d_i = 2n-2$.
+  \tcblower
+  \begin{description}[font=\normalfont\scshape]
+    \item[($\Rightarrow$)] Suppose that for some tree $T$, $d_1,\dots,d_n$ are the degrees of the vertices of the tree. Since $T$ is a tree, this means $e(G) = n-1$, and $\sum d_i = 2e(G)$, meaning $\sum d_i = 2(n-1) = 2n-2$.
+    \item[($\Leftarrow$)] Suppose that $\sum d_i = 2n-2$ for $d_1,\dots,d_n$ corresponding to the degrees of the vertices in $G$. By a previous result, we know that $\sum d_i = 2e(G)$, meaning that $\sum d_i = 2(n-1)$, implying that $e(G) = n-1$. We can find a tree $G$ with $n-1$ edges by letting $G$ be connected with that many edges.
+  \end{description}
 \end{problem}
 \begin{problem}{2.1.33}
   Let $G$ be a connected $n$-vertex graph. Prove that $G$ has exactly one cycle if and only if $G$ has exactly $n$ edges.
