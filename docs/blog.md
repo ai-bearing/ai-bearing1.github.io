@@ -8,6 +8,20 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 1 March, 2023
+One of the math professors teaching Calc 2 wants me to prove the rule of logarithms \(\log\left(a^b\right) = b\log(a)\). I tried using the following:
+```math
+\begin{align*}
+ \ln(a^b) &= \int_{1}^{a^b} \frac{1}{t} dt \\
+ &= \int_{1}^{a}\frac{1}{t} dt + \int_{a}^{a^b} \frac{1}{t} dt\\
+ &= \ln(a) + \int_{1}^{a^{b-1}} \frac{1}{t} dt\\
+ &= \ln(a) + \ln\left(a^{b-1}\right)
+\end{align*}
+```
+Of course a problem with this proof is that there is no theoretical limit, even though it should work. I'm really stuck right now.
+
+---
+
 ### 24 February, 2023
 Rain, rain, go away, come again another day (when it's not close to midterm season). Hopefully I will get the jump on studying for midterms, first one is on Wednesday at 8:30 am for Macro, covering a bunch of models that are largely fake.
 
