@@ -189,7 +189,7 @@
     \item We can show that $A^2 = MM^T$ for adjacency matrix $A$ and incidence matrix $M$ on any given graph.
   \end{itemize}
 \end{problem}
-\begin{problem}{The Petersen Graph}
+\begin{problem}{The Petersen graph}
   We can also examine combinatorial relations through graphs. For example, the Petersen graph ($G_p$) is defined as follows:
   \begin{quote}
     The simple graph whose vertices are the 2-element subsets of a 5 element set, and whose edges are the pairs of disjoint 2-element sets.
@@ -246,10 +246,9 @@
   A \textbf{path} is a walk that does not repeat vertices or edges, and a cycle is a circuit that does not repeat vertices.\\
 
   We can prove the following proposition:
-  \begin{problem}{Proposition}
+  \begin{problem}{Lemma 1.2.5}
     Every $u,v$ walk contains a $u,v$ path.
-  \end{problem}
-  \begin{problem}{Solution}
+    \tcblower
     Let $u,\dots,x,\dots,x,\dots,v$ be a path. If there exists copies of any vertex $x$, delete all edges and vertices between instances of $x$ and retain one of the instances of $x$, along with the remaining edges. Continue until there are no repeated instances of any vertices.
   \end{problem}
 \end{problem}
@@ -270,17 +269,15 @@
   If $U\subseteq V(G)$, then $G-U$ is equal to deleting all the vertices in $U$ and the edges incident on the vertices in $U$, or $G[V-U]$. If $U = \{v\}$, then we denote it $G-v$. An edge deletion doesn't require deleting the vertices the edge is incident on.\\
 
   By adding an edge to a graph, we either leave the number of components unchanged or increase them by one, which implies the following proposition.
-  \begin{problem}{Proposition}
+  \begin{problem}{Proposition 1.2.11}
     Every graph with $n$ vertices and $k$ edges has at least $n-k$ components.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     Start with $n$ vertices and $0$ edges. There are $n$ components in this graph --- by adding an edge, we decrease the number of components by $1$ or leave them unchanged, thus yielding us that the number of components is at least $n-k$.
   \end{problem}
   A \textbf{cut-edge} or \textbf{cut-vertex} is an edge or vertex whose deletion increases the number of components in $G-e$ or $G-v$. We can prove the following proposition:
-  \begin{problem}{Proposition}
+  \begin{problem}{Theorem 1.2.14}
     An edge is a cut-edge if and only if it is not contained within a cycle.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     This is equivalent to saying that for some connected graph $H$, $H-e$ is connected if and only if $e$ is in a cycle in $H$.\\
 
     Suppose $H-e$ is connected. Then, there must exist a path $P$ in $H-e$ such that $P+e$ is a cycle.\\
@@ -300,7 +297,7 @@
 \end{problem}
 \begin{problem}{Even and Odd Walks}
   A walk is \textbf{even} if it is of even length (as denoted by the number of edges), and a walk is \textbf{odd} if it is of odd length. Every closed walk $W$ contains a cycle $C$ if the vertices and edges of $C$ occur in cyclic order as a sublist of $W$.
-  \begin{problem}{Proposition}
+  \begin{problem}{Lemma 1.2.15}
     Every closed odd walk contains an odd cycle.
   \end{problem}
   \begin{problem}{Proof}
@@ -311,17 +308,15 @@
       \item[Proof] Else, consider $W' = x,\dots,x$ and $W'' = u,\dots,x,\dots,u$ found by deleting the first instance of $x$ and the remaining edges between that first instance and the second instance of $x$. We know that since $\ell(W)$ is odd, and $\ell(W) = \ell(W') + \ell(W'')$, we must have that one of $\ell(W')$ or $\ell(W'')$ must be odd.
     \end{description}
   \end{problem}
-  \begin{problem}{Proposition}
+  \begin{problem}{Note}
     If an edge appears exactly once in a closed walk $W$, then $W$ contains a cycle through that edge, $e$.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     Without loss of generality, let $W = y,\dots,x,y$, and $e = xy$. Then, $W' = y,\dots,x$ is a $y,x$ walk, implying $\exists y,x$ path $P$. Therefore, $P + e$ yields a cycle.
   \end{problem}
-  \begin{problem}{König's Theorem}
+  \begin{problem}{Theorem 1.2.18 (König's Theorem)}
     A graph is bipartite if and only if it does not contain an odd cycle.
-  \end{problem}
-  In order to prove something \textit{is} bipartite, it is easier to find a bipartition than to show that all cycles in the graph are even.
-  \begin{problem}{Proof}
+    \tcblower
+    In order to prove something \textit{is} bipartite, it is easier to find a bipartition than to show that all cycles in the graph are even.
     Let $\textrm{dist}(x,y)$ denote the length of the shortest path between $x$ and $y$, and let $G$ be a connected graph. Let $v\in V(G)$ and $X = \{v\in V(G): \textrm{dist}(v,x)\textrm{ is even} \}$, and $Y = \{v\in V(G): \textrm{dist}(v,x)\textrm{ is odd} \}$, where $x$ is some vertex. Assume towards contradiction that one of either $X$ or $Y$ is not an independent set. Without loss of generality, let $X$ be the set that is not independent. Let $e = x_1x_2$ be an edge for some $x_1,x_2\in X$. Then, we can construct a path as follows:
     \begin{itemize}
       \item $P_1 = v,\dots,x_1$
@@ -344,17 +339,15 @@
 \end{problem}
 \begin{problem}{Eulerian Graphs}
   A graph $G$ is \textbf{Eulerian} if it contains a circuit that contains all the edges in $G$, known as an Eulerian circuit. Vertices may repeat themselves, but edges may not.\\
-  \begin{problem}{Lemma}
+  \begin{problem}{Lemma 1.2.25}
     If $\forall v\in G$, $d(v) \geq 2$, then $G$ contains a cycle.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     Let $P = u_1,u_2,\dots,u_k$ be a maximal path. Since $d(u_1)\geq 2$ by our assumption, this means $u_1$ is incident on some edge other than $u_1u_2$. However, since $P$ is maximal and cannot be extended, this means $u_1$ must be incident on an edge that is also incident on $v\in \{u_1,\dots,u_k\}$, implying the existence of a cycle $C = u_1,v,\dots,u_2,u_1$.
   \end{problem}
   Using this lemma, we can prove the following important result about Eulerian graphs:
-  \begin{problem}{Proposition}
+  \begin{problem}{Theorem 1.2.26}
     A graph is Eulerian if and only if it has at most one nontrivial component and all vertices are of even degree.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     ($\Rightarrow$) Whenever we ``enter'' a vertex during an Eulerian circuit, we also have to ``exit'' the vertex at an edge. If a vertex is not on the trail, then it has no incident edges and so the vertex is a trivial component. Additionally, if $G$ has multiple components, then there is no trail connecting all components and so $G$ cannot be Eulerian.\\
 
     ($\Leftarrow$) Suppose all vertices of $G$ are of even degree and $G$ has only one nontrivial component. Let $e(G) = |E(G)|$
@@ -366,10 +359,9 @@
   \end{problem}
 \end{problem}
 \begin{problem}{Other Important Lemmas}
-  \begin{problem}{Even Graphs}
+  \begin{problem}{Proposition 1.2.17}
     Every even graph decomposes into cycles.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     We will proceed via induction as follows:
     \begin{itemize}
       \item If $e(G) = 0$, then we know that this is a cycle (of length zero), so we are done.
@@ -381,10 +373,9 @@
         \end{itemize}
     \end{itemize}
   \end{problem}
-  \begin{problem}{Trail Decomposition}
+  \begin{problem}{Theorem 1.2.33}
     For a connected, nontrivial graph with exactly $2k$ odd vertices, the minimum number of trails it decomposes into is max$\{1,k\}$. 
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     A non-closed trail contributes an even number of edges within its interior, meaning that we need at least $k$ non-closed trails to handle the $2k$ odd vertices in the given graph. We can pair each vertex with an element in the edge set $\{e_1,\dots,e_k\}$, giving us $G' = G + \{e_1,\dots,e_k\}$ that is connected and even, meaning it is Eulerian. 
   \end{problem}
 \end{problem}
@@ -397,13 +388,12 @@
     \item The \textbf{order}, $n(G)$, is the number of vertices in $G$, or $|V(G)|$.
     \item The \textbf{size}, $e(G)$, is the number of edges in $G$, or $|E(G)|$.
   \end{itemize}
-  \begin{problem}{Proposition}
+  \begin{problem}{Corollary 1.3.4}
     \[
       \sum_{v\in V} d(v) = 2|E|
     \]
     Additionally, each graph has an even number of vertices with odd degree.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     In each graph, the edges incident on a given vertex are incident on another vertex, meaning that summing up the degrees of each vertex means that we are double counting each vertex.\\
 
     Similarly, since the sum of the degrees of vertices must be even, there cannot be an odd number of vertices of odd degree, or else we would have a fractional number of edges.
@@ -415,16 +405,14 @@
   We know that $Q_k$ is bipartite because we can create a bipartition where $X$ refers to the tuples with an odd number of $1$ elements, while $Y$ refers to the tuples with an even number of $1$ elements. We know that $X$ and $Y$ are independent sets, since odd and even numbers differ from other odd and even numbers respectively by $2$, so $X$ and $Y$ are a bipartition of $Q_k$.
 \end{problem}
 \begin{problem}{Miscellaneous Proofs and Results}
-  \begin{problem}{Extremal Problem}
+  \begin{problem}{Proposition 1.3.13}
     The minimum number of edges in a connected graph with $n$ vertices is $n-1$.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     Suppose $G$ has $n-2$ edges. Then, by a previous result, we know that $G$ must have at least $n-(n-2) = 2$ components.
   \end{problem}
-  \begin{problem}{Connectedness Proof}
+  \begin{problem}{Proposition 1.3.15}
     Let $G$ be a simple $n$-vertex graph. If $\delta(G) \geq \frac{n-1}{2}$, then $G$ is connected.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     Let $G$ be a simple graph with $\delta(G) \geq \frac{n-1}{2}$, and let $x,y\in V(G)$. If $x\leftrightarrow y$, then we are done.\\
 
     Else, if $x\not\leftrightarrow y$, we have that $|N(x)| \geq \frac{n-1}{2}$, and $|N(y)| \geq \frac{n-1}{2}$. If $G$ were disconnected, it would be the case that $|N(x)\cup N(y)| = |N(x)| + |N(y)|$, implying that the total number of neighbors would be at least $n-1$. However, since there are $n-2$ vertices in the set $V(G) - \{x,y\}$, it must be the case that they share a common neighbor, meaning that there exists a path between $x$ and $y$.
@@ -437,10 +425,9 @@
     \item A $2$-regular graph is claw ($K_{1,3}$)-free because the claw graph contains a vertex of degree $3$.
     \item $Q_k$ is $C_5$ free because $Q_k$ is bipartite, and bipartite graphs do not contain odd cycles.
   \end{itemize}
-  \begin{problem}{Proposition}
+  \begin{problem}{Theorem 1.3.23}
     The maximum number of edges in an $n$-vertex, triangle-free simple graph is $\lfloor n^2/4\rfloor$.
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     Let $G$ be a triangle-free simple $n$-vertex graph. Suppose $\Delta(G) = k$ and let $d(v) = k$. Since $G$ is triangle-free, we know that $N(v)$ is an independent set. This means that every edge in $G$ must be incident on some vertex in $V(G) - N(v)$. Therefore, $e(G) \leq \sum_{x\in (V - N(v))} d(x) \leq |V - N(v)|\Delta(G) = (n-k)(k)$. The maximum of the function $f(k) = (n-k)(k)$ is when $k = \lfloor n/2 \rfloor$ (assuming integral $k$), so the maximum number of edges is $\lfloor n^2/4\rfloor$.
   \end{problem}
 \end{problem}
@@ -453,7 +440,7 @@
   Since every forest is acyclic, forests thus do not contain any odd cycles, meaning that they are bipartite.
 \end{problem}
 \begin{problem}{Theorems and Proofs}
-  \begin{problem}{Proposition}
+  \begin{problem}{Lemma 2.1.3}
     Every tree with at least $2$ vertices has at least $2$ leaves. Deleting a leaf from an $n$-vertex tree produces a tree with $n-1$ vertices.
   \end{problem}
   \begin{problem}{Proof}
@@ -461,7 +448,7 @@
 
     Since $x_1$ and $x_k$ have degree $1$, deleting one of them would reduce the number of edges and number of vertices by $1$, yielding a new tree.
   \end{problem}
-  \begin{problem}{Proposition}
+  \begin{problem}{Theorem 2.1.4}
     For an $n$-vertex graph $G$ with $n\geq 1$, the following are equivalent statements:
     \begin{enumerate}[(a)]
       \item $G$ is connected and acyclic
@@ -489,7 +476,7 @@
       Let $G$ be a connected, acyclic graph. Since $G$ is connected, we know that $\forall x, \forall y\in V(G), \exists x,y$ path $P_1$ in $G$. Assume toward contradiction that there exist two unique paths $P_1, P_2$ from $u$ to $v$ such that $e(P_1) + e(P_2)$ is minimized. We can see that $P_1$ and $P_2$ share no common vertices aside from $u$ and $v$, so $P_1 + P_2$ is a cycle, meaning that $G$ is not acyclic, meaning we have reached a contradiction. Therefore, we know that $\exists! u,v$ path in $G$.
   \end{problem}
   Since any two vertices are connected via exactly one path, we will call this path $xTy$ for tree $T$.
-  \begin{problem}{Corollaries}
+  \begin{problem}{Corollary 2.1.5}
     \begin{enumerate}[(a)]
       \item Every edge of a tree is a cut-edge
       \item Adding one edge to a tree forms exactly one cycle
@@ -505,20 +492,18 @@
   \end{problem}
 \end{problem}
 \begin{problem}{More Propositions}
-  Let $T$ and $T'$ be spanning trees of connected graph $G$. 
-  \begin{itemize}
-    \item Then, $\forall e\in E(T)-E(T')$, $\exists e'\in E(T')-E(T)$ such that $T-e+e'$ is a spanning tree.
-    \item Then, $\forall e\in E(T) - E(T')$, $\exists e'\in E(T') - E(T)$ such that $T'+e-e'$ is a spanning tree.
-  \end{itemize}
-  \begin{problem}{Proofs}
+  For 2.1.6 and 2.1.7, Let $T$ and $T'$ be spanning trees of connected graph $G$. 
+  \begin{description}[font=\normalfont]
+    \item[(2.1.6)] Then, $\forall e\in E(T)-E(T')$, $\exists e'\in E(T')-E(T)$ such that $T-e+e'$ is a spanning tree.
+    \item[(2.1.7)] Then, $\forall e\in E(T) - E(T')$, $\exists e'\in E(T') - E(T)$ such that $T'+e-e'$ is a spanning tree.
+    \item[(2.1.8)] If $T$ is a tree with $k$ edges and $G$ is a simple graph with $\delta(G) \geq k$, then $T$ is a subgraph of $G$.
+  \end{description}
+  \begin{problem}{Proofs of 2.1.6 and 2.1.7}
     Let $e\in E(T)-E(T')$. Since $T$ is a tree, $e$ is a cut-edge --- therefore, $T-e$ is split into two components, $H_1$ and $H_2$. Since $T'$ is connected, we know that $\exists e'\in E(T')$ such that $e$ connects a vertex in $H_1$ and a vertex in $H_2$. Notice that $T-e+e'$ is a connected graph with $n-1$ edges, meaning that $T-e+e'$ is still a tree. Therefore, $T-e+e'$ is a spanning tree.\\
 
     Let $e\in E(T)-E(T')$. Since $T'$ is a tree, by a previous result we know that $T'+e$ has exactly one cycle. Since $T'+e$ contains a cycle $C$, we know that there exists another edge $e'$ in the cycle that is not in $T$. Since $e'$ isn't a cut-edge (as it is within $C$), we can delete it, reducing the total number of cycles by $1$, yielding a new spanning tree.
   \end{problem}
-  \begin{itemize}
-    \item If $T$ is a tree with $k$ edges and $G$ is a simple graph with $\delta(G)\geq k$, then $T$ is a subgraph of $G$. 
-  \end{itemize}
-  \begin{problem}{Proof}
+  \begin{problem}{Proof of 2.1.8}
     We will use induction to prove as follows:
     \begin{description}[font=\normalfont\scshape]
       \item[Base Case] Suppose $T$ has $0$ edges. Then, $T$ is contained within $G$ because $G$ is a simple graph with at least one vertex.
@@ -544,7 +529,7 @@
 
   The diameter of $Q_k$ is equal to $k$ --- this is because for any $k$-tuple, the longest path in $Q_k$ is that path which leads to a path which flips every one of the $k$ coordinates.
 \end{problem}
-\begin{problem}{Proposition \& Proof}
+\begin{problem}{Theorem 2.1.11 \& Proof}
   If $G$ is a simple graph, then $\textrm{diam }G \geq 3 \rightarrow \textrm{diam }\overline{G} \leq 3$.
   \tcblower
   Let $G$ be a simple graph with $\textrm{diam }G \geq 3$. Then, $\exists u,v\in G$ such that $u\not\leftrightarrow v$ and $N(u)\cap N(v) = \emptyset$. Let $A = N_{\overline{G}}(u)$ and $B = N_{\overline{G}}(v)$. Then, $A\cup B = V(G)$.\\

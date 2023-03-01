@@ -7,8 +7,8 @@ Here are the various class notes I have written up so far.
 
 ## Spring 2023
 ### Graph Theory
-- [Graph Theory Notes (up to Midterm 1)](https://aiyer.notion.site/Math-382-Notes-7eb7de261b55436b80fb75fbb861c929)
-- [Graph Theory Midterm 1 Review](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/midterm review/midterm_1_review.pdf)
+- [Graph Theory Notes up to Midterm 1 (LaTeX PDF)](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/midterm review/midterm_1_review.pdf)
+- [Graph Theory Notes up to Midterm 1 (Notion)](https://aiyer.notion.site/Math-382-Notes-7eb7de261b55436b80fb75fbb861c929)
 - [Graph Theory Homeworks up to Midterm 1](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/midterm review/homeworks_to_midterm_1.pdf)
 
 - [Graph Theory Notes (after Midterm 1)](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Math 382/classnotes/notes_after_midterm_1.pdf)
