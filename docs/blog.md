@@ -9,7 +9,7 @@ This is less of a typical blog and more an online journal where I write down my 
 ---
 
 ### 1 March, 2023
-One of the math professors teaching Calc 2 wants me to prove the rule of logarithms \(\log\left(a^b\right) = b\log(a)\). I tried using the following:
+One of the math professors teaching Calc 2 wants me to prove the rule of logarithms $\log\left(a^b\right) = b\log(a)$. I tried using the following:
 ```math
 \begin{aligned}
  \ln(a^b) &= \int_{1}^{a^b} \frac{1}{t} dt \\
