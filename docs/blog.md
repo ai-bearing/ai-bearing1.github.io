@@ -8,6 +8,11 @@ This is less of a typical blog and more an online journal where I write down my 
 
 ---
 
+### 1 March, 2023
+Unfortunately it seems the way I set up my website means I can't use MathJax to include math equations in my website, really sad stuff.
+
+---
+
 ### 24 February, 2023
 Rain, rain, go away, come again another day (when it's not close to midterm season). Hopefully I will get the jump on studying for midterms, first one is on Wednesday at 8:30 am for Macro, covering a bunch of models that are largely fake.
 
