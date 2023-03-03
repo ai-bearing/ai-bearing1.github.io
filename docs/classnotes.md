@@ -26,6 +26,7 @@ Here are the various class notes I have written up so far.
   - [02-17](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/classnotes/02-17.pdf)
   - [02-22](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/classnotes/02-22.pdf)
   - [02-24](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/classnotes/02-24.pdf)
+  - [03-06](https://ai-bearing.github.io/Classes_and_Homework/College/Y2S2, Econ 251/classnotes/03-06.pdf)
 
 ## Fall 2022
 - [Topology Notes](https://aiyer.notion.site/Topology-Final-Exam-Notes-4603c14e5cb94f45a867fca3164d27a5)
