@@ -14,6 +14,7 @@
 \usepackage{geometry}
 \geometry{letterpaper, portrait, margin=1in}
 \usepackage{fancyhdr}
+\usepackage{soul}
 
 %symbols
 \usepackage{amsmath}
@@ -167,6 +168,18 @@
     \end{itemize}
   \end{problem}
   \begin{problem}{Dijkstra's Algorithm}
+    We want to find an algorithm to find the shortest path between two vertices in a weighted graph --- Dijkstra's Algorithm can solve this.\\
+
+    We know that if $P$ is the shortest $u,v$ path, and $x\in P$, then following $P$ from $u$ to $x$ will yield the shortest $u,x$ path.
+    \begin{description}[font=\normalfont\scshape]
+      \item[Input] A weighted graph, $G$, and $u\in V(G)$
+      \item[Output] For each $z\in V(G)$, the distance $d(u,z)$.
+      \item[Initialization]Extend the weight function such that if $xy\notin E(G)$, then $w(xy) = \infty$. Create $S$ that contains all vertices whose distances from $u$ are known. Let $S := \{u\}$. Let $t:V\rightarrow \mathbb{R}^+ \cup \{0,\infty\}$ which will keep track of the tentative distance between $u$ and $z$. Let $t(z) := w(uz)$ for all $z\neq u$, and $t(u) := 0$.
+      \item[Condition to Terminate Loop] If $t(z) = \infty$ for all $z\notin S$ \textsc{or} $S = V$, then go to end.
+      \item[Loop] Else, pick $v\in V-S$ such that $t(v) = \min_{z\notin S} t(z)$. Add $v$ to $S$. Explore the edges from $v$ to update tentative distances; for each edge $vz$ with $z\notin S$, $t(z) := \min\{t(z),t(v) + w(vz)\}$.
+      \item[End] Set $d(u,v) = t(v)~\forall v\in V$.
+    \end{description}
+    On the following weighted graph, we can do Dijkstra's algorithm as follows:
     \begin{center}
       \begin{tikzpicture}
         \filldraw (-2,0) circle (2pt)
@@ -185,6 +198,178 @@
         \draw (-2,0) --node[middleweight]{\small 3}(-1,-1) --node[middleweight]{\small 5} (1,-1) -- node[middleweight]{\small 6} (2,0);
         \draw (-1,-1) --node[earlyweight]{\small 4}(1,1);
         \draw (-1,1) --node[earlyweight]{\small 4}(1,-1);
+      \end{tikzpicture}
+    \end{center}
+  \end{problem}
+  \begin{problem}{Dijkstra's Algorithm: Worked Example}
+    We let $S = \{u\}$, and include our tentative distances for the first step.
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (-1,-1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (1,-1) circle (2pt)
+                  (1,1) circle (2pt);
+        \node[anchor = east] (u) at (-2,0) {\small $t_u=0$};
+        \node[anchor = south east] (a) at (-1,1) {\small $t_a = 1$};
+        \node[anchor = north east] (b) at (-1,-1) {\small $t_b = 3$};
+        \node[anchor = west] (e) at (2,0) {\small $t_e = \infty$};
+        \node[anchor = north west] (c) at (1,-1) {\small $t_d = \infty$};
+        \node[anchor = south west] (d) at (1,1) {\small $t_c = \infty$};
+        \draw (-2,0) -- node[middleweight]{\small 1} (-1,1) -- node[middleweight]{\small 1}(1,1) -- node[middleweight]{\small 2}(2,0);
+        \draw (-2,0) --node[middleweight]{\small 3}(-1,-1) --node[middleweight]{\small 5} (1,-1) -- node[middleweight]{\small 6} (2,0);
+        \draw (-1,-1) --node[earlyweight]{\small 4}(1,1);
+        \draw (-1,1) --node[earlyweight]{\small 4}(1,-1);
+      \end{tikzpicture}
+    \end{center}
+    Now, $S = \{u,a\}$ because $t_a \leq t_b$. We now start from $a$ and include our tentative distances.
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (-1,-1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (1,-1) circle (2pt)
+                  (1,1) circle (2pt);
+        \node[anchor = east] (u) at (-2,0) {\small $t_u=0$};
+        \node[anchor = south east] (a) at (-1,1) {\small $t_a = 1$};
+        \node[anchor = north east] (b) at (-1,-1) {\small $t_b = 3$};
+        \node[anchor = west] (e) at (2,0) {\small $t_e = \infty$};
+        \node[anchor = north west] (c) at (1,-1) {\small $t_c = 5$};
+        \node[anchor = south west] (d) at (1,1) {\small $t_d = 6$};
+        \draw (-2,0) -- node[middleweight]{\small 1} (-1,1) -- node[middleweight]{\small 1}(1,1) -- node[middleweight]{\small 2}(2,0);
+        \draw (-2,0) --node[middleweight]{\small 3}(-1,-1) --node[middleweight]{\small 5} (1,-1) -- node[middleweight]{\small 6} (2,0);
+        \draw (-1,-1) --node[earlyweight]{\small 4}(1,1);
+        \draw (-1,1) --node[earlyweight]{\small 4}(1,-1);
+      \end{tikzpicture}
+    \end{center}
+    Next, we include $b$ into $S$, making it $\{u,a,b\}$. We then check our tentative distances from $b$, where we find that they are no better than tentative distances from $a$, so we keep the tentative distances on $c$ and $d$ as what they were with $a$.
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (-1,-1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (1,-1) circle (2pt)
+                  (1,1) circle (2pt);
+        \node[anchor = east] (u) at (-2,0) {\small $t_u=0$};
+        \node[anchor = south east] (a) at (-1,1) {\small $t_a = 1$};
+        \node[anchor = north east] (b) at (-1,-1) {\small $t_b = 3$};
+        \node[anchor = west] (e) at (2,0) {\small $t_e = \infty$};
+        \node[anchor = north west] (c) at (1,-1) {\small $t_c =5$};
+        \node[anchor = south west] (d) at (1,1) {\small $t_d = 6$};
+        \draw (-2,0) -- node[middleweight]{\small 1} (-1,1) -- node[middleweight]{\small 1}(1,1) -- node[middleweight]{\small 2}(2,0);
+        \draw (-2,0) --node[middleweight]{\small 3}(-1,-1) --node[middleweight]{\small 5} (1,-1) -- node[middleweight]{\small 6} (2,0);
+        \draw (-1,-1) --node[earlyweight]{\small 4}(1,1);
+        \draw (-1,1) --node[earlyweight]{\small 4}(1,-1);
+      \end{tikzpicture}
+    \end{center}
+    Next, we include $c$ into $S$, making it $\{u,a,b,c\}$, and we update our tentative distances.
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (-1,-1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (1,-1) circle (2pt)
+                  (1,1) circle (2pt);
+        \node[anchor = east] (u) at (-2,0) {\small $t_u=0$};
+        \node[anchor = south east] (a) at (-1,1) {\small $t_a = 1$};
+        \node[anchor = north east] (b) at (-1,-1) {\small $t_b = 3$};
+        \node[anchor = west] (e) at (2,0) {\small $t_e = 11$};
+        \node[anchor = north west] (c) at (1,-1) {\small $t_c =5$};
+        \node[anchor = south west] (d) at (1,1) {\small $t_d = 6$};
+        \draw (-2,0) -- node[middleweight]{\small 1} (-1,1) -- node[middleweight]{\small 1}(1,1) -- node[middleweight]{\small 2}(2,0);
+        \draw (-2,0) --node[middleweight]{\small 3}(-1,-1) --node[middleweight]{\small 5} (1,-1) -- node[middleweight]{\small 6} (2,0);
+        \draw (-1,-1) --node[earlyweight]{\small 4}(1,1);
+        \draw (-1,1) --node[earlyweight]{\small 4}(1,-1);
+      \end{tikzpicture}
+    \end{center}
+    Finally, we include $d$ and update tentative distances:
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (-1,-1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (1,-1) circle (2pt)
+                  (1,1) circle (2pt);
+        \node[anchor = east] (u) at (-2,0) {\small $t_u=0$};
+        \node[anchor = south east] (a) at (-1,1) {\small $t_a = 1$};
+        \node[anchor = north east] (b) at (-1,-1) {\small $t_b = 3$};
+        \node[anchor = west] (e) at (2,0) {\small $t_e = 8$};
+        \node[anchor = north west] (c) at (1,-1) {\small $t_c =5$};
+        \node[anchor = south west] (d) at (1,1) {\small $t_d = 6$};
+        \draw (-2,0) -- node[middleweight]{\small 1} (-1,1) -- node[middleweight]{\small 1}(1,1) -- node[middleweight]{\small 2}(2,0);
+        \draw (-2,0) --node[middleweight]{\small 3}(-1,-1) --node[middleweight]{\small 5} (1,-1) -- node[middleweight]{\small 6} (2,0);
+        \draw (-1,-1) --node[earlyweight]{\small 4}(1,1);
+        \draw (-1,1) --node[earlyweight]{\small 4}(1,-1);
+      \end{tikzpicture}
+    \end{center}
+    In order to find the direct paths, we can add arrows along the edges that were selected by Dijkstra's algorithm.\\
+
+    The proof can be outlined as follows:
+    \begin{description}[font=\normalfont\scshape]
+      \item[If $z\in S$:] then, $t(z) = d(u,z)$.
+      \item[Else if $z\notin S$:] then, $t(z)$ is the length of a shortest $u,z$ path $P$ such that $V(P-z)\subseteq S$.
+    \end{description}
+  \end{problem}
+  \section*{3.1}%
+  \begin{problem}{Matchings}
+    In a simple graph, a \textbf{matching} $M$ is a set of pairwise disjoint edges. In other words, $\forall e_i,e_j\in M$, then $e_i\cap e_j = \emptyset$. In an arbitrary graph, a matching is a set of non-loop edges with no shared endpoints. For example, the thick edges are a matching.
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (1,1) circle (2pt)
+              (1,-1) circle (2pt)
+              (-1,1) circle (2pt)
+              (-1,-1) circle (2pt);
+        \draw (1,1) -- (1,-1) -- (-1,-1) -- (-1,1)-- cycle;
+        \draw[very thick] (1,1) -- (-1,-1);
+        \draw[very thick] (-1,1) -- (1,-1);
+      \end{tikzpicture}
+    \end{center}
+    If $v$ is incident to an edge, then $v$ is \textbf{saturated} by $M$, otherwise it is unsatured by $M$.\\
+
+    A \textbf{perfect matching} is a matching that saturates every vertex. We know that all graphs with perfect matchings have even number of vertices, but the alternative case may not be true (for example, we might consider a graph with an isolated vertex).\\
+
+    A \textbf{maximal matching} is a matching that cannot be enlarged by adding any other edges. A \textbf{maximum} matching is a matching of maximum size among all matchings. In other words, if $M^*$ is a maximum matching, then $|M^*| \geq |M|~\forall M\in G$.
+    \begin{itemize}
+      \item Not every maximal matching is a maximum matching.
+      \item However, every maximum matching is a maximal matching (because you cannot extend a maximum matching by definition).
+    \end{itemize}
+  \end{problem}
+  \begin{problem}{Alternating Paths}
+    Given a matching $M$, an $M$-\textbf{alternating path} is a path that alternates between edges in $M$ and edges not in $M$. An $M$-alternating path whose endpoints are unsaturated by $M$ is an $M$-\textbf{augmenting} path.
+    \begin{center}
+      An $M$-alternating path: \\
+      \vspace{10pt}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (0,0) circle (2pt)
+                  (1,1) circle (2pt)
+                  (2,0) circle (2pt);
+        \draw (-2,0) -- (-1,1);
+        \draw[very thick] (-1,1) -- (0,0);
+        \draw (0,0) -- (1,1);
+        \draw[very thick] (1,1) -- (2,0);
+      \end{tikzpicture}\\
+      \vspace{10pt}
+      An $M$-augmenting path:\\
+      \vspace{10pt}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (0,0) circle (2pt)
+                  (1,1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (3,1) circle (2pt);
+        \draw (-2,0) -- (-1,1);
+        \draw[very thick] (-1,1) -- (0,0);
+        \draw (0,0) -- (1,1);
+        \draw[very thick] (1,1) -- (2,0);
+        \draw (2,0) -- (3,1);
       \end{tikzpicture}
     \end{center}
   \end{problem}
