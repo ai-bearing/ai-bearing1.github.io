@@ -30,6 +30,10 @@
 %plotting
 \usepackage{pgfplots}
 \usepackage{tikz}
+\tikzset{middleweight/.style={pos = 0.5, fill=white}}
+\tikzset{weight/.style={pos = 0.5, fill = white}}
+\tikzset{lateweight/.style={pos = 0.75, fill = white}}
+\tikzset{earlyweight/.style={pos = 0.25, fill=white}}
 
 %\usepackage{natbib}
 
@@ -161,5 +165,27 @@
       \item If $e'$ shows up before $e$, then $e'$ would connect two vertices in $G_j = (V,\{e_1,\dots,e_j\})$. Since $G_j + e'\subseteq T^*$, then $T^*$ contains a cycle and isn't a spanning tree.
       \item If $e'$ shows up after $e$ in $L_E$, then $w(e') \geq w(e)$, meaning $w(T') \leq w(T^*)$, meaning that $w(T_K) \leq w(T^*)$, implying that $T_K$ is of a lower weight than $T^*$. 
     \end{itemize}
+  \end{problem}
+  \begin{problem}{Dijkstra's Algorithm}
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (-1,-1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (1,-1) circle (2pt)
+                  (1,1) circle (2pt);
+        \node[anchor = east] (u) at (-2,0) {$u$};
+        \node[anchor = south east] (a) at (-1,1) {$a$};
+        \node[anchor = north east] (b) at (-1,-1) {$b$};
+        \node[anchor = west] (e) at (2,0) {$e$};
+        \node[anchor = north west] (c) at (1,-1) {$c$};
+        \node[anchor = south west] (d) at (1,1) {$d$};
+        \draw (-2,0) -- node[middleweight]{\small 1} (-1,1) -- node[middleweight]{\small 1}(1,1) -- node[middleweight]{\small 2}(2,0);
+        \draw (-2,0) --node[middleweight]{\small 3}(-1,-1) --node[middleweight]{\small 5} (1,-1) -- node[middleweight]{\small 6} (2,0);
+        \draw (-1,-1) --node[earlyweight]{\small 4}(1,1);
+        \draw (-1,1) --node[earlyweight]{\small 4}(1,-1);
+      \end{tikzpicture}
+    \end{center}
   \end{problem}
 \end{document}
