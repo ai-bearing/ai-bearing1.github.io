@@ -216,7 +216,7 @@
     \end{itemize}
   \end{problem}
   \begin{problem}{Solution}
-    Because there are $3$ elements in $[5] = \{1,2,3,4,5\}$ not equal to any given set of two numbers, we know that the number of vertices adjacent to any given element is $\begin{pmatrix} 3\\ 2\end{pmatrix} = 3$.\\ 
+    Because there are $3$ elements in $[5] = \{1,2,3,4,5\}$ not equal to any given set of two numbers, we know that the number of vertices adjacent to any given element is ${3\choose 2} = 3$.\\ 
 
     Suppose two elements $v_1\neq v_2$ are in $V(G_p)$ where $v_1\not\leftrightarrow v_2$. Then, it must be the case that $v_1\cap v_2\neq 0$, meaning that $|v_1\cap v_2| = 1$, and $|v_1\cup v_2| = 3$, implying that $|[5] - v_1\cup v_2| = 2$. There is only one $v_k\in V(G_p)$ such that $v_k$ has two elements, defined as $v_k = [5] - (v_1\cup v_2)$.\\
 
@@ -224,9 +224,9 @@
   \end{problem}
 \end{problem}
 \begin{problem}{Decompositions}
-  A \textbf{decomposition} is a list of subgraphs of a graph such that every \textit{edge} appears only once (vertices are allowed to repeat themselves).
+  A \textbf{decomposition} is a list of subgraphs of a graph such that every \textit{edge} appears only once (vertices are allowed to repeat themselves).\\
 
-  A graph is \textbf{self-complementary} if it is isomorphic (not equal) to its complement. An $n$-vertex graph, $H$, is self-complementary if and only if $K_n$ has a decomposition consisting of two copies of $H$.\\
+  A graph is \textbf{self-complementary} if it is isomorphic (not equal) to its complement. An $n$-vertex graph, $H$, is self-complementary if and only if $K_n$ has a decomposition consisting of two copies of $H$.
 
   \begin{itemize}
     \item $C_5$ is self-complementary because $K_5$ can be decomposed into two copies of $C_5$.
@@ -348,13 +348,15 @@
   \begin{problem}{Theorem 1.2.26}
     A graph is Eulerian if and only if it has at most one nontrivial component and all vertices are of even degree.
     \tcblower
-    ($\Rightarrow$) Whenever we ``enter'' a vertex during an Eulerian circuit, we also have to ``exit'' the vertex at an edge. If a vertex is not on the trail, then it has no incident edges and so the vertex is a trivial component. Additionally, if $G$ has multiple components, then there is no trail connecting all components and so $G$ cannot be Eulerian.\\
-
-    ($\Leftarrow$) Suppose all vertices of $G$ are of even degree and $G$ has only one nontrivial component. Let $e(G) = |E(G)|$
     \begin{description}[font=\normalfont\scshape]
-      \item[Base Case] Suppose $e(G) = 0$. Then, there is an Eulerian circuit and every vertex is of even degree (namely, $0$).
-      \item[Inductive Hypothesis] If $e(G) > 0$, then every vertex in $G$ has a degree at least $2$. This means $\exists C\subseteq G$ where $C$ is a cycle. If we delete the edges of the cycle, then the vertices of $G$ have their degree reduced by either $0$ or $2$, so $G$ retains the property that its vertices are all of even degree. In each nontrivial component of $G-C$, by the inductive hypothesis, they contain within themselves an Eulerian circuit.
-      \item[Proof] We can construct an Eulerian circuit by walking along the edges of $C$, and whenever we reach a nontrivial component of $G-C$, find an Eulerian circuit within each component, then go back along $C$.
+      \item[($\Rightarrow$)] Whenever we ``enter'' a vertex during an Eulerian circuit, we also have to ``exit'' the vertex at an edge. If a vertex is not on the trail, then it has no incident edges and so the vertex is a trivial component. Additionally, if $G$ has multiple components, then there is no trail connecting all components and so $G$ cannot be Eulerian.
+
+      \item[($\Leftarrow$)] Suppose all vertices of $G$ are of even degree and $G$ has only one nontrivial component. Let $e(G) = |E(G)|$
+      \begin{description}[font=\normalfont\scshape]
+        \item[Base Case] Suppose $e(G) = 0$. Then, there is an Eulerian circuit and every vertex is of even degree (namely, $0$).
+        \item[Inductive Hypothesis] If $e(G) > 0$, then every vertex in $G$ has a degree at least $2$. This means $\exists C\subseteq G$ where $C$ is a cycle. If we delete the edges of the cycle, then the vertices of $G$ have their degree reduced by either $0$ or $2$, so $G$ retains the property that its vertices are all of even degree. In each nontrivial component of $G-C$, by the inductive hypothesis, they contain within themselves an Eulerian circuit.
+        \item[Proof] We can construct an Eulerian circuit by walking along the edges of $C$, and whenever we reach a nontrivial component of $G-C$, find an Eulerian circuit within each component, then go back along $C$.
+      \end{description}
     \end{description}
   \end{problem}
 \end{problem}
@@ -363,15 +365,11 @@
     Every even graph decomposes into cycles.
     \tcblower
     We will proceed via induction as follows:
-    \begin{itemize}
-      \item If $e(G) = 0$, then we know that this is a cycle (of length zero), so we are done.
-      \item Else, let $H$ be a nontrivial component of $G$.
-        \begin{itemize}
-          \item Every vertex of $H$ has degree at least $2$, by our assumption that $G$ is even and $H$ is nontrivial.
-          \item Therefore, $H$ contains within itself a cycle, $C$. In $G' = G - E(C)$, we can use the inductive hypothesis on each component of $G'$. By the inductive hypothesis, we know that $G'$ can be decomposed into cycles, since $G'$ is still even.
-          \item We add $C$ back into the the decomposition of $G'$ to get a decomposition of $G$.
-        \end{itemize}
-    \end{itemize}
+    \begin{description}[font=\normalfont\scshape]
+      \item[Base Case] If $e(G) = 0$, then we know that this is a cycle (of length zero), so we are done.
+      \item[Inductive Hypothesis] Let $H$ be a nontrivial component of $G$. Every vertex of $H$ has degree at least $2$, by our assumption that $G$ is even and $H$ is nontrivial. Therefore, $H$ contains within itself a cycle $C$.
+      \item[Proof] In $G' = G - E(C)$, we can use the inductive hypothesis on each component of $G'$. By the inductive hypothesis, we know that $G'$ can be decomposed into cycles, since $G'$ is still even. We add $C$ back into the the decomposition of $G'$ to get a decomposition of $G$.
+    \end{description}
   \end{problem}
   \begin{problem}{Theorem 1.2.33}
     For a connected, nontrivial graph with exactly $2k$ odd vertices, the minimum number of trails it decomposes into is max$\{1,k\}$. 
