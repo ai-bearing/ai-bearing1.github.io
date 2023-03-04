@@ -115,16 +115,16 @@
         e(G) &> \frac{k^2 + k}{2} - 1\\
         e(G) &> \frac{k(k+1)}{2} - 1
       \end{align*}
-      This means $e(G) = \frac{k(k+1)}{2}$ in the base case, so $G$ is the complete graph on $k+1$ vertices, so $\delta(G) = k$, meaning $T\subseteq G$.
-    \item[Inductive Hypothesis] If $n > k+1$, $e(G) > n(k-1) - {k\choose 2}$, and $\delta(G) < k$, then we have that $e(G-x) > (n-1)(k-1) - {k\choose 2}$, where $d(x) = \delta(G)$.
-    \item[Proof] Let $G' = G-x$, where $\delta(G)\leq k-1$ and $d(x) = \delta(G)$. Then, we have the following:
+      This means $e(G) = \frac{k(k+1)}{2}$ in the base case, meaning $G$ is the complete graph on $k+1$ vertices, where $\delta(G) = k$. By Theorem 2.1.8, we know that $T\subseteq G$.
+    \item[Inductive Hypothesis] If $n > k+1$, $e(G) > n(k-1) - {k\choose 2}$, then either $\delta(G) \geq k$ or, if $\delta(G) < k$, then $e(G-x) > (n-1)(k-1) - {k\choose 2}$ for $\delta(G) = d(x)$.
+    \item[Proof] If $\delta(G) \geq k$, then we know by Theorem 2.1.8 that $T\subseteq G$. Otherwise, suppose $\delta(G) < k$, and let $d(x) = \delta(G)$. Let $G' = G-x$.
       \begin{align*}
         e(G') &= e(G) - \delta(G)\\
         e(G') &\geq e(G) - (k-1) \\
         e(G') &> n(k-1) - {k\choose 2} - (k-1) \\
         e(G') &> (n-1)(k-1) - {k\choose 2}
       \end{align*}
-      Therefore, the inductive hypothesis is proven, and we have shown the formula to be correct.
+      Therefore, the inductive hypothesis is proven.
   \end{description}
 \end{problem}
 }\end{document}
