@@ -1,4 +1,4 @@
-\documentclass[10pt]{extarticle}
+\documentclass[9pt]{extarticle}
 \title{}
 \author{Avinash Iyer}
 \date{}
@@ -686,6 +686,11 @@
       \item[($\Leftarrow$)] Suppose that $\sum d_i = 2n-2$ for $d_1,\dots,d_n$ corresponding to the degrees of the vertices in $G$. By a previous result, we know that $\sum d_i = 2e(G)$, meaning that $\sum d_i = 2(n-1)$, implying that $e(G) = n-1$. We can find a tree $G$ with $n-1$ edges by letting $G$ be connected with $n-1$ edges.
     \end{description}
   \end{problem}
+  \begin{problem}{2.1.29}
+    Every tree is bipartite. Prove that every tree has a leaf in its larger partite set (or in both sets if the partite sets have equal size).
+    \tcblower
+    Let $T = X\sqcup Y$, and suppose without loss of generality that $|X| \geq |Y|$, and suppose that $X$ has no vertices of degree $1$ within it. Then, every vertex in $X$ has degree at least $2$, meaning that the total number of edges in $T$ is at least $2n(X)$. However, since $n(X) \geq \frac{n(T)}{2}$, this means the number of edges in $T$ is at least $n(T)$, which would contradict our assumption that $T$ is a tree.
+  \end{problem}
   \begin{problem}{2.1.33}
     Let $G$ be a connected $n$-vertex graph. Prove that $G$ has exactly one cycle if and only if $G$ has exactly $n$ edges.
     \tcblower
@@ -717,6 +722,22 @@
           e(G') &> (n-1)(k-1) - {k\choose 2}
         \end{align*}
         Therefore, the inductive hypothesis is proven.
+    \end{description}
+  \end{problem}
+  \begin{problem}{2.1.35}
+    Let $T$ be a tree. Prove that the vertices of $T$ all have odd degree if and only if for all $e\in E(T)$, both components of $T - e$ are of odd order.
+    \tcblower
+    \begin{description}[font=\normalfont\scshape]
+      \item[($\Rightarrow$)] Let $T$ be a tree. We will suppose toward contradiction with two cases:
+        \begin{description}[font=\normalfont\scshape]
+          \item[Case 1] Suppose $T-e$ has exactly one component of odd order. Then, $T$ has odd order, meaning that by a previous result, we know that there must exist at least one vertex of even degree in $T$, otherwise $\sum d(v)$ would be odd.
+          \item[Case 2] Suppose $T-e$ has two components of even order. Let $X$ and $Y$ be the two components of $T-e$.
+            \begin{description}[font = \normalfont\scshape]
+              \item[Subcase 2.1] Suppose every vertex in $X$ is of odd degree. Then, $T = T-e + e$ would increase the degree of a vertex in $X$ by $1$, making that particular vertex have even degree.
+              \item[Subcase 2.2] Suppose there is exactly one vertex in $X$ of even degree. This would mean $X$ has an odd number of vertices of odd degree, which we have previously shown is not possible.
+              \item[Subcase 2.3] Suppose there is more than one vertex in $X$ of even degree. Then, $T$ would contain at least one vertex of even degree (as reconnecting the edge would only increase the degree of one vertex).
+            \end{description}
+        \end{description}
     \end{description}
   \end{problem}
 \end{document}
