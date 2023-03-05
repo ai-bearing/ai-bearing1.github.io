@@ -7,6 +7,7 @@
 %font setup
 %
 %\usepackage[light,math]{anttor}
+\usepackage{newpxtext,eulerpx}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -455,24 +456,25 @@
       \item $G$ has $n-1$ edges and no cycles
       \item $G$ has no loops and has, $\forall u,v\in V(G)$, exactly one unique $u,v$ path
     \end{enumerate}
-  \end{problem}
-  \begin{problem}{Proof}
+    \tcblower
     We will commence with the proof by showing that (a) $\rightarrow$ \{(b),(c)\}, (b) $\rightarrow$ \{(a),(c)\}, (c) $\rightarrow$ \{(a),(b)\}, and (a) $\leftrightarrow$ (d).\\
-
-      Let $G$ be a connected acyclic graph with $n$ vertices (where $n\geq 1$). We will show that $G$ has $n-1$ edges as follows:
+    \begin{description}[font=\normalfont]
+      \item[(a) $\rightarrow$ \{(b),(c)\}:] Let $G$ be a connected acyclic graph with $n$ vertices (where $n\geq 1$). We will show that $G$ has $n-1$ edges as follows:
       \begin{itemize}
         \item Assuming that $n = 1$, we have that $G$ is an acyclic connected graph with $1$ vertex, implying there are $0$ edges.
         \item For an $n$-vertex, connected, acyclic graph $G$ with $n\geq 2$, we know that there must exist a leaf $v$ in $G$. Therefore, $n(G-v)$ must be equal to $n-1$, and since $v$ is a leaf, we know that by the inductive hypothesis, $e(G) = n-2$.
         \item Therefore, $G-v$ is a connected, acyclic graph, so $G$ must be a connected acyclic graph.
       \end{itemize}
-
+      
+    \item[(b) $\rightarrow$ \{(a),(c)\}:]
       Let $G$ be a connected graph with $n-1$ edges. We will show that $G$ is acyclic. Locate all edges within $G$ that are contained within a cycle, and delete the edges until there are no cycles left, yielding a graph $G'$. Since $G'$ is acyclic, and we did not delete any vertices, we have that $e(G') = n-1$, which is equal to $e(G)$. Therefore, $e(G)$ must be acyclic.\\
-
+    \item[(c) $\rightarrow$ \{(a),(b)\}:]
       Let $G$ be an acyclic graph with $n-1$ edges and no cycles. We will show that $G$ is connected. Since $G$ is acyclic, we know that it is a forest, implying that the components $H_1,\dots,H_k$ must also be acyclic. Additionally, we know that $\sum_{i = 1}^{k} n(H_i) = n$, and $\sum_{i = 1}^{k} e(H_i) = e(G)$. Since each of $H_1,\dots,H_k$ is acyclic, we have that $e(H_i) = n(H_i) - 1$, meaning $e(G) = n-1 = \sum_{i = 1}^{k} e(H_i) = \left(\sum_{i = 1}^{k} n(H_i)\right) - k = n - k$, meaning $k = 1$. So, $G$ is connected as there is one component.\\
-
+    \item[(a) $\rightarrow$ (d):]
       Suppose $G$ has no loops and for every set of vertices $u,v\in V(G)$, $\exists!u,v$ path in $G$. Since for every $u,v$, there exists a $u,v$ path, we know that $G$ is connected. Assume toward contradiction that $G$ contains a cycle, and that $u,v\in C_k$. Then, by the definition of a cycle, there exist two paths from $u$ to $v$, so we have reached a contradiction with our assumption that there is a unique $u,v$ path. Therefore, $G$ must be acyclic as well as connected.\\
-
+    \item[(d) $\rightarrow$ (a):]
       Let $G$ be a connected, acyclic graph. Since $G$ is connected, we know that $\forall x, \forall y\in V(G), \exists x,y$ path $P_1$ in $G$. Assume toward contradiction that there exist two unique paths $P_1, P_2$ from $u$ to $v$ such that $e(P_1) + e(P_2)$ is minimized. We can see that $P_1$ and $P_2$ share no common vertices aside from $u$ and $v$, so $P_1 + P_2$ is a cycle, meaning that $G$ is not acyclic, meaning we have reached a contradiction. Therefore, we know that $\exists! u,v$ path in $G$.
+    \end{description}
   \end{problem}
   Since any two vertices are connected via exactly one path, we will call this path $xTy$ for tree $T$.
   \begin{problem}{Corollary 2.1.5}
