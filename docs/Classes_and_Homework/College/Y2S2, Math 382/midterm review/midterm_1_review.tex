@@ -123,7 +123,8 @@
   \end{center}
 \end{problem}
 \begin{problem}{Paths, Cycles, and Complements}
-  A \textbf{path} is a nonempty graph in the form $P = x_1,x_2,\dots,x_k$ with edge set $E(P) = \{x_1x_2, x_2x_3,\dots,x_{k-1}x_k\}$, where edges don't repeat themselves. A cycle is a path where we include the edge $x_kx_1$. We will learn about different kinds of paths, trails, etc. in section 1.2.\\
+
+  A \textbf{path} is a nonempty graph $P = x_1,x_2,\dots,x_k$ with the edge set $E(P) = \{x_1x_2,\dots,x_{k-1}x_k\}$ where edges don't repeat themselves. A cycle is a path with the edge $x_kx_1$.\\
 
   The complement of a graph, $\overline{G}$ is found by using the same vertex set and taking the complement of the edge set. In other words, $V(\overline{G}) = V(G)$ and $E(\overline{G}) = \overline{E(G)}$. For example, we can consider the complete bipartite graph $K_{3,3}$ (explained later), and see its complement.
   \begin{center}
@@ -372,7 +373,7 @@
     \end{description}
   \end{problem}
   \begin{problem}{Theorem 1.2.33}
-    For a connected, nontrivial graph with exactly $2k$ odd vertices, the minimum number of trails it decomposes into is max$\{1,k\}$. 
+    For a connected, nontrivial graph with exactly $2k$ odd vertices, the minimum number of trails it decomposes into is $\max\{1,k\}$. 
     \tcblower
     A non-closed trail contributes an even number of edges within its interior, meaning that we need at least $k$ non-closed trails to handle the $2k$ odd vertices in the given graph. We can pair each vertex with an element in the edge set $\{e_1,\dots,e_k\}$, giving us $G' = G + \{e_1,\dots,e_k\}$ that is connected and even, meaning it is Eulerian. 
   \end{problem}

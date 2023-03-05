@@ -354,7 +354,7 @@
   \begin{problem}{1.3.3}
     Let $u$ and $v$ be adjacent vertices in $G$. Prove that $uv$ belongs to at least $d(u) + d(v) - n(G)$ triangles in $G$.
   \tcblower
-    Let $u\leftrightarrow v \in G$. In order for $uv$ to be in a triangle in $G$, $u$ and $v$ must share a common neighbor. By using the property of inclusion and exclusion, we can find the set as follows:
+    Let $u\leftrightarrow v \in G$. In order for $uv$ to be in a triangle in $G$, $u$ and $v$ must share a common neighbor. By using the principle of inclusion and exclusion, we can find the set as follows:
     \begin{align*}
       |N(u) \cup N(v)| &= |N(u)| + |N(v)| - |N(u) \cap N(v)| \\
       |N(u) \cap N(v)| &= |N(u)| + |N(v)| - |N(u) \cup N(v)| \\
@@ -670,5 +670,53 @@
     Prove that every graph with diameter $d$ has an independent set with at least $\left\lceil\frac{1+d}{2}\right\rceil$ vertices.
     \tcblower
     Let $G$ be a graph with diameter $d$, and let $u\in V(G)$ be a vertex with eccentricity $d$. Let $P$ be a maximal $u,v$ path of length $d$. Then, $P$ has $d+1$ vertices. So, $P$ has a maximal independent set containing every other vertex, with total cardinality of $\left\lceil \frac{d+1}{2} \right\rceil$. Therefore, $G$ has an independent set with at least $\left\lceil\frac{d+1}{2}\right\rceil$ vertices.
+  \end{problem}
+  \subsection*{Group}%
+  
+  \begin{problem}{2.1.22}
+    Let $T$ be an $n$-vertex tree with one vertex of each degree $2\leq i \leq k$; the remaining $n-k+1$ vertices are leaves. Determine $n$ in terms of $k$.
+    \tcblower
+    We will find the number of vertices in $T$ by finding the number of edges in $T$ and adding $1$. For $2\leq i\leq k$ corresponding to each of the non-leaf vertices, summation yields $\frac{k(k+1)}{2}-1$ edges. However, this scheme double-counts each edge, so we have to subtract the $k-2$ edges connecting the $k-1$ non-leaf vertices, yielding $\frac{k(k+1)}{2}-k+1$ edges. Finally, because $T$ is a tree, we get that $T$ has $\frac{k(k+1)}{2}-k+2$ vertices.
+  \end{problem}
+  \begin{problem}{2.1.27}
+    Let $d_1,\dots,d_n$ be positive integers with $n\geq 2$. Prove that there exists a tree with vertex degrees $d_1,\dots,d_n$ if and only if $\sum d_i = 2n-2$.
+    \tcblower
+    \begin{description}[font=\normalfont\scshape]
+      \item[($\Rightarrow$)] Suppose that for some tree $T$, $d_1,\dots,d_n$ are the degrees of the vertices of the tree. Since $T$ is a tree, this means $e(G) = n-1$, and $\sum d_i = 2e(G)$, meaning $\sum d_i = 2(n-1) = 2n-2$.
+      \item[($\Leftarrow$)] Suppose that $\sum d_i = 2n-2$ for $d_1,\dots,d_n$ corresponding to the degrees of the vertices in $G$. By a previous result, we know that $\sum d_i = 2e(G)$, meaning that $\sum d_i = 2(n-1)$, implying that $e(G) = n-1$. We can find a tree $G$ with $n-1$ edges by letting $G$ be connected with $n-1$ edges.
+    \end{description}
+  \end{problem}
+  \begin{problem}{2.1.33}
+    Let $G$ be a connected $n$-vertex graph. Prove that $G$ has exactly one cycle if and only if $G$ has exactly $n$ edges.
+    \tcblower
+    \begin{description}[font=\normalfont\scshape]
+      \item[($\Rightarrow$)] Let $G$ be a connected $n$-vertex graph with exactly one cycle. If we delete an edge from this cycle, then $G-e$ is acyclic, as well as connected (since $e$ is not a cut-edge), so $G-e$ has $n-1$ edges. Adding back $e$, we get that $G$ has $n$ edges.
+      \item[($\Leftarrow$)] Let $G$ be a connected $n$-vertex graph with $n$ edges. Then, $G$ contains a spanning tree that contains all $n$ vertices. Therefore, $T\subseteq G$ contains $n-1$ edges. By adding another edge, we get that $e(G) = e(T) + 1 = n-1+1$. Thus, $G$ has exactly one cycle.
+    \end{description}
+  \end{problem}
+  \begin{problem}{2.1.34}
+    Let $T$ be a tree with $k$ edges, and let $G$ be a $n$-vertex simple graph with more than $n(k-1)-{ k \choose 2 }$ edges. Use Proposition $2.1.8$ to prove that $T\subseteq G$ if $n>k$.
+    \tcblower
+    We will use induction to prove that $T\subseteq G$ as follows:
+    \begin{description}[font = \normalfont\scshape]
+      \item[Base Case] Suppose $n = k+1$. Then, we can find the following:
+        \begin{align*}
+          e(G) &> (k+1)(k-1) - {k\choose 2}\\
+          e(G) &> (k^2-1) - \frac{k(k-1)}{2}\\
+          e(G) &> \frac{k^2 - 1}{2} + \frac{k^2-1 - (k^2-k)}{2} \\
+          e(G) &> \frac{k^2 + k}{2} - 1\\
+          e(G) &> \frac{k(k+1)}{2} - 1
+        \end{align*}
+        This means $e(G) = \frac{k(k+1)}{2}$ in the base case, meaning $G$ is the complete graph on $k+1$ vertices, where $\delta(G) = k$. By Theorem 2.1.8, we know that $T\subseteq G$.
+      \item[Inductive Hypothesis] If $n > k+1$, $e(G) > n(k-1) - {k\choose 2}$, then either $\delta(G) \geq k$ or, if $\delta(G) < k$, then $e(G-x) > (n-1)(k-1) - {k\choose 2}$ for $\delta(G) = d(x)$.
+      \item[Proof] If $\delta(G) \geq k$, then we know by Theorem 2.1.8 that $T\subseteq G$. Otherwise, suppose $\delta(G) < k$, and let $d(x) = \delta(G)$. Let $G' = G-x$.
+        \begin{align*}
+          e(G') &= e(G) - \delta(G)\\
+          e(G') &\geq e(G) - (k-1) \\
+          e(G') &> n(k-1) - {k\choose 2} - (k-1) \\
+          e(G') &> (n-1)(k-1) - {k\choose 2}
+        \end{align*}
+        Therefore, the inductive hypothesis is proven.
+    \end{description}
   \end{problem}
 \end{document}
