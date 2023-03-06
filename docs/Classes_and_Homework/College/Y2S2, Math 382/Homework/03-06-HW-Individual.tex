@@ -118,7 +118,12 @@
     \begin{description}[font=\normalfont\scshape]
       \item[Base Case] If $m = 0$, then since this graph has zero edges, it has zero cycles, and since $0\geq 1-n$, we have proven the base case.
       \item[Inductive Hypothesis] For an $n$-vertex graph with $0\leq k\leq m$ vertices, then $G$ has at least $k-n+1$ cycles.
-      \item[Proof] If $e$ is an edge within a cycle of $G$, then $G-e$ has $k-1$ edges, and has seen a reduction of $1$ cycle, so $G-e$ has at least $(k-1)-n+1 = (k-n+1)-1$ cycles. If $e$ is not within a cycle, then $G$ has seen no reduction in cycles, but $G-e$ is predicted to have at least $(k-n+1)-1$ cycles, which it does by our assumption. Therefore, we have proven the inductive hypothesis for both cases.
+      \item[Proof] We can consider three cases of edge deletion changing the number of cycles:
+        \begin{description}[font=\normalfont\scshape]
+          \item[Reduction of $>1$ cycle] If edge deletion reduces the number of cycles by more than one, adding $e$ back into the graph yields a $((m-1)-n+1) + 1 = m-n+1$ increase in the lower bound of cycles, while the total number of cycles increases by more than one, meaning that the inductive hypothesis remains valid.
+          \item[Reduction of exactly $1$ cycle] If edge deletion reduces the number of cycles by exactly one, then the total number of cycles is reduced by $1$ and the lower bound on cycles is reduced by $(m-1) - n + 1 = (m-n+1)-1$ cycles, satisfying the inductive hypothesis.
+          \item[Reduction of $0$ cycles] If edge deletion does not reduce the number of cycles, then the lower bound on the number of cycles is $(m-1) - n + 1 = (m-n+1)-1$, but the total number of cycles remains unchanged, satisfying the inductive hypothesis.
+        \end{description}
     \end{description}
   \end{problem}
   \begin{problem}{2.1.12}
