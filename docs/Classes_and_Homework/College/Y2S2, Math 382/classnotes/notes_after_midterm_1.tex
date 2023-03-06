@@ -7,6 +7,7 @@
 %font setup
 %
 %\usepackage[light,math]{anttor}
+\usepackage{newpxtext,eulerpx}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -339,7 +340,7 @@
       \item However, every maximum matching is a maximal matching (because you cannot extend a maximum matching by definition).
     \end{itemize}
   \end{problem}
-  \begin{problem}{Alternating Paths}
+  \begin{problem}{Alternating and Augmenting Paths}
     Given a matching $M$, an $M$-\textbf{alternating path} is a path that alternates between edges in $M$ and edges not in $M$. An $M$-alternating path whose endpoints are unsaturated by $M$ is an $M$-\textbf{augmenting} path.
     \begin{center}
       An $M$-alternating path: \\
@@ -355,7 +356,7 @@
         \draw (0,0) -- (1,1);
         \draw[very thick] (1,1) -- (2,0);
       \end{tikzpicture}\\
-      \vspace{10pt}
+      \vspace{20pt}
       An $M$-augmenting path:\\
       \vspace{10pt}
       \begin{tikzpicture}
@@ -372,5 +373,57 @@
         \draw (2,0) -- (3,1);
       \end{tikzpicture}
     \end{center}
+    If $M$ is a matching and there exists an $M$-augmenting path in $G$, then $M$ is not a maximum matching (as in the path $P$ that contains $M$, you can switch the matching edges as follows)
+    \begin{center}
+      \begin{tikzpicture}
+        \filldraw (-2,0) circle (2pt)
+                  (-1,1) circle (2pt)
+                  (0,0) circle (2pt)
+                  (1,1) circle (2pt)
+                  (2,0) circle (2pt)
+                  (3,1) circle (2pt);
+        \draw[very thick] (-2,0) -- (-1,1);
+        \draw (-1,1) -- (0,0);
+        \draw[very thick](0,0) -- (1,1);
+        \draw (1,1) -- (2,0);
+        \draw[very thick] (2,0) -- (3,1);
+      \end{tikzpicture}
+    \end{center}
+  \end{problem}
+  \begin{problem}{Symmetric Difference}
+    The \textbf{symmetric difference} $G\vartriangle H$ is the subgraph of $G\cup H$ whose edges are the edges of $G\cup H$ that appear in exactly one of $G$ and $H$. A picture of an example of a symmetric difference between matchings is shown below.
+    \begin{center}
+      \includegraphics[width=12cm]{symmetric_difference}
+    \end{center}
+  \end{problem}
+  \begin{problem}{Theorems and Lemmas}
+    \begin{problem}{Lemma 3.1.9}
+      Every component of the symmetric difference of two matchings is a path or an even cycle.
+      \tcblower
+      Let $M$ and $M'$ be two matchings. Each vertex is incident to at most $1$ edge in $M$ and at most one edge in $M'$. Thus, $d(v)\leq 2$ for each vertex in $M$ and $M'$. Therefore, each component is either a path or a cycle.\\
+
+      If a component is a cycle, then it must be even because the edges of the cycle must alternate between $M$ and $M'$.
+    \end{problem}
+    \begin{problem}{Theorem 3.1.10}
+      A matching $M$ in a graph $G$ is a \textit{maximum} matching if and only if $G$ has no $M$-augmenting path.
+      \tcblower
+      \begin{description}[font=\normalfont\scshape]
+        \item[($\Rightarrow$)] Suppose $G$ has an $M$-augmenting path, $P$. Exchange the edges of $P$ in $M$ with the edges of $P$ not in $M$. This action increases the size of the matching by $1$, meaning that $M$ was not a maximum matching initially.
+        \item[$\Leftarrow$] Suppose $M$ is not a maximum matching. Let $M'$ be a matching with more edges than $M$ (i.e., $|M'| > |M|$). Let $H = (V(G),M\vartriangle M')$. By Lemma 3.1.9, we know that each component of $H$ is either a path or an even cycle. Since $|M'| > |M|$, there is a component of $H$ that contains more edges from $M'$ than edges from $M$, which means it cannot be an even cycle --- therefore, this component must be a path that alternates between $M'$ and $M$. Because there are more edges from $M'$ than $M$ in this path, meaning this path is an $M$-augmenting path.
+      \end{description}
+    \end{problem}
+  \end{problem}
+  \begin{problem}{Perfect Matchings}
+    Let $G = (X,E,Y)$ be a bipartite graph. A matching that saturates $X$ is an $X$-\textbf{perfect matching}.\\
+
+    If there exists a set of vertices $S\subseteq X$ such that $|S| > |N(S)|$, then it is impossible for $G$ to have an $X$-perfect matching.
+    \begin{problem}{Theorem 3.1.11}
+      A bipartite graph $G = (X,E,Y)$ has an $X$-perfect matching if and only if $|S| \leq |N(S)|$ for all $S\subseteq X$.
+      \tcblower
+      \begin{description}[font=\normalfont\scshape]
+        \item[($\Rightarrow$)] If $G$ has an $X$-perfect matching, then each vertex in $X$ is matched to a distinct vertex in $N(S)$. Thus, $|S| \leq |N(S)|$.
+        \item[($\Leftarrow$)] 
+      \end{description}
+    \end{problem}
   \end{problem}
 \end{document}
