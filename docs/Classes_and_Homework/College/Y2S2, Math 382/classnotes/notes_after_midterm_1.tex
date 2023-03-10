@@ -417,13 +417,24 @@
     Let $G = (X,E,Y)$ be a bipartite graph. A matching that saturates $X$ is an $X$-\textbf{perfect matching}.\\
 
     If there exists a set of vertices $S\subseteq X$ such that $|S| > |N(S)|$, then it is impossible for $G$ to have an $X$-perfect matching.
-    \begin{problem}{Theorem 3.1.11}
+    \begin{problem}{Theorem 3.1.11 (Hall, 1935)}
       A bipartite graph $G = (X,E,Y)$ has an $X$-perfect matching if and only if $|S| \leq |N(S)|$ for all $S\subseteq X$.
       \tcblower
       \begin{description}[font=\normalfont\scshape]
         \item[($\Rightarrow$)] If $G$ has an $X$-perfect matching, then each vertex in $X$ is matched to a distinct vertex in $N(S)$. Thus, $|S| \leq |N(S)|$.
-        \item[($\Leftarrow$)] 
+        \item[($\Leftarrow$)] We will prove via the contrapositive. Suppose $G$ does not have an $X$-perfect matching. Let $M$ be a maximum matching in $G$, and let $u\in X$ be an $M$-unsaturated vertex. Let $S = \{x\in X: \exists~M\textrm{-alternating $u,x$ path}\}$, and $T = \{y\in Y: \exists M\textrm{-alternating $u,y$ path}\}$.\\
+
+          We can partition $S$ into $\{u\},X_1,\dots,X_k$ and $T$ into $Y_1,\dots,Y_k$, where $|X_i| = |Y_i|$ for $1\leq i\leq k$. Our partition works as follows: $Y_1 = N(u), X_1 = N_M(Y_1), Y_2 = N(X_1)-Y_1, X_2 = N_M(Y_2)$, and the general form is $Y_i = N(X_{i-1}) - (Y_1\cup \cdots \cup Y_{i-1})$ and $X_i = N_M(Y_i)$.\\
+
+          Since $M$ is a maximum matching, we know that there are no $M$-augmenting paths, meaning $|X_i| = |Y_i|$ (otherwise, if $|X_i| < |Y_i|$, we would be able to find a $M$-augmenting $u,y$ path). Therefore, $|S| = |\{u\}| + |X_1| + \cdots + |X_k|$ while $|T| = |Y_1| + \cdots + |Y_k|$, so $|S| = |T| + 1$.
       \end{description}
+    \end{problem}
+    \begin{problem}{Corollary 3.1.13}
+      For $k>0$, every $k$-regular bipartite graph has a perfect matching.
+      \tcblower
+      Let $k>0$ and let $G = (X,E,Y)$ be a $k$-regular bipartite graph. We will show that $G$ satisfies Hall's condition. Let $S\subseteq X$ and $[S,N(S)] = \{xy\in E(G): x\in S \textrm{ and } y\in N(S)\}$, and $[X,N(S)] = \{xy\in E(G): x\in X \textrm{ and } y\in N(S)\}$. Since $[S,N(S)] \subseteq [X,N(S)]$. Additionally, $\sum_{x\in S} d(X) = |[S,N(S)]|$ and $\sum_{y\in X}d(y) = |[X,N(S)]|$.\\
+
+      Since $G$ is $k$=regular, we find that $|[S,N(S)]| = k|S|$ and $|[X,N(S)]| = k|N(S)|$, meaning that $|S| \leq |N(S)|$
     \end{problem}
   \end{problem}
 \end{document}
